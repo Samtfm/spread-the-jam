@@ -29,9 +29,9 @@
 
   |Path                        | Component              |
   |----------------------------|------------------------|
+  | "/"                        | "DashboardContainer" |
   | "/signup"                  | "AuthFormContainer" |
   | "/signin"                  | "AuthFormContainer" |
-  | "/dashboard"               | "DashboardContainer" |
   | "/new-event"               | "EventFormContainer" |
   | "/cities/"                 | "CitiesContainer" |
   | "/cities/:cityId"          | "CityContainer" |

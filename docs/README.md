@@ -17,8 +17,8 @@ Spread the Jam is a meetup app for musicians inspired by [Tea With Strangers][TW
 - [ ] host event
 - [ ] join event in your city
 - [ ] dashboard of joined and hosted events
-- [ ] Google Maps API integration
-- [ ] suggestions based on matching event details to user profiles
+- [ ] **bonus:** Google Maps API integration
+- [ ] **bonus:** suggestions based on matching event details to user profiles
 
 ## Design Docs
 - [Wireframes][wireframes]
@@ -26,11 +26,12 @@ Spread the Jam is a meetup app for musicians inspired by [Tea With Strangers][TW
 - [API endpoints][api-endpoints]
 - [schema][schema]
 - [Sample State][sample-state]
+
 [wireframes]: docs/wireframes
 [components]: docs/component-hierarchy.md
-[sample-state]: docs/sample-state.md
 [api-endpoints]: docs/api-endpoints.md
 [schema]: docs/schema.md
+[sample-state]: docs/sample-state.md
 
 ## timeline
 

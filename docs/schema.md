@@ -31,5 +31,5 @@ host_id         | integer   | not null, indexed, foreign key (users)
 column name     | data type | details
 ----------------|-----------|---------
 id              | integer   | not null, primary key
-event_id        | integer   | not null, indexed, foreign key (events)
+event_id        | integer   | not null, indexed, unique to user_id, foreign key (events)
 user_id         | integer   | not null, indexed, foreign key (users)
