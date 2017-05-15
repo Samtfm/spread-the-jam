@@ -4,9 +4,9 @@
 - [Heroku link][heroku]
 - [Trello link][trello]
 
-[heroku]: http://www.spreadthejam.herokuap.com
+[heroku]: http://www.spreadthejam.herokuapp.com
 
-[trello]: http://trello.com
+[trello]: https://trello.com/b/xQCkFqh5/spread-the-jam
 
 ## Minimum Viable Product
 Spread the Jam is a meetup app for musicians inspired by [Tea With Strangers][TWS]. This web-app will satisfy the following criteria with elegant style and no pesky bugs by May 26th:
