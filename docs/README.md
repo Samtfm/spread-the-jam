@@ -3,7 +3,9 @@
 
 - [Heroku link][heroku]
 - [Trello link][trello]
+
 [heroku]: http://www.spreadthejam.herokuap.com
+
 [trello]: http://trello.com
 
 ## Minimum Viable Product
