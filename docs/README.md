@@ -28,10 +28,10 @@ Spread the Jam is a meetup app for musicians inspired by [Tea With Strangers][TW
 - [Sample State][sample-state]
 
 [wireframes]: /wireframes
-[components]: /component-hierarchy.md
-[api-endpoints]: /api-endpoints.md
-[schema]: /schema.md
-[sample-state]: /sample-state.md
+[components]: /docs/component-hierarchy.md
+[api-endpoints]: /docs/api-endpoints.md
+[schema]: /docs/schema.md
+[sample-state]: /docs/sample-state.md
 
 ## timeline
 
