@@ -5,7 +5,7 @@ import SessionFormContainer from './session_form_container';
 const App = () => (
   <div>
     <h1>let's spread some JAM</h1>
-    <Route path='/' component={SessionFormContainer} />
+    <Route path='/signup' component={SessionFormContainer} />
   </div>
 );
 
