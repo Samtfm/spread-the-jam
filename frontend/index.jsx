@@ -1,7 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { HashRouter } from 'react-router-dom';
+
+import App from './components/app';
+import configureStore from './store/store';
+
+const Root = ({store}) => (
+  <Provider store={store}>
+    <HashRouter>
+      <App />
+    </HashRouter>
+  </Provider>
+);
 
 document.addEventListener('DOMContentLoaded', () => {
-    const root = document.getElementById('root');
-    ReactDOM.render(<h1>Let's spread some JAM</h1>, root);
+
+  const store = configureStore();
+  const rootEl = document.getElementById('root');
+  console.log(store);
+  ReactDOM.render(<Root store={store} />, rootEl);
 });
