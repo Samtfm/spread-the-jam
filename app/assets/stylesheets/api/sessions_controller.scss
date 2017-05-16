@@ -1,3 +1,14 @@
 // Place all the styles related to the API::SessionsController controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+form.auth {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  input {
+    margin: 5px;
+  }
+}
