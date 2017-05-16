@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   validates :username, :password_digest, :session_token, presence: true
   validates :password_digest, :session_token, uniqueness: true
-  validates :password, length: {minimum: 6, allow_nil: true}
+  validates :password, length: { minimum: 6, allow_nil: true }
 
   after_initialize :ensure_session_token
 
@@ -21,7 +21,7 @@ class User < ApplicationRecord
     self.save
   end
 
-  def find_by_credentials(username, pw)
+  def self.find_by_credentials(username, pw)
     user = User.find_by(username: username)
     #TODO: throw specific error for invalid username?
     return nil unless user
