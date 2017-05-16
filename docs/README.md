@@ -4,7 +4,7 @@
 - [Heroku link][heroku]
 - [Trello link][trello]
 
-[heroku]: http://www.spreadthejam.herokuapp.com
+[heroku]: https://spreadthejam.herokuapp.com/
 
 [trello]: https://trello.com/b/xQCkFqh5/spread-the-jam
 
