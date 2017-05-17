@@ -12,6 +12,7 @@ class Cities extends React.Component{
         {this.props.cities.map(city => (
           <li>
             {city.name}
+            <img src={city.imgUrl} />
           </li>
         ))}
       </ul>
