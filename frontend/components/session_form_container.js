@@ -4,7 +4,7 @@ import { signUp, signIn, signOut, receiveErrors } from '../actions/session_actio
 import SessionForm from './session_form';
 
 const mapStateToProps = (state, ownProps) => ({
-  errors: state.session.errors,
+  errors: state.errors,
   signedIn: Boolean(state.session.currentUser),
   formType: ownProps.location.pathname === '/signup' ? 'signup' : 'signin'
 });
