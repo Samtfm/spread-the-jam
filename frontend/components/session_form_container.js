@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import { signUp, signIn, signOut } from '../actions/session_actions';
+import { signUp, signIn, signOut, receiveErrors } from '../actions/session_actions';
 import SessionForm from './session_form';
 
 const mapStateToProps = (state, ownProps) => ({
@@ -17,6 +17,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     processForm = user => signIn(user);
   return {
     processForm: (user) => dispatch(processForm(user)),
+    clearErrors: () => dispatch(receiveErrors([])),
     demoSignIn: () => dispatch(signIn({username: 'sam', password: 'password'}))
   };
 };

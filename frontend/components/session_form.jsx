@@ -26,6 +26,11 @@ class SessionForm extends React.Component{
     e.preventDefault();
     this.props.demoSignIn();
   }
+
+  componentWillUnmount(){
+    this.props.clearErrors();
+  }
+
   render(){
     const isSignUpForm = this.props.formType === 'signup';
     const submitText = isSignUpForm ? 'Sign Up' : 'Log In';
