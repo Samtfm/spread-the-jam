@@ -30,33 +30,30 @@ class SessionForm extends React.Component{
     const isSignUpForm = this.props.formType === 'signup';
     const submitText = isSignUpForm ? 'Sign Up' : 'Log In';
     const SwitchFormLink = isSignUpForm ?
-      () => (<Link to="/signin">Returning user? Log in here!</Link>) :
-      () => (<Link to="/signup">New user? Sign up here!</Link>);
+      () => (<p>Returning user? <Link to="/signin"> Log in here!</Link></p>) :
+      () => (<p>New user? <Link to="/signup">Sign up here!</Link></p>);
     return(
       <form className='auth'>
+        <h2>Welcome!</h2>
+        <SwitchFormLink />
         <ul className='errors'>
           {this.props.errors ?
           (this.props.errors.map((err) => <li>{err}</li>)) : ''}
         </ul>
-        <label>
-          username:
-          <input type='text'
-            onChange={this.updateUsername.bind(this)}
-            value={this.state.username} />
-        </label>
-        <label>
-          password:
-          <input type='password'
-            onChange={this.updatePassword.bind(this)}
-            value={this.state.password} />
-        </label>
+        <input type='text'
+          placeholder='username'
+          onChange={this.updateUsername.bind(this)}
+          value={this.state.username} />
+        <input type='password'
+          placeholder='password'
+          onChange={this.updatePassword.bind(this)}
+          value={this.state.password} />
         <input type='submit'
           onClick={this.processForm.bind(this)}
           value={submitText}/>
 
         <button className="demo"
           onClick={this.demoSignIn.bind(this)}>Demo!</button>
-        <SwitchFormLink />
       </form>
     );
   }

@@ -5,19 +5,23 @@
 @import 'variables';
 
 form.auth {
+  h2 {
+    text-align: center;
+    margin: 10px;
+  }
   border-radius: 5px;
   background-color: $light-green;
   border: 2px solid $blue;
-  padding: 20px;
+  padding: 10px;
 
   margin: 10px auto;
-  width: 300px;
+  width: 350px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  input {
+  input, p {
     margin: 5px;
-    width: 100px;
+    // width: 100px;
   }
   button{
     // background-color: white;
@@ -37,32 +41,59 @@ ul.errors {
 }
 
 .welcome {
-    border-radius: 5px;
+  border-radius: 5px;
   background-color: $light-green;
   border: 2px solid $blue;
   margin: 10px auto;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 300px;
+  padding: 10px;
+  width: 350px;
   height: 100px;
-  button{
-    // background-color: $jam;
+  h2 {
     text-align: center;
-    vertical-align: middle;
+    margin: 10px;
+  }
+  nav {
+    margin: auto;
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    button{
+      // background-color: $jam;
+      text-align: center;
+      vertical-align: middle;
+    }
+
   }
 }
 
 nav.header{
+
   height: 80px;
   background-color: $blue;
   display: flex;
-  justify-content: flex-end;
   align-items: center;
+  justify-content: space-between;
+
+  h1.title{
+    font-size: 30px;
+    margin-left: 10%;
+    color: white;
+    opacity: 0.7;
+    font-weight: bold;
+    user-select: none;
+  }
   ul {
     // color: white;
+    justify-content: flex-end;
     display: flex;
     align-items: center;
+    h1 {
+      font-size: 18px;
+      color: white;
+      opacity: 1;
+      font-weight: bold;
+    }
     li {
       margin-right: 20px;
     }
