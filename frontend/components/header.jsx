@@ -3,29 +3,26 @@ import React from 'react';
 
 class Header extends React.Component{
 
-
-
   render(){
-    if (this.props.signedIn){
-      return (
-        <nav className="header">
-          <ul>
-            <li>
-              <h1>Hi {this.props.currentUser.username}!</h1>
-            </li><li>
-              <button onClick={this.props.signOut}>Log Out</button>
-            </li>
+    const HeaderNav = () => {
+      return this.props.signedIn ? (
+        <ul>
+          <li>
+            <h1>Hi {this.props.currentUser.username}!</h1>
+          </li><li>
+            <button onClick={this.props.signOut}>Log Out</button>
+          </li>
 
-          </ul>
-        </nav>
+        </ul>
+      ) : (
+        <ul></ul>
       );
-    } else {
-      return (
-        <nav className="header">
-
-        </nav>
-      );
-    }
+    };
+    return (
+      <nav className="header">
+        <HeaderNav />
+      </nav>
+    );
   }
 
 }
