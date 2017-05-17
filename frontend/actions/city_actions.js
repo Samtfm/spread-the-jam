@@ -7,7 +7,9 @@ export const receiveCities = (cities) => ({
   cities
 });
 
-export const requestCities = next => dispatch => () => (
+export const requestCities = next => dispatch => (
   APIUtil.fetchCities()
     .then(res => dispatch(receiveCities(res)))
 );
+
+window.requestCities = requestCities;

@@ -7,12 +7,11 @@ class Cities extends React.Component{
   }
 
   render(){
-    console.log(this.props.cities);
     return (
       <ul className='cities'>
         {this.props.cities.map(city => (
           <li>
-            city.name
+            {city.name}
           </li>
         ))}
       </ul>
