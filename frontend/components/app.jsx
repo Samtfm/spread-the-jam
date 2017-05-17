@@ -3,9 +3,11 @@ import { Route } from 'react-router-dom';
 
 import { AuthRoute, SecureRoute } from '../util/route_util';
 import SessionFormContainer from './session_form_container';
+
 import Dashboard from './dashboard';
 import Welcome from './welcome';
 import HeaderContainer from './header_container';
+import Cities from './cities';
 
 const App = () => (
   <div>
@@ -15,6 +17,7 @@ const App = () => (
     <AuthRoute path='/signup' component={SessionFormContainer} />
     <AuthRoute path='/signin' component={SessionFormContainer} />
     <SecureRoute path='/dashboard' component={Dashboard} />
+    <SecureRoute path='/cities' component={Cities} />
 
   </div>
 );
