@@ -2,9 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import 'variables';
 
 form.auth {
-  background-color: #e6e6e6;
+  border-radius: 5px;
+  background-color: $light-green;
+  border: 2px solid $blue;
   padding: 20px;
 
   margin: 10px auto;
@@ -16,11 +19,17 @@ form.auth {
     margin: 5px;
     width: 100px;
   }
+  button{
+    // background-color: white;
+    background-color: $jam;
+    background-color: lighten($jam, 30%)
+  }
 }
 
 ul.errors {
   li {
-    color: #c30000;
+    // color: #c30000;
+    color: $jam;
     font-size: 12px;
     text-align: center;
 
@@ -28,7 +37,9 @@ ul.errors {
 }
 
 .welcome {
-  background-color: #e6e6e6;
+    border-radius: 5px;
+  background-color: $light-green;
+  border: 2px solid $blue;
   margin: 10px auto;
   display: flex;
   justify-content: space-around;
@@ -36,7 +47,7 @@ ul.errors {
   width: 300px;
   height: 100px;
   button{
-    background-color: #fcb3ab;
+    // background-color: $jam;
     text-align: center;
     vertical-align: middle;
   }
@@ -44,7 +55,7 @@ ul.errors {
 
 nav.header{
   height: 80px;
-  background-color: #e8d9d0;
+  background-color: $blue;
   display: flex;
   justify-content: flex-end;
   align-items: center;

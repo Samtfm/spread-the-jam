@@ -1,0 +1,25 @@
+
+@import 'variables';
+
+* {
+  font-family: Verdana, Geneva, sans-serif;
+}
+
+body{
+  background-color: white;
+}
+
+button, input[type=submit]{
+  background-color: white;
+	border-radius:3px;
+  filter: brightness(95%);
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 35px;
+  &:hover{
+    filter: brightness(100%);
+  }
+}
+input[type=submit]{
+  border: 2px solid $blue;
+}
