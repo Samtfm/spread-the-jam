@@ -11,6 +11,13 @@ class Header extends React.Component{
           <li>
             <h1>Hi {this.props.currentUser.username}!</h1>
           </li>
+          { this.props.currentCity !== undefined ? (
+            <li>
+              <NavLink to={`/cities/${this.props.currentCity.id}`}>
+                <button>{this.props.currentCity.name}</button>
+              </NavLink>
+            </li>
+          ) : ('')}
           <li>
             <NavLink to='/cities'>
               <button>Cities</button>

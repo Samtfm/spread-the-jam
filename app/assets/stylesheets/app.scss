@@ -30,7 +30,13 @@ button, input[type=submit]{
   &:hover{
     filter: brightness(100%);
   }
+  &:focus{
+    outline: 0;
+  }
 }
 input[type=submit]{
-  border: 2px solid $blue;
+  // border: 2px solid $blue;
+}
+.active {
+  background-color: green;
 }
