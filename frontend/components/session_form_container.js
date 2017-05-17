@@ -16,7 +16,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   else
     processForm = user => signIn(user);
   return {
-    processForm: (user) => dispatch(processForm(user))
+    processForm: (user) => dispatch(processForm(user)),
+    demoSignIn: () => dispatch(signIn({username: 'sam', password: 'password'}))
   };
 };
 

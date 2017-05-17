@@ -24,6 +24,7 @@ class SessionForm extends React.Component{
 
   demoSignIn(e){
     e.preventDefault();
+    this.props.demoSignIn();
   }
   render(){
     const isSignUpForm = this.props.formType === 'signup';
@@ -38,13 +39,13 @@ class SessionForm extends React.Component{
           (this.props.errors.map((err) => <li>{err}</li>)) : ''}
         </ul>
         <label>
-          Username:
+          username:
           <input type='text'
             onChange={this.updateUsername.bind(this)}
             value={this.state.username} />
         </label>
         <label>
-          Password
+          password:
           <input type='password'
             onChange={this.updatePassword.bind(this)}
             value={this.state.password} />
@@ -54,8 +55,7 @@ class SessionForm extends React.Component{
           value={submitText}/>
 
         <button className="demo"
-          onClick={this.demoSignIn.bind(this)}
-          disabled>Demo!</button>
+          onClick={this.demoSignIn.bind(this)}>Demo!</button>
         <SwitchFormLink />
       </form>
     );
