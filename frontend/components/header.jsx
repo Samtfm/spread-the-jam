@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 
 class Header extends React.Component{
@@ -9,7 +10,18 @@ class Header extends React.Component{
         <ul>
           <li>
             <h1>Hi {this.props.currentUser.username}!</h1>
-          </li><li>
+          </li>
+          <li>
+            <NavLink to='/cities'>
+              <button>Cities</button>
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to='/'>
+              <button>Dashboard</button>
+            </NavLink>
+          </li>
+          <li>
             <button onClick={this.props.signOut}>Log Out</button>
           </li>
 
