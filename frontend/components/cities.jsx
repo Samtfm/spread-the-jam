@@ -2,11 +2,12 @@ import React from 'react';
 
 class Cities extends React.Component{
 
-  componentDidLoad(){
-    //TODO: load cities
+  componentDidMount(){
+    this.props.requestCities();
   }
 
   render(){
+    console.log(this.props.cities);
     return (
       <ul className='cities'>
         {this.props.cities.map(city => (
