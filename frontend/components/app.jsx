@@ -17,7 +17,6 @@ const App = () => (
     <AuthRoute path='/signup' component={SessionFormContainer} />
     <AuthRoute path='/signin' component={SessionFormContainer} />
     <SecureRoute path='/dashboard' component={Dashboard} />
-    <SecureRoute path='/cities' component={Cities} />
 
   </div>
 );
