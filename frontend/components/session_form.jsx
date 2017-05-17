@@ -26,17 +26,16 @@ class SessionForm extends React.Component{
     e.preventDefault();
   }
   render(){
-    console.log(this.props.location.pathname);
     const isSignUpForm = this.props.formType === 'signup';
     const submitText = isSignUpForm ? 'Sign Up' : 'Log In';
     const SwitchFormLink = isSignUpForm ?
       () => (<Link to="/signin">Returning user? Log in here!</Link>) :
       () => (<Link to="/signup">New user? Sign up here!</Link>);
-
     return(
       <form className='auth'>
-        <ul>
-          {this.props.errors.map((err) => <li>{err}</li>)}
+        <ul className='errors'>
+          {this.props.errors ?
+          (this.props.errors.map((err) => <li>{err}</li>)) : ''}
         </ul>
         <label>
           Username:

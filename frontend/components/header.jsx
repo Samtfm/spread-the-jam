@@ -9,13 +9,20 @@ class Header extends React.Component{
     if (this.props.signedIn){
       return (
         <nav className="header">
-          <h1>Hi {this.props.currentUser.username}!</h1>
-          <button onClick={this.props.signOut}>Log Out</button>
+          <ul>
+            <li>
+              <h1>Hi {this.props.currentUser.username}!</h1>
+            </li><li>
+              <button onClick={this.props.signOut}>Log Out</button>
+            </li>
+
+          </ul>
         </nav>
       );
     } else {
       return (
         <nav className="header">
+
         </nav>
       );
     }

@@ -8,25 +8,25 @@ export const receiveCurrentUser = user => ({
   user
 });
 
-export const receiveErrors = errors => ({
+export const receiveErrors = err => ({
   type: RECEIVE_ERRORS,
-  errors
+  errors: err
 });
 
 export const signUp = user => dispatch => (
   APIUtil.signUp(user)
     .then(res => dispatch(receiveCurrentUser(res)),
-          err => dispatch(receiveErrors(err)))
+          err => dispatch(receiveErrors(err.responseJSON)))
 );
 
 export const signIn = user => dispatch => (
   APIUtil.signIn(user)
     .then(res => dispatch(receiveCurrentUser(res)),
-          err => dispatch(receiveErrors(err)))
+          err => dispatch(receiveErrors(err.responseJSON)))
 );
 
 export const signOut = () => dispatch => (
   APIUtil.signOut()
     .then(res => dispatch(receiveCurrentUser(null)),
-          err => dispatch(receiveErrors(err)))
+          err => dispatch(receiveErrors(err.responseJSON)))
 );

@@ -4,12 +4,57 @@
 
 
 form.auth {
-  margin: 0 auto;
+  background-color: #e6e6e6;
+  padding: 20px;
+
+  margin: 10px auto;
   width: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
   input {
     margin: 5px;
+    width: 100px;
   }
+}
+
+ul.errors {
+  li {
+    color: #c30000;
+    font-size: 12px;
+    text-align: center;
+
+  }
+}
+
+.welcome {
+  background-color: #e6e6e6;
+  margin: 10px auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 300px;
+  height: 100px;
+  button{
+    background-color: #fcb3ab;
+    text-align: center;
+    vertical-align: middle;
+  }
+}
+
+nav.header{
+  height: 80px;
+  background-color: #e8d9d0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  ul {
+    // color: white;
+    display: flex;
+    align-items: center;
+    li {
+      margin-right: 20px;
+    }
+  }
+
 }
