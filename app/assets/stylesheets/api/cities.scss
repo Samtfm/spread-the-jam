@@ -2,6 +2,32 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.banner{
+  position: relative;
+  .banner-image {
+    height: 200px;
+    display: flex;
+    background-size: cover;
+    background-position: center;
+    filter: contrast(.8) grayscale(.5);
+    // filter: grayscale(.4);
+  }
+  .banner-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    h1 {
+      margin: 20px;
+      color: white;
+      font-size: 30px;
+    }
+  }
+}
+
 .cities {
   margin: 0 auto;
   display: flex;

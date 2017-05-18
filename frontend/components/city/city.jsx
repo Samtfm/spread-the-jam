@@ -15,13 +15,16 @@ class City extends React.Component{
   render(){
     return (
       <section className="city">
-        <section className="banner"
-           style={{backgroundImage: `url(${this.props.city.imgUrl})`}}>
-           <h1>{this.props.city.name}</h1>
-           <button onClick={this.chooseCity.bind(this)}>
-             Set as my home city
-           </button>
-        </section>
+        <div className="banner">
+          <div className="banner-image"
+           style={{backgroundImage: `url(${this.props.city.imgUrl})`}} />
+           <div className='banner-content'>
+             <h1>{this.props.city.name}</h1>
+             <button onClick={this.chooseCity.bind(this)}>
+               Set as my home city
+             </button>
+           </div>
+         </div>
         <ul>
           <li>
             event 1
