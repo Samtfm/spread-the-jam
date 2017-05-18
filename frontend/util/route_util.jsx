@@ -13,8 +13,8 @@ export const Auth = ({ component: Component, path, exact, loggedIn}) => (
     )}/>
 );
 
-export const Secure = ({ component: Component, path, loggedIn}) => (
-  <Route path={path} render={(props) => (
+export const Secure = ({ component: Component, path, exact, loggedIn}) => (
+  <Route path={path} exact={exact || false} render={(props) => (
       loggedIn? (
         <Component {...props} />
       ) : (

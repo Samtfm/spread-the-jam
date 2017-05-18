@@ -15,12 +15,12 @@ const App = () => (
   <div>
     <h1></h1>
     <HeaderContainer />
+    <SecureRoute path='/cities/:id' component={CityContainer} />
     <AuthRoute exact path='/' component={Welcome} />
     <AuthRoute path='/signup' component={SessionFormContainer} />
     <AuthRoute path='/signin' component={SessionFormContainer} />
     <SecureRoute path='/dashboard' component={Dashboard} />
-    <SecureRoute path='/cities' component={CitiesContainer} />
-    <SecureRoute path='/cities/:id' component={CityContainer} />
+    <SecureRoute exact path='/cities' component={CitiesContainer} />
   </div>
 );
 
