@@ -20,6 +20,8 @@ class SessionForm extends React.Component{
   processForm(e){
     e.preventDefault();
     this.props.processForm(this.state);
+    this.setState({password: ''});
+    this.passwordInput.focus();
   }
 
   demoSignIn(e){
@@ -29,6 +31,9 @@ class SessionForm extends React.Component{
 
   componentWillUnmount(){
     this.props.clearErrors();
+  }
+  componentDidMount(){
+    this.usernameInput.focus();
   }
 
   render(){
@@ -48,11 +53,13 @@ class SessionForm extends React.Component{
         <input type='text'
           placeholder='username'
           onChange={this.updateUsername.bind(this)}
-          value={this.state.username} />
+          value={this.state.username}
+          ref={(input) => { this.usernameInput = input; }} />
         <input type='password'
           placeholder='password'
           onChange={this.updatePassword.bind(this)}
-          value={this.state.password} />
+          value={this.state.password}
+          ref={(input) => { this.passwordInput = input; }} />
         <input type='submit'
           onClick={this.processForm.bind(this)}
           value={submitText}/>
