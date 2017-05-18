@@ -2,12 +2,12 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 
 import { AuthRoute, SecureRoute } from '../util/route_util';
-import SessionFormContainer from './session_form_container';
+import SessionFormContainer from './session/session_form_container';
 
-import Dashboard from './dashboard';
-import Welcome from './welcome';
-import HeaderContainer from './header_container';
-import CitiesContainer from './cities_container';
+import Dashboard from './dashboard/dashboard';
+import Welcome from './session/welcome';
+import HeaderContainer from './shared/header_container';
+import CitiesContainer from './cities/cities_container';
 
 const App = () => (
   <div>
@@ -22,7 +22,3 @@ const App = () => (
 );
 
 export default App;
-
-
-import { updateUser } from '../actions/user_actions';
-window.updateUser = updateUser;
