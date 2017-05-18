@@ -5,19 +5,20 @@ import { NavLink } from 'react-router-dom';
 class Header extends React.Component{
 
   componentDidMount(){
-    if (this.props.currentUser && this.props.currentUser.cityId){
+    if (this.props.currentUser.cityId){
       this.props.requestCity(this.props.currentUser.cityId);
     }
   }
 
   render(){
+    console.log(this.props.currentCity);
     const HeaderNav = () => {
       return this.props.signedIn ? (
         <ul>
           <li>
             <h1>Hi {this.props.currentUser.username}!</h1>
           </li>
-          { this.props.currentCity !== undefined ? (
+          { this.props.currentCity.name ? (
             <li>
               <NavLink to={`/cities/${this.props.currentCity.id}`}>
                 <button>{this.props.currentCity.name}</button>

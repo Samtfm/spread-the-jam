@@ -1,16 +1,19 @@
 import { connect } from 'react-redux';
 import { signOut } from '../actions/session_actions';
 import { requestCity } from '../actions/city_actions';
+
+import { selectUser, selectCity } from '../reducers/selectors';
 import Header from './header';
 
 const mapStateToProps = (state, ownProps) => {
-  const currentCity = state.session.currentUser ?
-    state.cities[state.session.currentUser.cityId] : undefined;
-  console.log(state.cities);
+  const currentUser = selectUser(state, state.session.currentUser);
+  const currentCity = selectCity(state, currentUser.cityId);
+  console.log(currentCity);
   return {
     signedIn: Boolean(state.session.currentUser),
-    currentUser: state.users[state.session.currentUser],
-    currentCity: 20//TODO: state.cities[state.users[state.session.currentUser].cityId]
+    currentUser: selectUser(state, state.session.currentUser),
+    currentCity: selectCity(state, currentUser.cityId),
+    cities: state.cities
   };
 };
 
