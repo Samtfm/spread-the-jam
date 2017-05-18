@@ -5,4 +5,10 @@ class Api::CitiesController < ApplicationController
     render :index
   end
 
+  def show
+    p params
+    @city = City.find(params[:id])
+    render :show
+  end
+
 end

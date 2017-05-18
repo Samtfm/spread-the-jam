@@ -4,6 +4,12 @@ import { NavLink } from 'react-router-dom';
 
 class Header extends React.Component{
 
+  componentDidMount(){
+    if (this.props.currentUser && this.props.currentUser.cityId){
+      this.props.requestCity(this.props.currentUser.cityId);
+    }
+  }
+
   render(){
     const HeaderNav = () => {
       return this.props.signedIn ? (
