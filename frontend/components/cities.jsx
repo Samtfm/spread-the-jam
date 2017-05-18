@@ -1,22 +1,37 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Cities extends React.Component{
 
-  componentDidLoad(){
-    //TODO: load cities
+  componentDidMount(){
+    this.props.requestCities();
   }
 
   render(){
     return (
-      <ul className='cities'>
-        {this.props.cities.map(city => (
-          <li>
-            city.name
-          </li>
-        ))}
-      </ul>
+      <section className="cities">
+        <h2>Where are ya?</h2>
+        <ul>
+          {this.props.cities.slice(0,3).map(city => (
+            <Link to={`/cities/${city.id}`}>
+              <li style={{backgroundImage: `url(${city.imgUrl})`}}>
+                {city.name}
+              </li>
+            </Link>
+          ))}
+        </ul>
+        <ul>
+          {this.props.cities.slice(3,6).map(city => (
+          <Link to={`/cities/${city.id}`}>
+            <li style={{backgroundImage: `url(${city.imgUrl})`}}>
+              {city.name}
+            </li>
+          </Link>
+          ))}
+        </ul>
+      </section>
     );
   }
 }
-
+// style={{marginRight: spacing + 'em'}}
 export default Cities;

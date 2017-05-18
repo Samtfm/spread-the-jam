@@ -7,7 +7,7 @@ import SessionFormContainer from './session_form_container';
 import Dashboard from './dashboard';
 import Welcome from './welcome';
 import HeaderContainer from './header_container';
-import Cities from './cities';
+import CitiesContainer from './cities_container';
 
 const App = () => (
   <div>
@@ -17,8 +17,12 @@ const App = () => (
     <AuthRoute path='/signup' component={SessionFormContainer} />
     <AuthRoute path='/signin' component={SessionFormContainer} />
     <SecureRoute path='/dashboard' component={Dashboard} />
-
+    <SecureRoute path='/cities' component={CitiesContainer} />
   </div>
 );
 
 export default App;
+
+
+import { updateUser } from '../actions/user_actions';
+window.updateUser = updateUser;

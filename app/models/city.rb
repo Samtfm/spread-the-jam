@@ -1,3 +1,3 @@
 class City < ApplicationRecord
-  validates :name, presence: true;
+  validates :name, :img_url, presence: true;
 end

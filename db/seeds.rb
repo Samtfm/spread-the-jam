@@ -8,9 +8,10 @@
 User.create(username: "sam", password: 'password')
 User.create(username: "scrappy", password: 'password')
 
-City1.create(name: "San Francisco")
-City2.create(name: "New York")
-City3.create(name: "Nashville")
-City4.create(name: "Chicago")
-City5.create(name: "London")
-City6.create(name: "New Orleans")
+City.destroy_all
+City.create(name: "San Francisco", img_url: '/assets/san_francisco.jpg' )
+City.create(name: "New York", img_url: '/assets/new_york.jpg')
+City.create(name: "Nashville", img_url: '/assets/san_francisco.jpg')
+City.create(name: "Chicago", img_url: '/assets/new_york.jpg')
+City.create(name: "London", img_url: '/assets/san_francisco.jpg')
+City.create(name: "New Orleans", img_url: '/assets/new_york.jpg')

@@ -4,3 +4,9 @@ export const fetchCities = () => (
     url: 'api/cities'
   })
 );
+export const fetchCity = (id) => (
+  $.ajax({
+    method: 'GET',
+    url: `api/cities/${id}`
+  })
+);
