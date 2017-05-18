@@ -1,5 +1,5 @@
 class City < ApplicationRecord
-  validates :name, :img_url, presence: true;
+  validates :name, presence: true;
 
   has_many :events
 end
