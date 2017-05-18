@@ -14,7 +14,7 @@ export const receiveUser = (user) => ({
   user
 });
 
-export const update = user => dispatch => (
+export const updateUser = user => dispatch => (
   APIUtil.update(user)
     .then(res => dispatch(receiveUser(res)),
           err => dispatch(receiveErrors(err.responseJSON)))

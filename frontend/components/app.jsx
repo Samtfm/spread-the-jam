@@ -22,3 +22,7 @@ const App = () => (
 );
 
 export default App;
+
+
+import { updateUser } from '../actions/user_actions';
+window.updateUser = updateUser;
