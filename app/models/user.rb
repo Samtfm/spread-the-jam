@@ -4,6 +4,10 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
+  has_many :events,
+    foreign_key: :host_id,
+    class_name: :Event
+
   attr_reader :password
 
   def password=(pw)
