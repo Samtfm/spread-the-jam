@@ -44,10 +44,12 @@ class Header extends React.Component{
       );
     };
     return (
-      <nav className="header">
-        <h1 className='title'>Spread the Jam</h1>
-        <HeaderNav />
-      </nav>
+      <span className="header">
+        <nav>
+          <h1 className='title'>Spread the Jam</h1>
+          <HeaderNav />
+        </nav>
+      </span>
     );
   }
 
