@@ -10,15 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170517161001) do
+ActiveRecord::Schema.define(version: 20170518164743) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "cities", force: :cascade do |t|
-    t.string   "CreateCities", null: false
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "name"
+    t.string   "img_url"
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.date     "date",        null: false
+    t.time     "time",        null: false
+    t.string   "address",     null: false
+    t.text     "description"
+    t.integer  "city_id",     null: false
+    t.integer  "host_id",     null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["city_id"], name: "index_events_on_city_id", unique: true, using: :btree
+    t.index ["host_id"], name: "index_events_on_host_id", unique: true, using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -27,6 +41,7 @@ ActiveRecord::Schema.define(version: 20170517161001) do
     t.string   "session_token",   null: false
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.integer  "city_id"
     t.index ["password_digest"], name: "index_users_on_password_digest", unique: true, using: :btree
     t.index ["session_token"], name: "index_users_on_session_token", unique: true, using: :btree
     t.index ["username"], name: "index_users_on_username", unique: true, using: :btree
