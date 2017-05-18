@@ -11,7 +11,6 @@ class Header extends React.Component{
   }
 
   render(){
-    console.log(this.props.currentCity);
     const HeaderNav = () => {
       return this.props.signedIn ? (
         <ul>

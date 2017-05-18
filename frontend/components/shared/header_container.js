@@ -8,11 +8,10 @@ import Header from './header';
 const mapStateToProps = (state, ownProps) => {
   const currentUser = selectUser(state, state.session.currentUser);
   const currentCity = selectCity(state, currentUser.cityId);
-  console.log(currentCity);
   return {
     signedIn: Boolean(state.session.currentUser),
-    currentUser: selectUser(state, state.session.currentUser),
-    currentCity: selectCity(state, currentUser.cityId),
+    currentUser: currentUser,
+    currentCity: currentCity,
     cities: state.cities
   };
 };

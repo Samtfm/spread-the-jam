@@ -11,7 +11,8 @@ class Api::UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id]);
+    p params
+    @user = User.find(params[:id])
     if @user.update_attributes(user_attributes)
       render :show
     else
@@ -22,7 +23,7 @@ class Api::UsersController < ApplicationController
   private
 
   def user_attributes
-    params.require(:user).permit(:city_id);
+    params.require(:user).permit(:city_id)
   end
 
   def user_params

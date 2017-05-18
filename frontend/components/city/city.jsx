@@ -3,7 +3,13 @@ import React from 'react';
 class City extends React.Component{
 
   componentDidMount(){
-    //TODO:load relevant events, load city
+    this.props.requestCity();
+  }
+
+  chooseCity(){
+    const userId = this.props.currentUser.id;
+    const cityId = this.props.match.params.id;
+    this.props.updateUser({ id: userId , city_id: cityId });
   }
 
   render(){
@@ -12,6 +18,9 @@ class City extends React.Component{
         <section className="banner"
            style={{backgroundImage: `url(${this.props.city.imgUrl})`}}>
            <h1>{this.props.city.name}</h1>
+           <button onClick={this.chooseCity.bind(this)}>
+             Set as my home city
+           </button>
         </section>
         <ul>
           <li>

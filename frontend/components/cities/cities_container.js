@@ -9,8 +9,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  requestCities: () => dispatch(requestCities()),
-  chooseCity: () => console.log('todo: assign city to user')
+  requestCities: () => dispatch(requestCities())
 });
 
 export default connect(
