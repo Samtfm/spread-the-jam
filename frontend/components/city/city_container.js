@@ -11,8 +11,7 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  requestCity: () => dispatch(requestCity(ownProps.match.params.id)),
-  chooseCity: (cityId) => console.log('todo: assign city to user')
+  requestCity: () => dispatch(requestCity(ownProps.match.params.id))
 });
 
 export default connect(
