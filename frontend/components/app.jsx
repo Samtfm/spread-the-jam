@@ -8,6 +8,8 @@ import Dashboard from './dashboard/dashboard';
 import Welcome from './session/welcome';
 import HeaderContainer from './shared/header_container';
 import CitiesContainer from './cities/cities_container';
+import CityContainer from './city/city_container';
+
 
 const App = () => (
   <div>
@@ -18,6 +20,7 @@ const App = () => (
     <AuthRoute path='/signin' component={SessionFormContainer} />
     <SecureRoute path='/dashboard' component={Dashboard} />
     <SecureRoute path='/cities' component={CitiesContainer} />
+    <SecureRoute path='/cities/:id' component={CityContainer} />
   </div>
 );
 
