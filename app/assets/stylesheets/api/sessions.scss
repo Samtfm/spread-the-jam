@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 @import 'variables';
-
+//TODO: pixabay, pexels
 form.auth {
   h2 {
     text-align: center;
@@ -73,9 +73,17 @@ ul.errors {
 
   }
 }
-
+.footer{
+  height: 60px;
+  background-color: $blue;
+  float: bottom;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+}
 span.header{
-
   height: 60px;
   background-color: $blue;
   display: flex;
