@@ -11,8 +11,7 @@ const mapStateToProps = (state, ownProps) => {
   return {
     signedIn: Boolean(state.session.currentUser),
     currentUser: currentUser,
-    currentCity: currentCity,
-    cities: state.cities
+    currentCity: currentCity
   };
 };
 

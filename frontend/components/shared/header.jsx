@@ -9,6 +9,11 @@ class Header extends React.Component{
       this.props.requestCity(this.props.currentUser.cityId);
     }
   }
+  componentWillReceiveProps(newProps){
+    if (newProps.currentUser.cityId && !(newProps.currentCity.name)){
+      this.props.requestCity(newProps.currentUser.cityId);
+    }
+  }
 
   render(){
     const HeaderNav = () => {
