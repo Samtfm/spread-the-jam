@@ -1,4 +1,5 @@
 import React from 'react';
+import EventIndexItemContainer from './event_index_item_container';
 
 class Events extends React.Component{
 
@@ -16,11 +17,13 @@ class Events extends React.Component{
 
   render(){
     console.log(this.props);
+
     return (
       <section className='events-index'>
         <ul>
-          {this.props.events.map(event => (
+          {this.props.events.map(eventData => (
             <li>
+              <EventIndexItemContainer />
               {event.dateTime + ": " + event.address}
             </li>
           ))}
