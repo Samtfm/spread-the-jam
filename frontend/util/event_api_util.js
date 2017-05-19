@@ -5,17 +5,17 @@ export const fetchEvents = (cityId) => (
   })
 );
 
-export const createEvent = (event) => (
+export const createEvent = (eventObj) => (
   $.ajax({
     method: 'POST',
-    url: `api/cities/${event.cityId}/events`
+    url: `api/cities/${eventObj.cityId}/events`
   })
 );
 
-export const updateEvent = (event) => (
+export const updateEvent = (eventObj) => (
   $.ajax({
     method: 'PATCH',
-    url: `api/events/${event.id}`
+    url: `api/events/${eventObj.id}`
   })
 );
 
