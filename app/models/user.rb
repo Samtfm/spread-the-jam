@@ -17,9 +17,14 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
-  has_many :events,
+  has_many :hosted_events,
     foreign_key: :host_id,
     class_name: :Event
+
+  has_many :registrations
+
+  has_many :events,
+    through: :registrations
 
   attr_reader :password
 
