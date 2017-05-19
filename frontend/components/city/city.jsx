@@ -8,11 +8,12 @@ class City extends React.Component{
 
   chooseCity(){
     const userId = this.props.currentUser.id;
-    const cityId = this.props.match.params.id;
+    const cityId = this.props.city.id;
     this.props.updateUser({ id: userId , city_id: cityId });
   }
 
   render(){
+    const isHomeCity = this.props.currentUser.cityId === this.props.city.id;
     return (
       <section className="city">
         <div className="banner">
@@ -20,9 +21,14 @@ class City extends React.Component{
            style={{backgroundImage: `url(${this.props.city.imgUrl})`}} />
            <div className='banner-content'>
              <h1>{this.props.city.name}</h1>
-             <button onClick={this.chooseCity.bind(this)}>
-               Set as my home city
-             </button>
+
+             { isHomeCity ? (
+               ''
+             ) : (
+               <button onClick={this.chooseCity.bind(this)}>
+                 Set as my home city
+               </button>
+             )}
            </div>
          </div>
         <ul>
