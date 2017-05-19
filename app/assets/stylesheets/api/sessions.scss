@@ -9,9 +9,9 @@ form.auth {
     text-align: center;
     margin: 5px;
   }
-  border-radius: 5px;
+  // border-radius: 5px;
   background-color: $light-green;
-  border: 2px solid $blue;
+  border-bottom: 2px solid $blue;
   padding-top: 10px;
   padding-bottom: 10px;
 
@@ -46,11 +46,13 @@ ul.errors {
 }
 
 .welcome {
-  border-radius: 5px;
+  // border-radius: 5px;
   background-color: $light-green;
-  border: 2px solid $blue;
+  border-bottom: 2px solid $blue;
   // margin: 10px auto;
-  padding: 10px;
+  // padding: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   // width: 350px;
   // height: 100px;
   width: 100%;
