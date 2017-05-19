@@ -17,7 +17,7 @@ City.create(name: "Chicago", img_url: 'http://res.cloudinary.com/samtfm/image/up
 City.create(name: "London", img_url: 'http://res.cloudinary.com/samtfm/image/upload/c_scale,w_1200/v1495168184/london.jpg')
 City.create(name: "New Orleans", img_url: 'http://res.cloudinary.com/samtfm/image/upload/c_scale,w_1200/v1495168184/new_orleans.jpg')
 
-event1 Event.create(
+event1 = Event.create(
   address: "160 spear street",
   description: "neat folks and rad tunes!",
   city_id: sf.id,
@@ -25,7 +25,7 @@ event1 Event.create(
   date_time: DateTime.new(2017, 5, 28, 17, 30, 0)
 );
 
-event2 Event.create(
+event2 = Event.create(
   address: "160 spear street",
   description: "lunch time jam!",
   city_id: sf.id,
@@ -33,7 +33,7 @@ event2 Event.create(
   date_time: DateTime.new(2017, 5, 29, 12, 30, 0)
 );
 
-event3 Event.create(
+event3 = Event.create(
   address: "new york, new york",
   description: "some folks like to get away",
   city_id: sf.id,
