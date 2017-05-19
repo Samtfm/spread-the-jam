@@ -2,13 +2,16 @@ import React from 'react';
 
 class Events extends React.Component{
 
-  componentDidMount(){
-    this.props.requestEvents();
+  componentWillReceiveProps(newProps){
+    console.log(this.props);
+    if (this.props.city.id !== newProps.city.id){
+      this.props.requestEvents(newProps.city.id);
+    }
     // where do i determine the city? here or in the mapDispatchToProps?
   }
 
   render(){
-    console.log(this.props.events);
+    console.log(this.props);
     return (
       <section className='events-index'>
         <ul>

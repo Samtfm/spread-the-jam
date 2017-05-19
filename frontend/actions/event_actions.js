@@ -1,6 +1,7 @@
 import * as APIUtil from '../util/event_api_util';
 
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
+
 export const receiveErrors = err => ({
   type: RECEIVE_ERRORS,
   errors: err

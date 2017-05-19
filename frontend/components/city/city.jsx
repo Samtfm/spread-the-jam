@@ -32,14 +32,8 @@ class City extends React.Component{
              )}
           </div>
         </div>
+        <EventsContainer city={this.props.city} />
 
-        <EventsContainer />
-        <ul>
-          <li>
-            event 1
-          </li>
-          <li> event 5</li>
-        </ul>
       </section>
     );
   }

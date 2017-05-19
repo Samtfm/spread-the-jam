@@ -6,7 +6,6 @@ import merge from 'lodash/merge';
 const UsersReducer = (state = {}, action) => {
   Object.freeze(state);
   const newState = merge({}, state);
-  console.log(action.user);
   switch (action.type) {
     case RECEIVE_USER:
       newState[action.user.id] = action.user;

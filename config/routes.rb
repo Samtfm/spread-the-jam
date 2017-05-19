@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     resource :session, only: [:create, :destroy]
-    resources :cities, only: [:index, :show]
+    resources :cities, only: [:index, :show] do
+      resources :events, only: [:index, :create]
+    end
     resources :users, only: [:create, :update]
-    resources :events, only: [:index, :show, :create, :update, :destroy]
+    resources :events, only: [ :show, :update, :destroy]
     #TODO: nest some event routes under cities
   end
 
