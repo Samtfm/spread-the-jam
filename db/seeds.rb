@@ -23,7 +23,7 @@ event1 = Event.create(
   city_id: sf.id,
   host_id: sam.id,
   date_time: DateTime.new(2017, 5, 28, 17, 30, 0)
-);
+)
 
 event2 = Event.create(
   address: "160 spear street",
@@ -31,12 +31,12 @@ event2 = Event.create(
   city_id: sf.id,
   host_id: sam.id,
   date_time: DateTime.new(2017, 5, 29, 12, 30, 0)
-);
+)
 
 event3 = Event.create(
   address: "new york, new york",
   description: "some folks like to get away",
-  city_id: sf.id,
+  city_id: ny.id,
   host_id: frank.id,
   date_time: DateTime.new(2017, 6, 15, 14, 00, 0)
-);
+)

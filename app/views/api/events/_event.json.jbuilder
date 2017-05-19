@@ -1,7 +1,6 @@
 json.extract! event,
   :id,
-  :date,
-  :time,
+  :date_time,
   :address,
   :description,
   :city_id,

@@ -1,6 +1,5 @@
 class Api::EventsController < ApplicationController
   def index
-    p params
     @events = City.find(params[:city_id]).events
   end
 
@@ -15,7 +14,6 @@ class Api::EventsController < ApplicationController
     if @event.save
       render :show
     else
-      p @event.errors.full_messages
       render json: @event.errors.full_messages, status: 422
     end
   end
