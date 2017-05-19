@@ -20,4 +20,8 @@ class Event < ApplicationRecord
     class_name: :User
 
   belongs_to :city
+
+  has_many :registrations
+
+  has_many :users, through: :registrations
 end
