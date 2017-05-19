@@ -13,8 +13,7 @@
 #
 
 class Event < ApplicationRecord
-  validates :date_time, :address, presence: true
-  validates :city, :host, presence: true, uniqueness: true
+  validates :date_time, :address, :city, :host, presence: true
 
   belongs_to :host,
     foreign_key: :host_id,

@@ -5,8 +5,8 @@ import { selectEvents } from '../../reducers/selectors';
 import Events from './events';
 
 const mapStateToProps = (state, ownProps) => ({
-  events: selectEvents(state),
-  city: ownProps.city
+  events: selectEvents(state, ownProps.cityId),
+  cityId: ownProps.cityId
 });
 
 const mapDispatchToProps = (dispatch) => ({

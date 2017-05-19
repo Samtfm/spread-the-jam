@@ -2,10 +2,14 @@ import React from 'react';
 
 class Events extends React.Component{
 
+  componentDidMount(){
+    console.log("hey");
+    this.props.requestEvents(this.props.cityId);
+  }
   componentWillReceiveProps(newProps){
-    console.log(this.props);
-    if (this.props.city.id !== newProps.city.id){
-      this.props.requestEvents(newProps.city.id);
+    console.log('props');
+    if (this.props.cityId !== newProps.cityId){
+      this.props.requestEvents(newProps.cityId);
     }
     // where do i determine the city? here or in the mapDispatchToProps?
   }
@@ -17,7 +21,7 @@ class Events extends React.Component{
         <ul>
           {this.props.events.map(event => (
             <li>
-              event.id
+              {event.dateTime + ": " + event.address}
             </li>
           ))}
         </ul>

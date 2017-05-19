@@ -12,6 +12,6 @@ export const selectUser = (state, id) => (
   (id && state.users[id]) ? state.users[id] : {}
 );
 
-export const selectEvents = (state) => (
-  values(state.events)
+export const selectEvents = (state, cityId) => (
+  values(state.events).filter(event => event.cityId === cityId)
 );

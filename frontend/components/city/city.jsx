@@ -32,7 +32,7 @@ class City extends React.Component{
              )}
           </div>
         </div>
-        <EventsContainer city={this.props.city} />
+        <EventsContainer cityId={this.props.city.id} />
 
       </section>
     );
