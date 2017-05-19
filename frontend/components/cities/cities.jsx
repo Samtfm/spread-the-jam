@@ -15,7 +15,9 @@ class Cities extends React.Component{
           {this.props.cities.slice(0,3).map(city => (
             <Link to={`/cities/${city.id}`}>
               <li style={{backgroundImage: `url(${city.imgUrl})`}}>
-                {city.name}
+                <button>
+                  {city.name}
+                </button>
               </li>
             </Link>
           ))}
@@ -24,7 +26,9 @@ class Cities extends React.Component{
           {this.props.cities.slice(3,6).map(city => (
           <Link to={`/cities/${city.id}`}>
             <li style={{backgroundImage: `url(${city.imgUrl})`}}>
-              {city.name}
+              <button>
+                {city.name}
+              </button>
             </li>
           </Link>
           ))}
