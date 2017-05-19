@@ -3,7 +3,7 @@ import { selectEvents } from '../../reducers/selectors';
 import Events from './events';
 
 const mapStateToProps = (state) => ({
-  events: selectEvents()
+  events: selectEvents(state)
 });
 
 const mapDispatchToProps = (dispatch) => ({

@@ -8,8 +8,9 @@ class Events extends React.Component{
   }
 
   render(){
+    console.log(this.props.events);
     return (
-      <Section className='events-index'>
+      <section className='events-index'>
         <ul>
           {this.props.events.map(event => (
             <li>
@@ -18,7 +19,7 @@ class Events extends React.Component{
           ))}
         </ul>
 
-      </Section>
+      </section>
     );
   }
 }

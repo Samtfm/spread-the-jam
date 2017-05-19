@@ -1,5 +1,5 @@
 import React from 'react';
-import EventsIndex from '../events/events';
+import EventsContainer from '../events/events_container';
 
 class City extends React.Component{
 
@@ -33,7 +33,7 @@ class City extends React.Component{
           </div>
         </div>
 
-        <Events />
+        <EventsContainer />
         <ul>
           <li>
             event 1
