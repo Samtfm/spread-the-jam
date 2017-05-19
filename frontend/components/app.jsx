@@ -21,6 +21,7 @@ const App = () => (
     <AuthRoute path='/signin' component={SessionFormContainer} />
     <SecureRoute path='/dashboard' component={Dashboard} />
     <SecureRoute exact path='/cities' component={CitiesContainer} />
+    <div className='footer' />
   </div>
 );
 
