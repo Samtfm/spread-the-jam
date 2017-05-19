@@ -1,4 +1,5 @@
 import React from 'react';
+import EventsIndex from '../events/events';
 
 class City extends React.Component{
 
@@ -18,7 +19,7 @@ class City extends React.Component{
       <section className="city">
         <div className="banner">
           <div className="banner-image"
-           style={{backgroundImage: `url(${this.props.city.imgUrl})`}} />
+           style={{backgroundImage: `url(${this.props.city.imgUrl})`}}></div>
            <div className='banner-content'>
              <h1>{this.props.city.name}</h1>
 
@@ -29,8 +30,10 @@ class City extends React.Component{
                  Set as my home city
                </button>
              )}
-           </div>
-         </div>
+          </div>
+        </div>
+
+        <Events />
         <ul>
           <li>
             event 1
