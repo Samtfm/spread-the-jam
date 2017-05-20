@@ -26,6 +26,8 @@ class User < ApplicationRecord
   has_many :events,
     through: :registrations
 
+  belongs_to :city
+
   attr_reader :password
 
   def password=(pw)
