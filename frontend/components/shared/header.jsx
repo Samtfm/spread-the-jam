@@ -5,9 +5,9 @@ import { NavLink } from 'react-router-dom';
 class Header extends React.Component{
 
   componentDidMount(){
-    // if (this.props.currentUser.cityId){
-    //   this.props.requestCity(this.props.currentUser.cityId);
-    // }
+    if (this.props.currentUser.cityId){
+      this.props.requestCity(this.props.currentUser.cityId);
+    }
   }
   componentWillReceiveProps(newProps){
     // if (newProps.currentUser.cityId && !(newProps.currentCity.name)){

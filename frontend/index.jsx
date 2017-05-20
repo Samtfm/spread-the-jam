@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { HashRouter } from 'react-router-dom';
 
+import { receiveCurrentUser } from './actions/session_actions';
+
 import App from './components/app';
 import configureStore from './store/store';
 
@@ -18,12 +20,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   let store;
-  if (window.currentUser){
+  if (window.currentUserData){
 
-    const preloadedState = { session: { currentUser: window.currentUser.id }, users: {} };
-    preloadedState.users[window.currentUser.id] = window.currentUser;
+    // const user = window.currentUserData.user;
+    // console.log(window.currentUserData);
+    // const preloadedState = { session: { currentUser: user.id}, users: {} };
+    // preloadedState.users[user.id] = user;
+    // const preloadedState = { session: {currentUser: user.id}};
+    // store = configureStore(preloadedState);
+
     //TODO: revert bootstrapping to original?
-    store = configureStore(preloadedState);
+    store = configureStore();
+    store.dispatch(receiveCurrentUser(window.currentUserData));
     delete window.currentUser;
   } else {
     store = configureStore();
