@@ -9,9 +9,10 @@ export const receiveErrors = err => ({
 export const RECEIVE_USER = "RECEIVE_USER";
 
 
-export const receiveUser = (user) => ({
+export const receiveUser = ({user, city}) => ({
   type: RECEIVE_USER,
-  user
+  user,
+  city
 });
 
 export const updateUser = user => dispatch => (

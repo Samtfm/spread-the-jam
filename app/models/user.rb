@@ -26,7 +26,8 @@ class User < ApplicationRecord
   has_many :events,
     through: :registrations
 
-  belongs_to :city
+  belongs_to :city,
+    optional: :true
 
   attr_reader :password
 
