@@ -20,8 +20,8 @@ class Events extends React.Component{
         <ul>
           {this.props.events.map(eventData => (
             <li>
-              <EventIndexItem {...eventData} />
-              {eventData.dateTime + ": " + eventData.address}
+              <EventIndexItem userId={this.props.userId} joinEvent={this.props.joinEvent}{...eventData} />
+              {/*eventData.dateTime + ": " + eventData.address*/}
             </li>
           ))}
         </ul>
