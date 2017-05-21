@@ -1,5 +1,6 @@
 import React from 'react';
 import EventIndexItemContainer from './event_index_item_container';
+import EventIndexItem from './event_index_item';
 
 class Events extends React.Component{
 
@@ -19,6 +20,7 @@ class Events extends React.Component{
         <ul>
           {this.props.events.map(eventData => (
             <li>
+              <EventIndexItem {...eventData} />
               {eventData.dateTime + ": " + eventData.address}
             </li>
           ))}

@@ -22,7 +22,7 @@ const App = () => (
     <AuthRoute exact path='/' component={Welcome} />
     <AuthRoute path='/signup' component={SessionFormContainer} />
     <AuthRoute path='/signin' component={SessionFormContainer} />
-    <SecureRoute exact path='/dashboard' component={DashboardContainer} />
+    <SecureRoute exact path='/dashboard' component={() => (<div></div>)} />
     <SecureRoute exact path='/cities' component={CitiesContainer} />
     <SecureRoute exact path='/new-event' component={EventFormContainer} />
 

@@ -16,14 +16,24 @@ export const selectUser = (state, id) => (
 //   (id && state.users[id]) ? state.users[id] : {}
 // );
 
+const constructEvent = (state, eventObj) => ({
+  host: state.users[eventObj.hostId],
+  attendees: [1,2], //array? object?
+  description: eventObj.description,
+  id: eventObj.id,
+  address: eventObj.address,
+  dateTime: eventObj.dateTime
+});
+
 export const selectEvents = (state, cityId) => {
   const events = values(state.events).filter(event => event.cityId === cityId);
-  return events.map(eventObj => ({
-    host: state.users[eventObj.hostId],
-    attendees: ["fill", "me", "up"], //array? object?
-    description: eventObj.description,
-    id: eventObj.id,
-    address: eventObj.address,
-    dateTime: eventObj.dateTime
-  }));
+  return events.map(eventObj => constructEvent(state, eventObj));
+};
+export const selectJoinedEvents = (state, userId) => {
+  const events = values(state.events).filter(event => event.attendees.includes(userId));
+  return events.map(eventObj => constructEvent(state, eventObj));
+};
+export const selectHostedEvents = (state, hostId) => {
+  const events = values(state.events).filter(event => event.hostId === hostId);
+  return events.map(eventObj => constructEvent(state, eventObj));
 };

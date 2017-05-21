@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import EventIndexItem from '../events/event_index_item';
 // const Dashboard = () => (
 //   <div className='dashboard'></div>
 //   <
@@ -13,6 +13,19 @@ class Dashboard extends React.Component{
         <Link tabIndex='-1' to='/new-event'>
           <button>Host A Jam</button>
         </Link>
+        <h2>Joined Events</h2>
+        <ul>
+          {this.props.joinedEvents.map(eventObj => (
+            <EventIndexItem {...eventObj} />
+          ))}
+        </ul>
+        <h2>Hosted Events</h2>
+        <ul>
+          {this.props.hostedEvents.map(eventObj => (
+            <EventIndexItem {...eventObj} />
+          ))}
+        </ul>
+
       </section>
     );
   }
