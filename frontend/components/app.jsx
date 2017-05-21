@@ -6,6 +6,8 @@ import SessionFormContainer from './session/session_form_container';
 
 import Dashboard from './dashboard/dashboard';
 import DashboardContainer from './dashboard/dashboard_container';
+import EventFormContainer from './dashboard/event_form_container';
+
 import Welcome from './session/welcome';
 import HeaderContainer from './shared/header_container';
 import CitiesContainer from './cities/cities_container';
@@ -22,6 +24,7 @@ const App = () => (
     <AuthRoute path='/signin' component={SessionFormContainer} />
     <SecureRoute exact path='/dashboard' component={DashboardContainer} />
     <SecureRoute exact path='/cities' component={CitiesContainer} />
+    <SecureRoute exact path='/new-event' component={EventFormContainer} />
 
     <SecureRoute exact path="/" component={() => (<Redirect to="/dashboard"/>)}/>
 
