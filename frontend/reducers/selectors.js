@@ -23,6 +23,7 @@ export const selectEvents = (state, cityId) => {
     attendees: ["fill", "me", "up"], //array? object?
     description: eventObj.description,
     id: eventObj.id,
-    address: eventObj.address
+    address: eventObj.address,
+    dateTime: eventObj.dateTime
   }));
 };

@@ -19,8 +19,7 @@ class Events extends React.Component{
         <ul>
           {this.props.events.map(eventData => (
             <li>
-              <EventIndexItemContainer />
-              {event.dateTime + ": " + event.address}
+              {eventData.dateTime + ": " + eventData.address}
             </li>
           ))}
         </ul>
