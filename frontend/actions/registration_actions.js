@@ -1,0 +1,20 @@
+import * as APIUtil from '../util/registration_api_util';
+
+export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
+
+export const receiveErrors = err => ({
+  type: RECEIVE_ERRORS,
+  errors: err
+});
+
+export const RECEIVE_REGISTRATION = "RECEIVE_REGISTRATION";
+
+export const receiveRegistration = registration => dispatch => ({
+  type: RECEIVE_REGISTRATION,
+  registration
+});
+
+export const joinEvent = (userId, eventId) => (
+  APIUtil.joinEvent({userId, eventId})
+    .then(res => receiveRegistration(res))
+);
