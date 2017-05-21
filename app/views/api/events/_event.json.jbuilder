@@ -6,4 +6,7 @@ json.extract! event,
   :city_id,
   :host_id
 
-json.host_username event.host.username
+# json.host_username event.host.username
+
+json.host { json.partial! 'api/users/user', user: event.host }
+json.city { json.partial! 'api/cities/city', city: event.city }

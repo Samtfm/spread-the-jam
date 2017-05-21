@@ -24,7 +24,5 @@ export const selectEvents = (state, cityId) => {
     description: eventObj.description,
     id: eventObj.id,
     address: eventObj.address
-    // eventObj.host = state.users[eventObj.hostId];
-    // eventObj.attendees =
   }));
 };

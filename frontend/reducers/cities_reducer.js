@@ -9,7 +9,6 @@ const CitiesReducer = (state = {}, action) => {
       newState[action.city.id] = action.city;
       return newState;
     case RECEIVE_CURRENT_USER:
-      console.log(action);
       const city = action.user.city;
       if (city){
         newState[city.id] = city;
