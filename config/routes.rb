@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     end
     resources :users, only: [:create, :update]
     resources :events, only: [ :show, :update, :destroy]
+    resources :registrations, only: [:create, :destroy]
     #TODO: nest some event routes under cities
   end
 
