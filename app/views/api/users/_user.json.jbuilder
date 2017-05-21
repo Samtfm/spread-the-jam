@@ -1,9 +1,5 @@
-json.user do
-  json.extract! user, :username, :id, :city_id
-end
+
+json.extract! user, :username, :id, :city_id
 if user.city
-  json.city do
-    json.id user.city_id
-    json.name user.city.name
-  end
+  json.city name: user.city.name, id: user.city.id
 end

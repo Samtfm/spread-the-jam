@@ -9,11 +9,11 @@ const CitiesReducer = (state = {}, action) => {
       newState[action.city.id] = action.city;
       return newState;
     case RECEIVE_CURRENT_USER:
-    console.log(action);
-      if (action.city){
-        const cityData = {};
-        cityData[action.city.id] = { id: action.city.id, name: action.city.name };
-        return merge({}, state, cityData);
+      console.log(action);
+      const city = action.user.city;
+      if (city){
+        newState[city.id] = city;
+        return newState;
       } else {
         return state;
       }
