@@ -8,7 +8,7 @@ const EventsReducer = (state = {}, action) => {
   switch (action.type) {
     case RECEIVE_REGISTRATION:
       const newState = merge({}, state);
-      newState[action.registration.eventId].participants.push(action.registration.userId);
+      newState[action.registration.eventId].attendees.push(action.registration.userId);
       return newState;
     case RECEIVE_EVENTS:
       const keys = ['id', 'dateTime', 'address', 'description', 'hostId', 'cityId'];
