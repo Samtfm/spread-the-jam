@@ -10,7 +10,13 @@ class Cities extends React.Component{
   render(){
     return (
       <section className="cities">
-        <h2>Where are ya?</h2>
+        <div className="banner">
+          <div className="banner-image"
+            style={{backgroundImage: `url(${'https://linkablenetworks.com/wp-content/themes/linkablenetworks/library/images/svg/logo-mark.svg'})`}}>hi</div>
+          <div className='banner-content'>
+            <h1>{'where are ya?'}</h1>
+          </div>
+        </div>
         <ul>
           {this.props.cities.slice(0,3).map(city => (
             <Link tabIndex="-1" to={`/cities/${city.id}`}>
