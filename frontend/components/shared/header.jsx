@@ -24,18 +24,18 @@ class Header extends React.Component{
           </li>
           { this.props.currentCity.name ? (
             <li>
-              <NavLink to={`/cities/${this.props.currentCity.id}`}>
+              <NavLink tabIndex="-1" to={`/cities/${this.props.currentCity.id}`}>
                 <button>{this.props.currentCity.name}</button>
               </NavLink>
             </li>
           ) : ('')}
           <li>
-            <NavLink to='/cities'>
+            <NavLink tabIndex="-1" to='/cities'>
               <button>Cities</button>
             </NavLink>
           </li>
           <li>
-            <NavLink to='/'>
+            <NavLink tabIndex="-1" to='/'>
               <button>Dashboard</button>
             </NavLink>
           </li>

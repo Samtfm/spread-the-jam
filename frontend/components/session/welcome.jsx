@@ -5,10 +5,10 @@ const Welcome = () => (
   <div className='welcome'>
     <h2>Welcome!</h2>
     <nav>
-      <Link to='/signin' className='button'>
+      <Link tabIndex="-1" to='/signin'>
         <button>Log In</button>
       </Link>
-      <Link to='/signup' className='button'>
+      <Link tabIndex="-1" to='/signup'>
         <button>Sign Up</button>
       </Link>
     </nav>
