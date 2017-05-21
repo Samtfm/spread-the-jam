@@ -1,10 +1,11 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 
 import { AuthRoute, SecureRoute } from '../util/route_util';
 import SessionFormContainer from './session/session_form_container';
 
 import Dashboard from './dashboard/dashboard';
+import DashboardContainer from './dashboard/dashboard_container';
 import Welcome from './session/welcome';
 import HeaderContainer from './shared/header_container';
 import CitiesContainer from './cities/cities_container';
@@ -19,8 +20,11 @@ const App = () => (
     <AuthRoute exact path='/' component={Welcome} />
     <AuthRoute path='/signup' component={SessionFormContainer} />
     <AuthRoute path='/signin' component={SessionFormContainer} />
-    <SecureRoute path='/dashboard' component={Dashboard} />
+    <SecureRoute exact path='/dashboard' component={DashboardContainer} />
     <SecureRoute exact path='/cities' component={CitiesContainer} />
+
+    <SecureRoute exact path="/" component={() => (<Redirect to="/dashboard"/>)}/>
+
     <div className='footer' />
   </div>
 );

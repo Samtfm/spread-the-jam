@@ -30,7 +30,7 @@ form.auth {
   }
   button{
     // background-color: white;
-    background-color: $jam;
+    // background-color: $jam;
     background-color: lighten($jam, 30%)
   }
 }
@@ -38,7 +38,7 @@ form.auth {
 ul.errors {
   li {
     // color: #c30000;
-    color: $jam;
+    color: pink;
     font-size: 12px;
     text-align: center;
 

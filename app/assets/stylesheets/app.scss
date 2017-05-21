@@ -46,6 +46,7 @@ input[type=text], input[type=password]{
 }
 button, input[type=submit]{
   cursor: pointer;
+  background-color: white;
 	border-radius:3px;
   filter: brightness(95%);
   padding-left: 15px;
