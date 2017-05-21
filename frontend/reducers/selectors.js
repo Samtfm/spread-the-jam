@@ -18,10 +18,13 @@ export const selectUser = (state, id) => (
 
 export const selectEvents = (state, cityId) => {
   const events = values(state.events).filter(event => event.cityId === cityId);
-  events.forEach(eventObj => {
-    console.log(eventObj.hostId);
-    eventObj.host = state.users[eventObj.hostId];
+  return events.map(eventObj => ({
+    host: state.users[eventObj.hostId],
+    attendees: ["fill", "me", "up"], //array? object?
+    description: eventObj.description,
+    id: eventObj.id,
+    address: eventObj.address
+    // eventObj.host = state.users[eventObj.hostId];
     // eventObj.attendees =
-  });
-  return events;
+  }));
 };

@@ -1,11 +1,12 @@
 import { RECEIVE_USER, RECEIVE_ERRORS }
   from '../actions/user_actions';
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
-import merge from 'lodash/merge';
+import { RECEIVE_EVENTS } from '../actions/event_actions';
+import { merge, mapValues } from 'lodash';
 
 const UsersReducer = (state = {}, action) => {
   Object.freeze(state);
-  const newState = merge({}, state);
+  let newState = merge({}, state);
   switch (action.type) {
     case RECEIVE_USER:
       newState[action.user.id] = action.user;
@@ -17,6 +18,13 @@ const UsersReducer = (state = {}, action) => {
       } else {
         return state;
       }
+    case RECEIVE_EVENTS:
+      const keys = ['hostId', 'hostUsername'];
+      mapValues(action.events, ({hostId, hostUsername}) => {
+        newState[hostId] = newState[hostId] || {};
+        newState[hostId].username = hostUsername;
+      });
+      return newState;
     default:
       return state;
   }

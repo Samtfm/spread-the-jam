@@ -18,23 +18,28 @@ const Root = ({store}) => (
 
 document.addEventListener('DOMContentLoaded', () => {
 
-
+/*
+// old bootstrap that got out of hand
   let store;
   if (window.currentUserData){
-
-    // const user = window.currentUserData.user;
-    // console.log(window.currentUserData);
-    // const preloadedState = { session: { currentUser: user.id}, users: {} };
-    // preloadedState.users[user.id] = user;
-    // const preloadedState = { session: {currentUser: user.id}};
-    // store = configureStore(preloadedState);
-
+    const user = window.currentUserData.user;
+    const preloadedState = { session: { currentUser: user.id}, users: {} };
+    preloadedState.users[user.id] = user;
+    const preloadedState = { session: {currentUser: user.id}};
+    store = configureStore(preloadedState);
     //TODO: revert bootstrapping to original?
-    store = configureStore();
-    store.dispatch(receiveCurrentUser(window.currentUserData));
     delete window.currentUser;
   } else {
     store = configureStore();
+  }
+*/
+
+ // Sam's weird bootstrap!
+ // QUESTION: is this bootstrap bad?
+  const store = configureStore();
+  if (window.currentUserData){
+    store.dispatch(receiveCurrentUser(window.currentUserData));
+    delete window.currentUser;
   }
 
   //TODO: remove store from window! (debugger console.log)

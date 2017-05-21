@@ -4,11 +4,9 @@ import EventIndexItemContainer from './event_index_item_container';
 class Events extends React.Component{
 
   componentDidMount(){
-    console.log("hey");
     this.props.requestEvents(this.props.cityId);
   }
   componentWillReceiveProps(newProps){
-    console.log('props');
     if (this.props.cityId !== newProps.cityId){
       this.props.requestEvents(newProps.cityId);
     }
@@ -16,8 +14,6 @@ class Events extends React.Component{
   }
 
   render(){
-    console.log(this.props);
-
     return (
       <section className='events-index'>
         <ul>
