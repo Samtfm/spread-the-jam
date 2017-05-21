@@ -6,12 +6,12 @@
   position: relative;
   width: 100%;
   .banner-image {
-    height: 140px;
+    height: 220px;
     display: flex;
     background-size: cover;
     // background-color: $city-tint;
     background-position: center;
-    filter: contrast(.6) grayscale(.4);
+    filter: contrast(1) grayscale(.7);
     // filter: grayscale(.4);
   }
   .banner-content{
@@ -29,8 +29,13 @@
     transform: translate(-50%, -50%);
     h1 {
       margin: 40px;
+      text-transform: uppercase;
       color: white;
-      font-size: 30px;
+      font-size: 50px;
+      font-weight: bold;
+      opacity: .7;
+      letter-spacing: .1em;
+      word-spacing: .2em;
     }
   }
 }
@@ -60,6 +65,7 @@
     text-align: center;
     button {
       font-size: 20px;
+      text-transform: uppercase;
       width: 100%;
       height: 100%;
       color: aliceblue;

@@ -6,7 +6,12 @@
 }
 
 body{
-  background-color: white;
+  background-color: black;
+  color: white;
+}
+a{
+
+  color: $link;
 }
 h2{
   font-size: 22px;
@@ -23,10 +28,20 @@ input[type=text], input[type=password]{
   button{
     background: none;
     font-weight: bolder;
-    color: #B7FFFF;
+    color: $link;
+    border: 2px solid transparent;
+    height: auto;
+    padding: 5px;
+    width: auto;
+    transition: border .2s;
+    &:hover{
+      // color: white;
+      border-bottom: 2px solid $link;
+    }
   }
   .active button{
-    background-color: $button;
+
+    // border: 2px solid $button;
   }
 }
 button, input[type=submit]{
@@ -46,7 +61,4 @@ button, input[type=submit]{
 
 input[type=submit]{
   // border: 2px solid $blue;
-}
-.active {
-  background-color: green;
 }

@@ -51,7 +51,7 @@ class Header extends React.Component{
     return (
       <span className="header">
         <nav>
-          <h1 className='title'>Spread the Jam</h1>
+          <h1 className='title'>Spread the <span className='spread'>Jam</span></h1>
           <HeaderNav />
         </nav>
       </span>
