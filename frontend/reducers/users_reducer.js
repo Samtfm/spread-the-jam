@@ -8,7 +8,7 @@ const mergeBasics = (state, obj) => {
   const keys = Object.keys(obj).filter(key => (typeof obj[key]) !== 'object');
   const simpleObj = pick(obj, keys);
   state[obj.id] = simpleObj;
-}
+};
 
 const UsersReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -24,7 +24,7 @@ const UsersReducer = (state = {}, action) => {
         // const keys = Object.keys(action.user).filter(key => (typeof action.user[key]) !== 'object');
         // const user = pick(action.user, keys);
         // newState[action.user.id] = user;
-        mergeBasics(newState, action.user)
+        mergeBasics(newState, action.user);
 
         return newState;
       } else {
@@ -39,7 +39,7 @@ const UsersReducer = (state = {}, action) => {
       //   newState[hostId] = newState[hostId] || {};
       //   newState[hostId].username = hostUsername;
       // });
-      return newState;
+      // return newState;
     default:
       return state;
   }
