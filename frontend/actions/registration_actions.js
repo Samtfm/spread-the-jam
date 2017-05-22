@@ -14,10 +14,26 @@ export const receiveRegistration = registration => ({
   registration
 });
 
+
 export const joinEvent = (registration) => dispatch => {
   return (
   APIUtil.createRegistration(registration)
     .then(res => dispatch(receiveRegistration(res)),
+          err => dispatch(receiveErrors(err.responseJSON)))
+  );
+};
+
+export const REMOVE_REGISTRATION = "REMOVE_REGISTRATION";
+
+export const removeRegistration = registration => ({
+  type: REMOVE_REGISTRATION,
+  registration
+});
+
+export const leaveEvent = (registration) => dispatch => {
+  return (
+  APIUtil.destroyRegistration(registration)
+    .then(res => dispatch(removeRegistration(res)),
           err => dispatch(receiveErrors(err.responseJSON)))
   );
 };
