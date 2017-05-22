@@ -18,7 +18,7 @@ export const selectUser = (state, id) => (
 
 const constructEvent = (state, eventObj) => ({
   host: state.users[eventObj.hostId],
-  attendees: [1,2], //array? object?
+  attendees: eventObj.attendees, //array? object?
   description: eventObj.description,
   id: eventObj.id,
   address: eventObj.address,
