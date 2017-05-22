@@ -32,7 +32,7 @@ class City extends React.Component{
              )}
           </div>
         </div>
-        <EventsContainer cityId={this.props.city.id} />
+        <EventsContainer cityId={parseInt(this.props.match.params.id)} />
 
       </section>
     );

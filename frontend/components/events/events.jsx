@@ -5,6 +5,7 @@ import EventIndexItem from './event_index_item';
 class Events extends React.Component{
 
   componentDidMount(){
+    console.log(this.props.cityId);
     this.props.requestEvents(this.props.cityId);
   }
   componentWillReceiveProps(newProps){
