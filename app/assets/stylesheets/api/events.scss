@@ -41,7 +41,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    padding: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     background-color: $blue;
     width: 85px;
     height: 85px;
@@ -55,6 +56,7 @@
     }
     #date {
       font-size: 120%;
+      font-weight: bold;
     }
     #time {
       font-size: 90%;
@@ -69,7 +71,7 @@
     width: 100%;
     height: 100%;
     li{
-      margin: 2px;
+      margin: 5px;
     }
     button{
       background-color: lighten($blue, 30%);
