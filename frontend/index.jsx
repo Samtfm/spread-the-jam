@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const store = configureStore();
   if (window.currentUserData){
     store.dispatch(receiveCurrentUser(window.currentUserData));
-    delete window.currentUser;
+    delete window.currentUserData;
   }
 
   //TODO: remove store from window! (debugger console.log)

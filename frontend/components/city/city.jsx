@@ -5,12 +5,19 @@ class City extends React.Component{
 
   componentDidMount(){
     this.props.requestCity();
+    this.props.requestEvents();
   }
 
   chooseCity(){
     const userId = this.props.currentUser.id;
     const cityId = this.props.city.id;
     this.props.updateUser({ id: userId , city_id: cityId });
+  }
+  componentWillReceiveProps(newProps){
+    if (newProps.cityId && newProps.cityId !== this.props.cityId){
+      newProps.requestCity();
+      newProps.requestEvents();
+    }
   }
 
   render(){
@@ -32,7 +39,7 @@ class City extends React.Component{
              )}
           </div>
         </div>
-        <EventsContainer cityId={parseInt(this.props.match.params.id)} />
+        <EventsContainer events={this.props.events} />
 
       </section>
     );

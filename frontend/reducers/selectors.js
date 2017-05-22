@@ -37,7 +37,7 @@ export const selectEvents = (state, cityId) => {
   return events.map(eventObj => constructEvent(state, eventObj));
 };
 export const selectJoinedEvents = (state, userId) => {
-  const events = values(state.events).filter(event => event.attendees.includes(userId));
+  const events = values(state.events).filter(event => event.attendees[userId]);
   return events.map(eventObj => constructEvent(state, eventObj));
 };
 export const selectHostedEvents = (state, hostId) => {
