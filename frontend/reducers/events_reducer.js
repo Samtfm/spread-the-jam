@@ -11,7 +11,7 @@ const EventsReducer = (state = {}, action) => {
       newState[action.registration.eventId].attendees.push(action.registration.userId);
       return newState;
     case RECEIVE_EVENTS:
-      const keys = ['id', 'dateTime', 'address', 'description', 'hostId', 'cityId'];
+      const keys = ['id', 'dateTime', 'address', 'description', 'hostId', 'cityId', 'attendees'];
       const events = mapValues(action.events, event => pick(event, keys));
       return merge({}, state, events);
     default:

@@ -16,7 +16,8 @@ export const receiveRegistration = registration => ({
 
 export const joinEvent = (registration) => dispatch => {
   return (
-  APIUtil.joinEvent(registration)
-    .then(res => receiveRegistration(res))
+  APIUtil.createRegistration(registration)
+    .then(res => dispatch(receiveRegistration(res)),
+          err => dispatch(receiveErrors(err.responseJSON)))
   );
 };

@@ -1,4 +1,4 @@
-export const joinEvent = (registration) => (
+export const createRegistration = (registration) => (
   $.ajax({
     method: 'POST',
     url: `api/registrations`,
