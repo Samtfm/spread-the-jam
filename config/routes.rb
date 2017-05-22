@@ -4,7 +4,9 @@ Rails.application.routes.draw do
     resources :cities, only: [:index, :show] do
       resources :events, only: [:index, :create]
     end
-    resources :users, only: [:create, :update]
+    resources :users, only: [:create, :update] do
+      resources :events, only: [:index]
+    end
     resources :events, only: [ :show, :update, :destroy]
     resources :registrations, only: [:create, :destroy]
     #TODO: nest some event routes under cities

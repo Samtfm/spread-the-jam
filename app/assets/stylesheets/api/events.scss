@@ -85,5 +85,6 @@
   }
 }
 .hosted {
-  background-color: transparentize($link, 0.84);
+  border: 1px solid $link;
+  background-color: transparentize($link, 0.9);
 }

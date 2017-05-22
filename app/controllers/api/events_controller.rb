@@ -1,6 +1,12 @@
 class Api::EventsController < ApplicationController
   def index
-    @events = City.find(params[:city_id]).events
+    if params[:city_id]
+      @events = City.find(params[:city_id]).events
+    else
+      user = User.find(params[:user_id])
+      @events = user.events + user.hostedEvents
+    end
+    render :index
   end
 
   def show

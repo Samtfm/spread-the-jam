@@ -4,6 +4,12 @@ export const fetchEvents = (cityId) => (
     url: `api/cities/${cityId}/events`
   })
 );
+export const fetchUserEvents = (userId) => (
+  $.ajax({
+    method: 'GET',
+    url: `api/users/${userId}/events`
+  })
+);
 
 export const createEvent = (eventObj) => (
   $.ajax({
