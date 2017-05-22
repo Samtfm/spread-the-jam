@@ -10,6 +10,8 @@
 }
 
 .event-item{
+  border: 1px solid $jam;
+
   width: 200px;
   height: 200px;
   border-radius: 5px;
@@ -26,8 +28,8 @@
     text-align: center;
     #host{
       text-transform: uppercase;
-      font-size: 90%;
-      opacity: .5;
+      font-size: 75%;
+      opacity: .6;
       margin-bottom: 5px;
     }
     #name{
@@ -51,8 +53,8 @@
     top: -5%;
     border-radius: 5px;
     #day {
-      font-size: 90%;
-      opacity: .5;
+      font-size: 75%;
+      opacity: .6;
     }
     #date {
       font-size: 120%;

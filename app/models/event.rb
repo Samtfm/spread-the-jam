@@ -14,6 +14,11 @@
 
 class Event < ApplicationRecord
   validates :date_time, :address, :city, :host, presence: true
+  after_save :join_event
+
+  def join_event
+    Registration.create(user_id: self.host_id, event_id: self.id)
+  end
 
   belongs_to :host,
     foreign_key: :host_id,
