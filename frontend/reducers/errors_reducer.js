@@ -4,8 +4,7 @@ const ErrorsReducer = (state = [], action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_ERRORS:
-      console.log(action);
-      return action.errors;
+      return action.errors ? action.errors : state;
     default:
       return state;
   }
