@@ -1,6 +1,6 @@
 class Api::RegistrationsController < ApplicationController
   def create
-    @registration = Registration.new(registration_params);
+    @registration = Registration.new(registration_params)
     if @registration.save
       render :show
     else
@@ -13,6 +13,6 @@ class Api::RegistrationsController < ApplicationController
   end
 
   def registration_params
-    params.require(:registration).permit(:userId, :eventId)
+    params.require(:registration).permit(:user_id, :event_id)
   end
 end

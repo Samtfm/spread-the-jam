@@ -9,12 +9,14 @@ export const receiveErrors = err => ({
 
 export const RECEIVE_REGISTRATION = "RECEIVE_REGISTRATION";
 
-export const receiveRegistration = registration => dispatch => ({
+export const receiveRegistration = registration => ({
   type: RECEIVE_REGISTRATION,
   registration
 });
 
-export const joinEvent = (userId, eventId) => (
-  APIUtil.joinEvent({userId, eventId})
+export const joinEvent = (registration) => dispatch => {
+  return (
+  APIUtil.joinEvent(registration)
     .then(res => receiveRegistration(res))
-);
+  );
+};

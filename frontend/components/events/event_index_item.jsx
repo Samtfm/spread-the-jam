@@ -7,15 +7,19 @@ class EventIndexItem extends React.Component{
 
   }
 
+  register(){
+    this.props.joinEvent({user_id: this.props.userId, event_id: this.props.id});
+  }
+
   render(){
     const JoinLeaveButton = () => (
       this.props.attendees.includes(this.props.userId) ?
       (
-        <button onClick={this.props.joinEvent.bind(this, this.props.id)}>
+        <button onClick={this.register.bind(this)}>
           JOIN
         </button>
       ) : (
-        <button onClick={this.props.joinEvent.bind(this, this.props.id)}>
+        <button onClick={this.register.bind(this)}>
           LEAVE
         </button>
       )
