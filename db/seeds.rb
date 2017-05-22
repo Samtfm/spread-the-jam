@@ -8,15 +8,17 @@
 User.destroy_all
 sam = User.create(username: "sam", password: 'password')
 scrappy = User.create(username: "scrappy", password: 'password')
+carlos = User.create(username: "Carlos", password: 'password')
+
 frank = User.create(username: "Frank", password: 'password')
 
 City.destroy_all
 sf = City.create(name: "San Francisco", img_url: 'http://res.cloudinary.com/samtfm/image/upload/c_scale,w_1200/v1495168184/san_francisco.jpg' )
 ny = City.create(name: "New York", img_url: 'http://res.cloudinary.com/samtfm/image/upload/c_scale,w_1200/v1495168184/new_york.jpg')
-City.create(name: "Nashville", img_url: 'http://res.cloudinary.com/samtfm/image/upload/c_scale,w_1200/v1495168184/nashville.jpg')
-City.create(name: "Chicago", img_url: 'http://res.cloudinary.com/samtfm/image/upload/c_scale,w_1200/v1495168184/chicago.jpg')
-City.create(name: "London", img_url: 'http://res.cloudinary.com/samtfm/image/upload/c_scale,w_1200/v1495168184/london.jpg')
-City.create(name: "New Orleans", img_url: 'http://res.cloudinary.com/samtfm/image/upload/c_scale,w_1200/v1495168184/new_orleans.jpg')
+nv = City.create(name: "Nashville", img_url: 'http://res.cloudinary.com/samtfm/image/upload/c_scale,w_1200/v1495168184/nashville.jpg')
+ch = City.create(name: "Chicago", img_url: 'http://res.cloudinary.com/samtfm/image/upload/c_scale,w_1200/v1495168184/chicago.jpg')
+ld = City.create(name: "London", img_url: 'http://res.cloudinary.com/samtfm/image/upload/c_scale,w_1200/v1495168184/london.jpg')
+no = City.create(name: "New Orleans", img_url: 'http://res.cloudinary.com/samtfm/image/upload/c_scale,w_1200/v1495168184/new_orleans.jpg')
 
 Event.destroy_all
 event1 = Event.create(
@@ -36,6 +38,14 @@ event2 = Event.create(
 )
 
 event3 = Event.create(
+  address: "down by the bay",
+  description: "",
+  city_id: sf.id,
+  host_id: carlos.id,
+  date_time: DateTime.new(2017, 8, 22, 18 , 00, 0)
+)
+
+event4 = Event.create(
   address: "new york, new york",
   description: "some folks like to get away",
   city_id: ny.id,
