@@ -16,6 +16,10 @@ class EventIndexItem extends React.Component{
   }
 
   render(){
+    const date = new Date(this.props.dateTime);
+    const DAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+    const MONTHS = "January February March April May June July August September October November December".split(' ');
+
     const JoinLeaveButton = () => (
       this.props.attendees[this.props.userId] ?
       (
@@ -30,8 +34,12 @@ class EventIndexItem extends React.Component{
     );
     return (
       <div className='eventItem'>
+        <div className='date'>
+          <div>{}</div>
+          <div>{DAYS[date.getDay()]}</div>
+          <div>{MONTHS[date.getMonth()] + ' ' + date.getDate()}</div>
+        </div>
         <ul>
-          <li>{this.props.dateTime}</li>
           <li>host: {this.props.host.username}</li>
           <li>number attending: {this.props.numAttendees}</li>
           <li>

@@ -18,8 +18,22 @@ body{
   color: white;
   position: relative;
   min-height: 100%;
-  padding-bottom: 8rem;
+  padding-bottom: 90px;
 }
+.footer{
+  height: 90px;
+  border-top: 30px solid darken($blue, 12);
+  background-color: $blue;
+  float: bottom;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  // padding: 3rem;
+}
+
+
 a{
 
   color: $link;
