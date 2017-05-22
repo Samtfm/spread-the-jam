@@ -40,6 +40,10 @@ export const selectJoinedEvents = (state, userId) => {
   const events = values(state.events).filter(event => event.attendees[userId]);
   return events.map(eventObj => constructEvent(state, eventObj));
 };
+export const selectUserEvents = (state, userId) => {
+  const events = values(state.events).filter(event => event.hostId === userId || event.attendees[userId]);
+  return events.map(eventObj => constructEvent(state, eventObj));
+};
 export const selectHostedEvents = (state, hostId) => {
   const events = values(state.events).filter(event => event.hostId === hostId);
   return events.map(eventObj => constructEvent(state, eventObj));

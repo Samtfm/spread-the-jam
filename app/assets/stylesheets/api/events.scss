@@ -62,7 +62,6 @@
       font-size: 90%;
     }
   }
-
   ul {
     display: flex;
     flex-direction: column;
@@ -84,4 +83,7 @@
       // height: 60px;
     }
   }
+}
+.hosted {
+  background-color: transparentize($link, 0.84);
 }

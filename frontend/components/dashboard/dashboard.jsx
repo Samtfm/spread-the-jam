@@ -15,10 +15,8 @@ class Dashboard extends React.Component{
         <Link tabIndex='-1' to='/new-event'>
           <button>Host A Jam</button>
         </Link>
-        <h2>Joined Events</h2>
+        <h2>Hi {this.props.currentUser.username}!</h2>
         <EventsContainer events={this.props.joinedEvents} />
-        <h2>Hosted Events</h2>
-        <EventsContainer events={this.props.hostedEvents} />        
       </section>
     );
   }

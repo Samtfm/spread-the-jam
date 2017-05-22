@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
 import Dashboard from './dashboard';
-import { selectJoinedEvents, selectHostedEvents } from '../../reducers/selectors';
+import { selectJoinedEvents, selectHostedEvents, selectUserEvents } from '../../reducers/selectors';
 
 const mapStateToProps = state => ({
-  joinedEvents: selectJoinedEvents(state, 1),
-  hostedEvents: selectHostedEvents(state, 1)
+  joinedEvents: selectUserEvents(state, state.session.currentUser),
+  currentUser: state.users[state.session.currentUser]
 });
 
 const mapDispatchToProps = dispatch => ({

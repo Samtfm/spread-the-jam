@@ -21,6 +21,19 @@ class EventIndexItem extends React.Component{
     // const MONTHS = "January February March April May June July August September October November December".split(' ');
     const MONTHS = "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split(' ');
 
+    const isHost = this.props.userId === this.props.host.id;
+
+    const EditCancelButtons = () => (
+      <div>
+        <button onClick={console.log('edit')}>
+          EDIT
+        </button>
+        <button onClick={console.log('cancel')}>
+          CANCEL
+        </button>
+      </div>
+    );
+
     const JoinLeaveButton = () => (
       this.props.attendees[this.props.userId] ?
       (
@@ -34,7 +47,7 @@ class EventIndexItem extends React.Component{
       )
     );
     return (
-      <div className='event-item'>
+      <div className={isHost ? 'event-item hosted' : 'event-item'} >
         <div className='date'>
           <div id='day'>{DAYS[date.getDay()]}</div>
           <div id='date'>{MONTHS[date.getMonth()] + ' ' + date.getDate()}</div>
@@ -45,7 +58,11 @@ class EventIndexItem extends React.Component{
           <li>{this.props.address}</li>
           <li>number attending: {this.props.numAttendees}</li>
           <li>
-            <JoinLeaveButton />
+            {isHost ? (
+              <EditCancelButtons />
+            ) : (
+              <JoinLeaveButton />
+            )}
           </li>
         </ul>
       </div>
