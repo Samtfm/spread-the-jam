@@ -4,7 +4,7 @@ class Api::EventsController < ApplicationController
       @events = City.find(params[:city_id]).events
     else
       user = User.find(params[:user_id])
-      @events = user.events + user.hostedEvents
+      @events = user.events + user.hosted_events
     end
     render :index
   end

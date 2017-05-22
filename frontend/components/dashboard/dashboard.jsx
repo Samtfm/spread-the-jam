@@ -9,6 +9,10 @@ import EventsContainer from '../events/events_container';
 // );
 class Dashboard extends React.Component{
 
+  componentDidMount(){
+    this.props.requestEvents(this.props.currentUser.id);
+  }
+
   render(){
     return(
       <section className='dashboard'>
