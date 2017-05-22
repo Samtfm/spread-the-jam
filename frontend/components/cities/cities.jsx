@@ -20,7 +20,8 @@ class Cities extends React.Component{
         <ul>
           {this.props.cities.slice(0,3).map(city => (
             <Link tabIndex="-1" to={`/cities/${city.id}`}>
-              <li style={{backgroundImage: `url(${city.imgUrl})`}}>
+              <li key={city.id}
+                  style={{backgroundImage: `url(${city.imgUrl})`}}>
                 <button>
                   {city.name}
                 </button>
@@ -31,7 +32,8 @@ class Cities extends React.Component{
         <ul>
           {this.props.cities.slice(3,6).map(city => (
           <Link tabIndex="-1" to={`/cities/${city.id}`}>
-            <li style={{backgroundImage: `url(${city.imgUrl})`}}>
+            <li key={city.id}
+                style={{backgroundImage: `url(${city.imgUrl})`}}>
               <button>
                 {city.name}
               </button>

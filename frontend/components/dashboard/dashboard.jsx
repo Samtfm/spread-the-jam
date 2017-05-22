@@ -16,13 +16,17 @@ class Dashboard extends React.Component{
         <h2>Joined Events</h2>
         <ul>
           {this.props.joinedEvents.map(eventObj => (
-            <EventIndexItem {...eventObj} />
+            <li key={eventObj.id}>
+              <EventIndexItem {...eventObj} />
+            </li>
           ))}
         </ul>
         <h2>Hosted Events</h2>
         <ul>
           {this.props.hostedEvents.map(eventObj => (
-            <EventIndexItem {...eventObj} />
+            <li key={eventObj.id}>
+              <EventIndexItem {...eventObj} />
+            </li>
           ))}
         </ul>
 
