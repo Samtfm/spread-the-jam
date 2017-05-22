@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+User.destroy_all
 sam = User.create(username: "sam", password: 'password')
 scrappy = User.create(username: "scrappy", password: 'password')
 frank = User.create(username: "Frank", password: 'password')
@@ -17,6 +18,7 @@ City.create(name: "Chicago", img_url: 'http://res.cloudinary.com/samtfm/image/up
 City.create(name: "London", img_url: 'http://res.cloudinary.com/samtfm/image/upload/c_scale,w_1200/v1495168184/london.jpg')
 City.create(name: "New Orleans", img_url: 'http://res.cloudinary.com/samtfm/image/upload/c_scale,w_1200/v1495168184/new_orleans.jpg')
 
+Event.destroy_all
 event1 = Event.create(
   address: "160 spear street",
   description: "neat folks and rad tunes!",

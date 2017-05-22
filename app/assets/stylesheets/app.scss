@@ -4,10 +4,21 @@
 * {
   font-family: Verdana, Geneva, sans-serif;
 }
-
+html{
+  height: 100%;
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after{
+  box-sizing: inherit;
+}
 body{
   background-color: black;
   color: white;
+  position: relative;
+  min-height: 100%;
+  padding-bottom: 8rem;
 }
 a{
 

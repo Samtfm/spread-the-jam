@@ -29,14 +29,16 @@ class EventIndexItem extends React.Component{
       )
     );
     return (
-      <ul>
-        <li>{this.props.dateTime}</li>
-        <li>host: {this.props.host.username}</li>
-        <li>number attending: {this.props.numAttendees}</li>
-        <li>
-          <JoinLeaveButton />
-        </li>
-      </ul>
+      <div className='eventItem'>
+        <ul>
+          <li>{this.props.dateTime}</li>
+          <li>host: {this.props.host.username}</li>
+          <li>number attending: {this.props.numAttendees}</li>
+          <li>
+            <JoinLeaveButton />
+          </li>
+        </ul>
+      </div>
     );
   }
 }
