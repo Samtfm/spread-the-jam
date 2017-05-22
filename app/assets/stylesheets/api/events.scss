@@ -5,6 +5,7 @@
 
 .event-index{
   display: flex;
+  flex-wrap: wrap;
   // background-color: aliceblue;
 }
 
@@ -15,6 +16,25 @@
   background-color: darken($blue, 10);
   position: relative;
   margin: 20px;
+  .host {
+
+    position: absolute;
+    // width: 100%;
+    // height: 100%;
+    top: 8%;
+    right: 20%;
+    text-align: center;
+    #host{
+      text-transform: uppercase;
+      font-size: 90%;
+      opacity: .5;
+      margin-bottom: 5px;
+    }
+    #name{
+      font-size: 120%;
+    }
+    // right: -20%;
+  }
   .date {
     text-transform: uppercase;
     text-align: center;
@@ -38,9 +58,9 @@
     }
     #time {
       font-size: 90%;
-
     }
   }
+
   ul {
     display: flex;
     flex-direction: column;

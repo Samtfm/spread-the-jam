@@ -39,10 +39,9 @@ class EventIndexItem extends React.Component{
           <div id='day'>{DAYS[date.getDay()]}</div>
           <div id='date'>{MONTHS[date.getMonth()] + ' ' + date.getDate()}</div>
           <div id='time'>{date.toLocaleTimeString().match( /(\S*)\S{3}\s(\S\S)/).slice(1, 3).join(" ")}</div>
-
         </div>
+        <div className='host'><div id='host'>host</div><div id='name'>{this.props.host.username}</div></div>
         <ul>
-          <li>host: {this.props.host.username}</li>
           <li>{this.props.address}</li>
           <li>number attending: {this.props.numAttendees}</li>
           <li>
