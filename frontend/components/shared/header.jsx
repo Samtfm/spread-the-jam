@@ -19,9 +19,6 @@ class Header extends React.Component{
     const HeaderNav = () => {
       return this.props.signedIn ? (
         <ul>
-          <li>
-            <h1>Hi {this.props.currentUser.username}!</h1>
-          </li>
           { this.props.currentCity.name ? (
             <li>
               <NavLink tabIndex="-1" exact to={`/cities/${this.props.currentCity.id}`}>

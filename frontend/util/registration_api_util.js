@@ -8,7 +8,7 @@ export const createRegistration = (registration) => (
 export const destroyRegistration = (registration) => (
   $.ajax({
     method: 'DELETE',
-    url: `api/registrations/6`,
+    url: `api/registrations/potato`,
     data: {registration}
   })
 );

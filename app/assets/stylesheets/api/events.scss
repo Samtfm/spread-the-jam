@@ -2,7 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import 'variables';
-.eventItem{
+
+.event-index{
+  display: flex;
+  // background-color: aliceblue;
+}
+
+.event-item{
   width: 200px;
   height: 200px;
   border-radius: 5px;
@@ -10,19 +16,29 @@
   position: relative;
   margin: 20px;
   .date {
+    text-transform: uppercase;
     text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
+    padding: 5px;
     background-color: $blue;
-    width: 90px;
-    height: 90px;
+    width: 85px;
+    height: 85px;
     position: absolute;
     left: -5%;
     top: -5%;
     border-radius: 5px;
-    div {
-      margin: 3px;
+    #day {
+      font-size: 90%;
+      opacity: .5;
+    }
+    #date {
+      font-size: 120%;
+    }
+    #time {
+      font-size: 90%;
+
     }
   }
   ul {
@@ -30,21 +46,17 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
-    // margin-top: -25%;
-    margin-left: -50%;
-    position: absolute;
-    left: 50%;
     width: 100%;
     height: 100%;
-    // top: 50%;
-    // margin: 0 auto;
     li{
       margin: 2px;
     }
     button{
       background-color: lighten($blue, 30%);
+      // background-color: $link;
       font-weight: bold;
       color: white;
+      margin: 6px;
       // border-radius: 100%;
       // width: 60px;
       // height: 60px;
