@@ -5,6 +5,13 @@ export const createRegistration = (registration) => (
     data: {registration}
   })
 );
+export const destroyRegistration = (registration) => (
+  $.ajax({
+    method: 'DELETE',
+    url: `api/registrations/6`,
+    data: {registration}
+  })
+);
 // export const leaveEvent = (eventId, userId) => (
 //   $.ajax({
 //     method: 'DELETE',

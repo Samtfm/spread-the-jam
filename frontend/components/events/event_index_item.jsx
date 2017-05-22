@@ -32,7 +32,7 @@ class EventIndexItem extends React.Component{
       <ul>
         <li>{this.props.dateTime}</li>
         <li>host: {this.props.host.username}</li>
-        <li>number attending: {Object.keys(this.props.attendees).length}</li>
+        <li>number attending: {this.props.numAttendees}</li>
         <li>
           <JoinLeaveButton />
         </li>

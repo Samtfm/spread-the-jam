@@ -24,6 +24,7 @@ class Events extends React.Component{
               <EventIndexItem
                 userId={this.props.userId}
                 joinEvent={this.props.joinEvent}
+                leaveEvent={this.props.leaveEvent}
                 {...eventData} />
               {/*eventData.dateTime + ": " + eventData.address*/}
             </li>

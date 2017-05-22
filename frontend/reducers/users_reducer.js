@@ -41,9 +41,6 @@ const UsersReducer = (state = {}, action) => {
       //   newState[hostId].username = hostUsername;
       // });
       // return newState;
-    case RECEIVE_REGISTRATION:
-      newState[action.registration.eventId].events.push(action.registration.userId);
-      return newState;
     default:
       return state;
   }

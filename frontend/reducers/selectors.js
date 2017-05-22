@@ -16,9 +16,16 @@ export const selectUser = (state, id) => (
 //   (id && state.users[id]) ? state.users[id] : {}
 // );
 
+const countAttendees = (attendees) => {
+  let count = 0;
+  for (let id in attendees) if (attendees[id]) count++;
+  return count;
+};
+
 const constructEvent = (state, eventObj) => ({
   host: state.users[eventObj.hostId],
-  attendees: eventObj.attendees, //array? object?
+  attendees: eventObj.attendees,
+  numAttendees: countAttendees(eventObj.attendees),
   description: eventObj.description,
   id: eventObj.id,
   address: eventObj.address,
