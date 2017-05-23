@@ -43,30 +43,47 @@ class SessionForm extends React.Component{
       () => (<p>Returning user? <Link to="/signin"> Log in here!</Link></p>) :
       () => (<p>New user? <Link to="/signup">Sign up here!</Link></p>);
     return(
-      <form className='auth'>
-        <h2>Welcome!</h2>
-        <SwitchFormLink />
-        <ul className='errors'>
-          {this.props.errors ?
-          (this.props.errors.map((err) => <li>{err}</li>)) : ''}
-        </ul>
-        <input type='text'
-          placeholder='username'
-          onChange={this.updateUsername.bind(this)}
-          value={this.state.username}
-          ref={(input) => { this.usernameInput = input; }} />
-        <input type='password'
-          placeholder='password'
-          onChange={this.updatePassword.bind(this)}
-          value={this.state.password}
-          ref={(input) => { this.passwordInput = input; }} />
-        <input type='submit'
-          onClick={this.processForm.bind(this)}
-          value={submitText}/>
+      <div>
+        <div className="banner">
+          <div className="banner-image"
+           style={{backgroundImage: `url(${'/'})`}}></div>
+           <div className='banner-content'>
+             <h1>Welcome!</h1>
 
-        <button className="demo"
-          onClick={this.demoSignIn.bind(this)}>Demo!</button>
-      </form>
+             { true ? (
+               ''
+             ) : (
+               <button >
+                 Set as my home city
+               </button>
+             )}
+           </div>
+         </div>
+        <form className='auth'>
+          <h2>Welcome!</h2>
+          <SwitchFormLink />
+          <ul className='errors'>
+            {this.props.errors ?
+            (this.props.errors.map((err) => <li>{err}</li>)) : ''}
+          </ul>
+          <input type='text'
+            placeholder='username'
+            onChange={this.updateUsername.bind(this)}
+            value={this.state.username}
+            ref={(input) => { this.usernameInput = input; }} />
+          <input type='password'
+            placeholder='password'
+            onChange={this.updatePassword.bind(this)}
+            value={this.state.password}
+            ref={(input) => { this.passwordInput = input; }} />
+          <input type='submit'
+            onClick={this.processForm.bind(this)}
+            value={submitText}/>
+
+          <button className="demo"
+            onClick={this.demoSignIn.bind(this)}>Demo!</button>
+        </form>
+      </div>
     );
   }
 }

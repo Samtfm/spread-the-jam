@@ -27,7 +27,7 @@
 .event-index{
   display: flex;
   flex-wrap: wrap;
-  
+
   // background-color: aliceblue;
 }
 #new-event{
@@ -108,7 +108,7 @@
       margin: 5px;
     }
     button{
-      background-color: lighten($blue, 30%);
+      background-color: $blue;
       // background-color: $link;
       font-weight: bold;
       color: white;

@@ -29,11 +29,13 @@
 
 $button: #843346;
 $brown: #261E1A;
-$blue: #501020;
+$blue: lighten(#501020, 18%);
+// $blue: #ba254b;
 // $light-blue: #84ACC9;
 $light-blue: #ABBCC9;
 $light-green: transparentize(#BB88FF, .8);
-$jam: #82204A;
+// $jam: lighten(#82204A, 25%);
+$jam: #ba254b;
 // $city-tint: rgba(120,50,120,0.6);
 $city-tint: rgba(120,80,160,0.4);
 $link:  #BB88FF;
