@@ -44,11 +44,11 @@
 }
 .event-item{
   border: 1px solid $jam;
-
+  color: black;
   width: 200px;
   height: 200px;
   border-radius: 5px;
-  background-color: #222;
+  background-color: lighten($light-gray, 10%);
   position: relative;
   margin: 20px;
   .host {
@@ -92,6 +92,7 @@
     #date {
       font-size: 120%;
       font-weight: bold;
+      color: $jam;
     }
     #time {
       font-size: 90%;
@@ -108,7 +109,7 @@
       margin: 5px;
     }
     button{
-      background-color: $blue;
+      background-color: $jam;
       // background-color: $link;
       font-weight: bold;
       color: white;

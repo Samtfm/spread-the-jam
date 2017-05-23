@@ -17,7 +17,7 @@ html{
   box-sizing: inherit;
 }
 body{
-  background-color: #111;
+  background-color: $light-gray;
   color: white;
   position: relative;
   min-height: 100%;
@@ -74,8 +74,8 @@ input[type=text], input[type=password]{
 }
 button, input[type=submit]{
   cursor: pointer;
-  color: white;
-  background-color: $blue;
+  color: $jam;
+  background-color: white;
   font-weight: bold;
 	border-radius:3px;
   filter: brightness(95%);

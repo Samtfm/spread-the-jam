@@ -31,7 +31,7 @@ form.auth {
   button{
     // background-color: white;
     // background-color: $jam;
-    background-color: lighten($jam, 30%)
+    background-color: $jam;
   }
 }
 
@@ -68,8 +68,8 @@ ul.errors {
     justify-content: space-around;
     align-items: center;
     button{
-      background-color: $jam;
-      color: white;
+      background-color: white;
+      color: $jam;
       font-weight: bold;
       text-align: center;
       vertical-align: middle;
@@ -83,8 +83,8 @@ ul.errors {
 }
 span.header{
   height: 60px;
-  // background-color: $blue;
-  border-bottom: 3px solid $blue;
+  background-color: $jam;
+  // border-bottom: 3px solid $blue;
   display: flex;
   margin: auto;
   justify-content: center;
