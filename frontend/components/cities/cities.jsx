@@ -30,6 +30,8 @@ class Cities extends React.Component{
             </Link>
           ))}
         </ul>
+        <div className='footer' />
+
       </section>
     );
   }

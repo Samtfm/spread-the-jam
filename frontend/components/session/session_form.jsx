@@ -43,24 +43,9 @@ class SessionForm extends React.Component{
       () => (<p>Returning user? <Link to="/signin"> Log in here!</Link></p>) :
       () => (<p>New user? <Link to="/signup">Sign up here!</Link></p>);
     return(
-      <div>
-        <div className="banner">
-          <div className="banner-image"
-           style={{backgroundImage: `url(${'/'})`}}></div>
-           <div className='banner-content'>
-             <h1>Welcome!</h1>
-
-             { true ? (
-               ''
-             ) : (
-               <button >
-                 Set as my home city
-               </button>
-             )}
-           </div>
-         </div>
-        <form className='auth'>
-          <h2>Welcome!</h2>
+      <section className='auth'>
+        <h2>Sign up today!</h2>
+        <form>
           <SwitchFormLink />
           <ul className='errors'>
             {this.props.errors ?
@@ -83,7 +68,7 @@ class SessionForm extends React.Component{
           <button className="demo"
             onClick={this.demoSignIn.bind(this)}>Demo!</button>
         </form>
-      </div>
+      </section>
     );
   }
 }

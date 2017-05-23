@@ -43,7 +43,6 @@ class City extends React.Component{
         <div  className='body'>
           <EventsContainer events={this.props.events} />
         </div>
-
       </section>
     );
   }

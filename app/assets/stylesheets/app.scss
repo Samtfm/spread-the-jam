@@ -18,13 +18,13 @@ html{
 }
 body{
   background-color: $light-gray;
-  color: white;
+  color: black;
   position: relative;
   min-height: 100%;
-  padding-bottom: 90px;
+  padding-bottom: $footer-height;
 }
 .footer{
-  height: 90px;
+  height: $footer-height;
   // border-top: 30px solid transparentize($link, .9);
   background-color: #222;
   float: bottom;
@@ -38,11 +38,10 @@ body{
 
 
 a{
-
   color: $link;
 }
 h2{
-  font-size: 22px;
+  font-size: 24px;
 }
 input[type=text], input[type=password]{
   border-radius: 3px;
