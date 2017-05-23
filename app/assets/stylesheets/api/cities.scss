@@ -27,7 +27,7 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    h1 {
+    h1, h2 {
       margin: 40px;
       text-transform: uppercase;
       color: white;
@@ -36,6 +36,13 @@
       opacity: .7;
       letter-spacing: .1em;
       word-spacing: .2em;
+    }
+    h2 {
+      letter-spacing: .05em;
+      word-spacing: .1em;
+      opacity: .8;
+
+      font-size: 25px;
     }
   }
 }
