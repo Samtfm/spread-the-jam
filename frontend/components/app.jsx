@@ -26,7 +26,7 @@ const App = () => (
       <SecureRoute exact path='/dashboard' component={DashboardContainer} />
       <SecureRoute exact path='/cities' component={CitiesContainer} />
       <SecureRoute exact path='/new-event' component={EventFormContainer} />
-
+      <SecureRoute exact path='/edit-event/:id' component={() => <EventFormContainer edit='true' />} />
       <SecureRoute exact path="/" component={() => (<Redirect to="/dashboard"/>)}/>
 
     <div className='footer' />

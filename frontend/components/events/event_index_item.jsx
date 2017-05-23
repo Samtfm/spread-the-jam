@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link } from 'react-router-dom';
 
 
 class EventIndexItem extends React.Component{
@@ -25,9 +26,11 @@ class EventIndexItem extends React.Component{
 
     const EditCancelButtons = () => (
       <div>
-        <button onClick={console.log('edit')}>
-          EDIT
-        </button>
+        <Link tabIndex='-1' to={`/edit-event/${this.props.id}`}>
+          <button >
+            EDIT
+          </button>
+        </Link>
       </div>
     );
 
