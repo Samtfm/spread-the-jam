@@ -8,7 +8,18 @@
   flex-wrap: wrap;
   // background-color: aliceblue;
 }
-
+#new-event{
+  width: 200px;
+  height: 200px;
+  margin: 20px;
+  color: white;
+  font-size: 22px;
+  background-color: transparentize($link, .7);
+  border: 1px solid $link;
+  &:hover{
+    // background-color: transparentize($link, .6);
+  }
+}
 .event-item{
   border: 1px solid $jam;
 
@@ -87,6 +98,9 @@
   }
 }
 .hosted {
-  border: 1px solid $link;
-  background-color: transparentize($link, 0.9);
+  ul button {
+    background-color: transparentize($link, 0.6);
+  }
+  // background-color: transparentize($link, 0.9);
+  // border: 1px solid $link;
 }

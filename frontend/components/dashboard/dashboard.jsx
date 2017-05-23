@@ -16,11 +16,11 @@ class Dashboard extends React.Component{
   render(){
     return(
       <section className='dashboard body'>
-        <Link tabIndex='-1' to='/new-event'>
-          <button>Host A Jam</button>
-        </Link>
         <h2>Hi {this.props.currentUser.username}!</h2>
         <EventsContainer events={this.props.joinedEvents} />
+        <Link tabIndex='-1' to='/new-event'>
+          <button id='new-event'>Host A Jam</button>
+        </Link>
       </section>
     );
   }
