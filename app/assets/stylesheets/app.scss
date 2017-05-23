@@ -2,7 +2,10 @@
 @import 'variables';
 
 * {
-  font-family: Verdana, Geneva, sans-serif;
+  // font-family: Verdana, Geneva, sans-serif;
+  // font-family: 'Varela Round', sans-serif;
+  // font-family: 'Varela', sans-serif;
+  font-family: 'Muli', sans-serif;
 }
 html{
   height: 100%;
@@ -14,7 +17,7 @@ html{
   box-sizing: inherit;
 }
 body{
-  background-color: black;
+  background-color: #111;
   color: white;
   position: relative;
   min-height: 100%;
@@ -22,8 +25,8 @@ body{
 }
 .footer{
   height: 90px;
-  border-top: 30px solid darken($blue, 12);
-  background-color: $blue;
+  // border-top: 30px solid transparentize($link, .9);
+  background-color: #222;
   float: bottom;
   position: absolute;
   right: 0;
@@ -53,7 +56,7 @@ input[type=text], input[type=password]{
   button{
     background: none;
     font-weight: bolder;
-    color: $link;
+    color: white;
     border: 2px solid transparent;
     height: auto;
     padding: 5px;
@@ -61,7 +64,7 @@ input[type=text], input[type=password]{
     transition: border .2s;
     &:hover{
       // color: white;
-      border-bottom: 2px solid $link;
+      border-bottom: 2px solid white;
     }
   }
   .active button{
