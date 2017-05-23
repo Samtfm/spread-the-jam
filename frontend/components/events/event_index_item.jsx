@@ -28,9 +28,6 @@ class EventIndexItem extends React.Component{
         <button onClick={console.log('edit')}>
           EDIT
         </button>
-        <button onClick={console.log('cancel')}>
-          CANCEL
-        </button>
       </div>
     );
 

@@ -75,6 +75,10 @@ ul.errors {
 
   }
 }
+.body{
+  max-width: 1000px;
+  margin: 0 auto;
+}
 span.header{
   height: 60px;
   background-color: $blue;
@@ -88,11 +92,10 @@ span.header{
     justify-content: space-between;
 
     h1.title{
-      .spread{
-      }
+      font-family: 'Kalam', cursive;
       letter-spacing: .05em;
       word-spacing: .1em;
-      font-size: 30px;
+      font-size: 26px;
       margin-left: 20px;
       color: white;
       opacity: 0.7;

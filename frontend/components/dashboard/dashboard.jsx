@@ -15,7 +15,7 @@ class Dashboard extends React.Component{
 
   render(){
     return(
-      <section className='dashboard'>
+      <section className='dashboard body'>
         <Link tabIndex='-1' to='/new-event'>
           <button>Host A Jam</button>
         </Link>

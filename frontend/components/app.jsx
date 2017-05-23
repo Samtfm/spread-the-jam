@@ -18,15 +18,16 @@ const App = () => (
   <div>
     <h1></h1>
     <HeaderContainer />
-    <SecureRoute path='/cities/:id' component={CityContainer} />
-    <AuthRoute exact path='/' component={Welcome} />
-    <AuthRoute path='/signup' component={SessionFormContainer} />
-    <AuthRoute path='/signin' component={SessionFormContainer} />
-    <SecureRoute exact path='/dashboard' component={DashboardContainer} />
-    <SecureRoute exact path='/cities' component={CitiesContainer} />
-    <SecureRoute exact path='/new-event' component={EventFormContainer} />
+      <SecureRoute path='/cities/:id' component={CityContainer} />
+      <AuthRoute exact path='/' component={Welcome} />
 
-    <SecureRoute exact path="/" component={() => (<Redirect to="/dashboard"/>)}/>
+      <AuthRoute path='/signup' component={SessionFormContainer} />
+      <AuthRoute path='/signin' component={SessionFormContainer} />
+      <SecureRoute exact path='/dashboard' component={DashboardContainer} />
+      <SecureRoute exact path='/cities' component={CitiesContainer} />
+      <SecureRoute exact path='/new-event' component={EventFormContainer} />
+
+      <SecureRoute exact path="/" component={() => (<Redirect to="/dashboard"/>)}/>
 
     <div className='footer' />
   </div>
