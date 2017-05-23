@@ -34,17 +34,17 @@ const constructEvent = (state, eventObj) => ({
 
 export const selectEvents = (state, cityId) => {
   const events = values(state.events).filter(event => event.cityId === cityId);
-  return events.map(eventObj => constructEvent(state, eventObj));
+  return events.map(eventObj => constructEvent(state, eventObj)).sort((a,b) => new Date(a.dateTime) > new Date(b.dateTime));
 };
 export const selectJoinedEvents = (state, userId) => {
   const events = values(state.events).filter(event => event.attendees[userId]);
-  return events.map(eventObj => constructEvent(state, eventObj));
+  return events.map(eventObj => constructEvent(state, eventObj)).sort((a,b) => new Date(a.dateTime) > new Date(b.dateTime));
 };
 export const selectUserEvents = (state, userId) => {
   const events = values(state.events).filter(event => event.hostId === userId || event.attendees[userId]);
-  return events.map(eventObj => constructEvent(state, eventObj));
+  return events.map(eventObj => constructEvent(state, eventObj)).sort((a,b) => new Date(a.dateTime) > new Date(b.dateTime));
 };
 export const selectHostedEvents = (state, hostId) => {
   const events = values(state.events).filter(event => event.hostId === hostId);
-  return events.map(eventObj => constructEvent(state, eventObj));
+  return events.map(eventObj => constructEvent(state, eventObj)).sort((a,b) => new Date(a.dateTime) > new Date(b.dateTime));
 };
