@@ -1,0 +1,28 @@
+@import 'variables';
+
+.steps{
+  display: flex;
+  height: 150px;
+  background-color: transparentize($link, .8);
+  align-items: center;
+  justify-content: space-around;
+  div {
+    width: 25%
+  }
+  h2 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 22px;
+    margin-bottom: 15px
+  }
+  p {
+    text-align: center;
+    font-size: 18px;
+
+  }
+}
+.welcome {
+  h2 {
+    
+  }
+}

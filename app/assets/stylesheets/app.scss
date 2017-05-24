@@ -23,19 +23,20 @@ body{
   min-height: 100%;
   padding-bottom: $footer-height;
 }
+.body{
+  max-width: 1000px;
+  margin: 0 auto;
+}
 .footer{
   height: $footer-height;
-  // border-top: 30px solid transparentize($link, .9);
-  background-color: #222;
+  background-color: #999;
   float: bottom;
   position: absolute;
   right: 0;
   bottom: 0;
   left: 0;
   margin: 0;
-  // padding: 3rem;
 }
-
 
 a{
   color: $link;
@@ -48,29 +49,10 @@ input[type=text], input[type=password], input[type=time], input[type=date], text
   padding: 4px;
 
 }
-::-webkit-input-placeholder{
-  font-size: 14px;
-}
-.header {
-  button.nav{
-    background: none;
-    font-weight: bolder;
-    color: white;
-    border: 2px solid transparent;
-    height: auto;
-    padding: 5px;
-    width: auto;
-    transition: border .2s;
-    &:hover{
-      // color: white;
-      border-bottom: 2px solid white;
-    }
-  }
-  .active button{
+// ::-webkit-input-placeholder{
+//   font-size: 14px;
+// }
 
-    // border: 2px solid $button;
-  }
-}
 button, input[type=submit]{
   cursor: pointer;
   color: $jam;
@@ -78,15 +60,15 @@ button, input[type=submit]{
   font-weight: bold;
 	border-radius:3px;
   filter: brightness(95%);
+  transition: brightness(1);
   padding-left: 15px;
   padding-right: 15px;
   height: 35px;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
   &:hover{
-    filter: brightness(100%);
+    filter: brightness(115%);
   }
-  // &:focus{
-  //   outline: 1px solid blue;
-  // }
 }
 
 input[type=submit]{

@@ -3,9 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 @import 'variables';
-//TODO: pixabay, pexels
+//TODO: add background to auth form
 .auth {
-  // padding-top: 10px;
   background-image: url(http://res.cloudinary.com/samtfm/image/upload/e_brightness:-80/e_contrast:-80/e_blue:32/v1495558030/piano_bw.jpg);
   background-size: cover;
   background-position: center;
@@ -16,12 +15,10 @@
   flex-direction: column;
   h2 {
     text-align: center;
-    // margin: 20px;
     padding-top: 20px;
     font-size: 24px;
   }
   form {
-
     a {
       color: lighten($link, 30%)
     }
@@ -50,81 +47,8 @@
 
 ul.errors {
   li {
-    // color: #c30000;
     color: $jam;
     font-size: 12px;
     text-align: center;
-
-  }
-}
-
-.steps{
-  display: flex;
-  height: 150px;
-  background-color: transparentize($link, .8);
-  align-items: center;
-  justify-content: space-around;
-  div {
-    width: 25%
-  }
-  h2 {
-    text-align: center;
-    font-weight: bold;
-    font-size: 22px;
-    margin-bottom: 15px
-  }
-  p {
-    text-align: center;
-    font-size: 18px;
-
-  }
-}
-.welcome {
-}
-.body{
-  max-width: 1000px;
-  margin: 0 auto;
-}
-span.header{
-  height: $header-height;
-  background-color: $jam;
-  // border-bottom: 3px solid $blue;
-  display: flex;
-  margin: auto;
-  justify-content: center;
-  nav {
-    width: 1000px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    .title{
-      font-family: 'Kalam', cursive;
-      letter-spacing: .05em;
-      word-spacing: .1em;
-      font-size: 24px;
-      margin-left: 20px;
-      color: white;
-      text-decoration: none;
-      // opacity: 0.7;
-      // font-weight: bold;
-      user-select: none;
-    }
-    ul {
-      // color: white;
-      justify-content: flex-end;
-      display: flex;
-      align-items: center;
-      margin-right: 15px;
-      h1 {
-        font-size: 18px;
-        color: white;
-        opacity: 1;
-        font-weight: bold;
-      }
-      li {
-        margin-right: 5px;
-      }
-    }
   }
 }

@@ -1,0 +1,49 @@
+@import 'variables';
+.banner{
+  position: relative;
+  width: 100%;
+  .banner-image {
+    height: 280px;
+    display: flex;
+    background-size: cover;
+    background-position: center;
+    filter: contrast(1) grayscale(.7);
+  }
+  .banner-content{
+    // background-color: rgba(255,140,100,0.4);
+    background-color: $city-tint;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    // justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    h1, h2 {
+      margin: 40px;
+      color: white;
+      font-size: 50px;
+      font-weight: bold;
+      opacity: .7;
+      letter-spacing: .1em;
+      word-spacing: .2em;
+    }
+    h1, {
+      text-transform: uppercase;
+    }
+    h2 {
+      letter-spacing: .05em;
+      word-spacing: .1em;
+      opacity: .9;
+
+      font-size: 32px;
+    }
+    button {
+      background-color: $jam;
+      color: white;
+    }
+  }
+}
