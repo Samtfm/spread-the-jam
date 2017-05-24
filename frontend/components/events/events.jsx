@@ -1,12 +1,23 @@
 import React from 'react';
 // import EventIndexItemContainer from './event_index_item_container';
 import EventIndexItem from './event_index_item';
+import Modal from 'react-modal';
 
 class Events extends React.Component{
 
-  // componentDidMount(){
-  //
-  // }
+  constructor(props){
+    super(props);
+    this.state = {detailShowing: false};
+  }
+  componentWillMount(){
+    Modal.setAppElement('body');
+  }
+  showDetail(){
+    this.setState({ detailShowing: true });
+  }
+  hideDetail(){
+    this.setState({ detailShowing: false });
+  }
   // componentWillReceiveProps(newProps){
   //   // if (this.props.cityId !== newProps.cityId){
   //   //   this.props.requestEvents(newProps.cityId);
@@ -17,6 +28,12 @@ class Events extends React.Component{
   render(){
     return (
       <section className='event-index'>
+        <button onClick={this.showDetail.bind(this)}>HEHY THERE</button>
+        <Modal
+          isOpen={this.state.detailShowing}
+          contentLabel="Modal">
+          <button onClick={this.hideDetail.bind(this)}>HEHY THERE</button>
+        </Modal>
         <ul >
           {this.props.firstItem ? (
             <li>
