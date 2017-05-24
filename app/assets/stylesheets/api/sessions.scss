@@ -78,13 +78,14 @@ span.header{
     align-items: center;
     justify-content: space-between;
 
-    h1.title{
+    .title{
       font-family: 'Kalam', cursive;
       letter-spacing: .05em;
       word-spacing: .1em;
       font-size: 24px;
       margin-left: 20px;
       color: white;
+      text-decoration: none;
       // opacity: 0.7;
       // font-weight: bold;
       user-select: none;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 
 class Header extends React.Component{
@@ -54,7 +54,11 @@ class Header extends React.Component{
     return (
       <span className="header">
         <nav>
-          <h1 className='title'>Spread the <span className='spread'>Jam</span></h1>
+          <Link className='title'
+            tabIndex="-1" exact to='/'>
+            <h1>Spread the Jam</h1>
+          </Link>
+
           <HeaderNav />
         </nav>
       </span>
