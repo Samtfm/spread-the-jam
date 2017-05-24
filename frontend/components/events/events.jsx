@@ -28,12 +28,15 @@ class Events extends React.Component{
   render(){
     return (
       <section className='event-index'>
-        <button onClick={this.showDetail.bind(this)}>HEHY THERE</button>
         <Modal
           isOpen={this.state.detailShowing}
-          contentLabel="Modal">
-          <button onClick={this.hideDetail.bind(this)}>HEHY THERE</button>
+          className='event-detail'
+          shouldCloseOnOverlayClick={true}
+          onRequestClose={this.hideDetail.bind(this)}
+          contentLabel="Event Details">
+          <button onClick={this.hideDetail.bind(this)}>X</button>
         </Modal>
+        <button onClick={this.showDetail.bind(this)}>HEHY THERE</button>
         <ul >
           {this.props.firstItem ? (
             <li>
@@ -44,6 +47,7 @@ class Events extends React.Component{
             <li key={eventData.id}>
               <EventIndexItem
                 userId={this.props.userId}
+                showDetai={this.showDetail.bind(this)}
                 joinEvent={this.props.joinEvent}
                 leaveEvent={this.props.leaveEvent}
                 {...eventData} />

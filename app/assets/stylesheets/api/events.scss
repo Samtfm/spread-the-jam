@@ -25,6 +25,29 @@
     flex-wrap: wrap;
   }
 }
+.event-detail {
+  width: 90%;
+  // height: 600px;
+  // background-color: $light-gray;
+  max-width: 500px;
+  min-width: 300px;
+  max-height: 600px;
+  min-height: 400px;
+  margin: auto;
+
+  position: absolute;
+  top: 0px;
+  left: 0%;
+  right: 0px;
+  bottom: 0px;
+  border: 1px solid $jam;
+  background: #fff;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 4px;
+  outline: none;
+  padding: 20px
+}
 
 .event-item{
   border: 1px solid $jam;
