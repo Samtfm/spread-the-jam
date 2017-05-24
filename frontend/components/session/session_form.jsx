@@ -40,14 +40,13 @@ class SessionForm extends React.Component{
     const isSignUpForm = this.props.formType === 'signup';
     const submitText = isSignUpForm ? 'Sign Up' : 'Log In';
     const SwitchFormLink = isSignUpForm ?
-      () => (<p>Returning user? <Link to="/signin"> Log in here!</Link></p>) :
-      () => (<p>New user? <Link to="/signup">Sign up here!</Link></p>);
+      () => (<p>Returning user? <Link to="/signin"> Log in here.</Link></p>) :
+      () => (<p>New user? <Link to="/signup">Sign up here.</Link></p>);
     return(
       <section className='auth'>
         <form>
           <div>
-
-            <h2>Welcome aboard!</h2>
+            <h2>Welcome!</h2>
             <SwitchFormLink />
           </div>
           <div id='inputs'>

@@ -45,7 +45,9 @@ a{
   color: $link;
 }
 h2{
-  font-size: 24px;
+  color: darken($link, 13);
+  font-size: 22px;
+  font-weight: bold;
 }
 input[type=text], input[type=password], input[type=time], input[type=date], textarea{
   border-radius: 3px;
