@@ -40,8 +40,11 @@ export const requestUserEvents = (userId) => dispatch => (
 //     .then(res => dispatch(receiveEvents(res)),
 //           err => dispatch(receiveErrors(err.responseJSON)))
 // );
-export const createEvent = (eventObj) => dispatch => (
+export const createEvent = (eventObj, callback) => dispatch => (
   APIUtil.createEvent(eventObj)
-    .then(res => dispatch(receiveEvent(res)),
+    .then(res => {
+        callback();
+        return dispatch(receiveEvent(res));
+      },
           err => dispatch(receiveErrors(err.responseJSON)))
 );

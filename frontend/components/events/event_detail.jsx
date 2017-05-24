@@ -1,11 +1,11 @@
 import React from 'react';
-import {Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
-class EventIndexItem extends React.Component{
+class EventDetail extends React.Component{
 
   componentDidMount(){
-
+    this.props.requestEvent();
   }
 
   register(){
@@ -17,20 +17,18 @@ class EventIndexItem extends React.Component{
   }
 
   render(){
+    console.log("this.props.dateTime");
     const date = new Date(this.props.dateTime);
     const DAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
-    // const MONTHS = "January February March April May June July August September October November December".split(' ');
     const MONTHS = "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split(' ');
-
     const isHost = this.props.userId === this.props.host.id;
-
     const EditCancelButtons = () => (
       <div>
-        {/*<Link tabIndex='-1' to={`/edit-event/${this.props.id}`}>
+        <Link tabIndex='-1' to={`/edit-event/${this.props.id}`}>
           <button >
             EDIT
           </button>
-        </Link>*/}
+        </Link>
       </div>
     );
 
@@ -47,7 +45,7 @@ class EventIndexItem extends React.Component{
       )
     );
     return (
-      <div className={isHost ? 'event-item hosted' : 'event-item'} >
+      <div className={isHost ? 'event-detail hosted' : 'event-detail'} >
         <div className='date'>
           <div id='day'>{DAYS[date.getDay()]}</div>
           <div id='date'>{MONTHS[date.getMonth()] + ' ' + date.getDate()}</div>
@@ -71,4 +69,4 @@ class EventIndexItem extends React.Component{
 }
 
 
-export default EventIndexItem;
+export default EventDetail;

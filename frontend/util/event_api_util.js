@@ -14,14 +14,16 @@ export const fetchUserEvents = (userId) => (
 export const createEvent = (eventObj) => (
   $.ajax({
     method: 'POST',
-    url: `api/cities/${eventObj.cityId}/events`
+    url: `api/cities/${eventObj.city_id}/events`,
+    data: {event: eventObj}
   })
 );
 
 export const updateEvent = (eventObj) => (
   $.ajax({
     method: 'PATCH',
-    url: `api/events/${eventObj.id}`
+    url: `api/events/${eventObj.id}`,
+    data: {event: eventObj}
   })
 );
 

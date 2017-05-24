@@ -16,8 +16,13 @@ class Events extends React.Component{
 
   render(){
     return (
-      <section >
-        <ul className='event-index'>
+      <section className='event-index'>
+        <ul >
+          {this.props.firstItem ? (
+            <li>
+              <this.props.firstItem />
+            </li>
+          ) : ('')}
           {this.props.events.map(eventData => (
             <li key={eventData.id}>
               <EventIndexItem
