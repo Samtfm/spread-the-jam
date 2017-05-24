@@ -44,9 +44,13 @@ class SessionForm extends React.Component{
       () => (<p>New user? <Link to="/signup">Sign up here!</Link></p>);
     return(
       <section className='auth'>
-        <h2>Sign up today!</h2>
         <form>
-          <SwitchFormLink />
+          <div>
+
+            <h2>Welcome aboard!</h2>
+            <SwitchFormLink />
+          </div>
+          <div id='inputs'>
           <ul className='errors'>
             {this.props.errors ?
             (this.props.errors.map((err) => <li>{err}</li>)) : ''}
@@ -67,6 +71,7 @@ class SessionForm extends React.Component{
 
           <button className="demo"
             onClick={this.demoSignIn.bind(this)}>Demo!</button>
+        </div>
         </form>
       </section>
     );
