@@ -52,7 +52,7 @@ class SessionForm extends React.Component{
           <div id='inputs'>
           <ul className='errors'>
             {this.props.errors ?
-            (this.props.errors.map((err) => <li>{err}</li>)) : ''}
+            (this.props.errors.map((err, id) => <li key={id} >{err}</li>)) : ''}
           </ul>
           <input type='text'
             placeholder='username'

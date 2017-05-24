@@ -13,8 +13,8 @@ class EventDetail extends React.Component{
     this.day = DAYS[date.getDay()];
     this.date = MONTHS[date.getMonth()] + ' ' + date.getDate();
     this.time = date.toLocaleTimeString().match( /(\S*)\S{3}\s(\S\S)/).slice(1, 3).join(" ");
-
-    const isHost = this.props.userId === this.props.eventObj.host;
+    console.log(this.props);
+    this.isHost = this.props.userId === this.props.eventObj.host.id;
   }
 
   register(){
