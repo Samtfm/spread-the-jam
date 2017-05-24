@@ -21,10 +21,15 @@ const countAttendees = (attendees) => {
   for (let id in attendees) if (attendees[id]) count++;
   return count;
 };
+const selectAttendees = (state, attendeesObj) => {
+  const attendees = [];
+  for (let id in attendeesObj) if (attendeesObj[id]) attendees.push(state.users[id]);
+  return attendees;
+};
 
 const constructEvent = (state, eventObj) => ({
   host: state.users[eventObj.hostId],
-  attendees: eventObj.attendees,
+  attendees: selectAttendees(state, eventObj.attendees),
   numAttendees: countAttendees(eventObj.attendees),
   description: eventObj.description,
   id: eventObj.id,

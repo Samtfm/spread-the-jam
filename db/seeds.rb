@@ -64,7 +64,7 @@ end
 20.times do
   Event.create(
   address: Faker::Address.street_address,
-  description: Faker::Lorem.sentence(2),
+  description: Faker::Lorem.sentence(4),
   city_id: City.all.sample.id,
   host_id: User.all.sample.id,
   date_time: DateTime.new(2017, 6 + rand(3), 1 + rand(30), 10 + rand(10), rand(2)*30, 0)
