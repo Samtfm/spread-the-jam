@@ -5,6 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+#TODO: MAKE ALL THE SEEDS
 User.destroy_all
 sam = User.create(username: "sam", password: 'password')
 scrappy = User.create(username: "scrappy", password: 'password')

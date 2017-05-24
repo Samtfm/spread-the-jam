@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 class Cities extends React.Component{
-//TODO: add text prompting you to choose a city to select as home
   componentDidMount(){
     this.props.requestCities();
   }

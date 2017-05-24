@@ -2,8 +2,8 @@ import React from 'react';
 import {Link } from 'react-router-dom';
 
 class EventIndexItem extends React.Component{
-//TODO: create modal thing to show description
-//TODO: change button to display modal, add join/leave/edit buttons to modal
+//TODO: style / format modal details
+//TODO: add edit buttons to modal, change style of hosted events
   componentDidMount(){
 
   }
