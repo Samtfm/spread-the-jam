@@ -18,4 +18,4 @@ const EventIndex = ({events}) => (
   </section>
 );
 
-export default EventIndex;
+// export default EventIndex;
