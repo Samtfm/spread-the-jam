@@ -44,8 +44,11 @@ class Header extends React.Component{
       ) : (
         <ul>
           <li>
+            <NavLink tabIndex="-1" exact to={`/signup`}>
+              <button className='nav'>Sign Up</button>
+            </NavLink>
             <NavLink tabIndex="-1" exact to={`/signin`}>
-              <button>Log In</button>
+              <button className='login'>Log In</button>
             </NavLink>
           </li>
         </ul>

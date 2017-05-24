@@ -27,12 +27,12 @@ const Welcome = () => (
         </div>
         <div>
           <h2>See where it takes you</h2>
-          <p>Explore new styles! Start a band even!</p>
+          <p>Explore new styles! Maybe even start a band!</p>
         </div>
       </section>
 
     </div>
 );
 
-
-export default Welcome;
+import {connect} from 'react-redux';
+export default connect(state => ({currentUser: Boolean(state.session.currentUser)}))(Welcome);

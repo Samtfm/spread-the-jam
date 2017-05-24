@@ -19,7 +19,7 @@ const App = () => (
     <h1></h1>
     <HeaderContainer />
       <SecureRoute path='/cities/:id' component={CityContainer} />
-      <AuthRoute exact path='/' component={Welcome} />
+      <Route exact path='/' component={Welcome} />
 
       <AuthRoute path='/signup' component={SessionFormContainer} />
       <AuthRoute path='/signin' component={SessionFormContainer} />
@@ -27,7 +27,7 @@ const App = () => (
       <SecureRoute exact path='/cities' component={CitiesContainer} />
       <SecureRoute exact path='/new-event' component={EventFormContainer} />
       <SecureRoute exact path='/edit-event/:id' component={() => <EventFormContainer edit='true' />} />
-      <SecureRoute exact path="/" component={() => (<Redirect to="/dashboard"/>)}/>
+    {/*<SecureRoute exact path="/" component={() => (<Redirect to="/dashboard"/>)}/>*/}
 
     <div className='footer' />
   </div>
