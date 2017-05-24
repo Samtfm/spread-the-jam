@@ -9,7 +9,6 @@ Rails.application.routes.draw do
     end
     resources :events, only: [ :show, :update, :destroy]
     resources :registrations, only: [:create, :destroy]
-    #TODO: nest some event routes under cities
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

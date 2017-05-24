@@ -3,7 +3,8 @@ import {Link } from 'react-router-dom';
 
 
 class EventIndexItem extends React.Component{
-
+//TODO: create modal thing to show description
+//TODO: change button to display modal, add join/leave/edit buttons to modal
   componentDidMount(){
 
   }

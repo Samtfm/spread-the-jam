@@ -3,7 +3,9 @@ import { NavLink, Link } from 'react-router-dom';
 
 
 class Header extends React.Component{
-
+//TODO: add host event button to header??
+//TODO: Add cute little logo or something
+//TODO: add logo as the little page icon thing
   componentDidMount(){
     // if (this.props.currentUser.cityId){
     //   this.props.requestCity(this.props.currentUser.cityId);

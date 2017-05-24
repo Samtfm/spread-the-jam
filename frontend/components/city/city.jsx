@@ -2,7 +2,7 @@ import React from 'react';
 import EventsContainer from '../events/events_container';
 
 class City extends React.Component{
-
+//TODO: add descriptive text / title
   componentDidMount(){
     this.props.requestCity();
     this.props.requestEvents();
