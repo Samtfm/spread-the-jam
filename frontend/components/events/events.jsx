@@ -2,6 +2,7 @@ import React from 'react';
 // import EventIndexItemContainer from './event_index_item_container';
 import EventIndexItem from './event_index_item';
 import Modal from 'react-modal';
+import EventDetailContainer from './event_detail_container';
 
 class Events extends React.Component{
 
@@ -12,8 +13,8 @@ class Events extends React.Component{
   componentWillMount(){
     Modal.setAppElement('body');
   }
-  showDetail(){
-    this.setState({ detailShowing: true });
+  showDetail(eventId){
+    this.setState({ detailShowing: true, detailId: eventId });
   }
   hideDetail(){
     this.setState({ detailShowing: false });
@@ -34,9 +35,12 @@ class Events extends React.Component{
           shouldCloseOnOverlayClick={true}
           onRequestClose={this.hideDetail.bind(this)}
           contentLabel="Event Details">
-          <button onClick={this.hideDetail.bind(this)}>X</button>
+
+            <button onClick={this.hideDetail.bind(this)}>X</button>
+            <EventDetailContainer eventId={this.state.detailId} />
+
         </Modal>
-        <button onClick={this.showDetail.bind(this)}>HEHY THERE</button>
+
         <ul >
           {this.props.firstItem ? (
             <li>
@@ -47,7 +51,7 @@ class Events extends React.Component{
             <li key={eventData.id}>
               <EventIndexItem
                 userId={this.props.userId}
-                showDetai={this.showDetail.bind(this)}
+                showDetail={this.showDetail.bind(this)}
                 joinEvent={this.props.joinEvent}
                 leaveEvent={this.props.leaveEvent}
                 {...eventData} />

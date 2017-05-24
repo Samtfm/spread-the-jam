@@ -31,7 +31,9 @@ const constructEvent = (state, eventObj) => ({
   address: eventObj.address,
   dateTime: eventObj.dateTime
 });
-
+export const selectEvent = (state, eventId) => {
+  return constructEvent(state, state.events[eventId]);
+};
 export const selectEvents = (state, cityId) => {
   const events = values(state.events).filter(event => event.cityId === cityId);
   return events.map(eventObj => constructEvent(state, eventObj)).sort((a,b) => new Date(a.dateTime) > new Date(b.dateTime));

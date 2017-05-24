@@ -10,10 +10,10 @@ class Api::RegistrationsController < ApplicationController
 
   def destroy
     @registration = Registration.find_by(registration_params)
-    if @registration.destroy
+    if @registration && @registration.destroy
       render :show
     else
-      render json: @registration.errors.full_messages, status: 422
+      render json: ["you are not registered for this event"], status: 422
     end
   end
 

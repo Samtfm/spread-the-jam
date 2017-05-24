@@ -60,7 +60,7 @@ class Header extends React.Component{
       <span className="header">
         <nav>
           <Link className='title'
-            tabIndex="-1" exact to='/'>
+            tabIndex="-1" to='/'>
             <h1>Spread the Jam</h1>
           </Link>
 

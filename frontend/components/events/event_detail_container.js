@@ -2,11 +2,11 @@ import { connect } from 'react-redux';
 
 import { requestEvent } from '../../actions/event_actions';
 import { joinEvent, leaveEvent } from '../../actions/registration_actions';
-import { selectEvents } from '../../reducers/selectors';
+import { selectEvent } from '../../reducers/selectors';
 import EventDetail from './event_detail';
 
 const mapStateToProps = (state, ownProps) => ({
-  eventObj: state.events[ownProps.match.params.id],
+  eventObj: selectEvent(state, ownProps.eventId),
   userId: state.session.currentUser
 });
 
