@@ -1,7 +1,7 @@
  import React from 'react';
 
 class EventForm extends React.Component{
-
+//TODO: ADD DROPDOWN TO CHOOSE EVENT CITY
   constructor(props){
     const date = new Date(Date.now()).toDateString();
     super(props);
