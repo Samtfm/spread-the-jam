@@ -27,7 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
     preloadedState.users[user.id] = user;
     const preloadedState = { session: {currentUser: user.id}};
     store = configureStore(preloadedState);
-    //TODO: revert bootstrapping to original?
     delete window.currentUser;
   } else {
     store = configureStore();

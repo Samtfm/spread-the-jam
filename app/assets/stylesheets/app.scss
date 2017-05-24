@@ -24,7 +24,10 @@ body{
   padding-bottom: $footer-height;
 }
 .body{
+  //TODO: make outside of body lighter shade of gray
+  // height: 100%;
   max-width: 1000px;
+  // background-color: #BBB;
   margin: 0 auto;
 }
 .footer{

@@ -18,7 +18,10 @@ class Cities extends React.Component{
             <h1>{'where are ya?'}</h1>
           </div>
         </div>*/}
-
+        <h1>Set your home city</h1>
+        <p>Make it easy to find events in your area</p>
+        <h2>We're building our communities here</h2>
+        <p>If you don't see your city, hopefully we'll expand there soon</p>
         <ul>
           {this.props.cities.map(city => (
             <Link key={city.id} tabIndex="-1" to={`/cities/${city.id}`}>

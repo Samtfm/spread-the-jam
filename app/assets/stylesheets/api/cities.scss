@@ -5,14 +5,27 @@
 
 .cities {
   margin: auto;
-  margin-top: 50px;
+  margin-top: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+  h1 {
+    font-size: 40px;
+    color: #334;
+    font-weight: bold;
+    margin-top: 25px;
+    margin-bottom: 10px;
+  }
   h2 {
-    margin: 20px
+    margin-top: 35px;
+    margin-bottom: 10px;
+    color: darken($link, 13);
+    font-weight: bold;
+    font-size: 24px;
   }
   ul {
+    margin-top: 30px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
