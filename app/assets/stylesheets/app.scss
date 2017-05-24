@@ -59,6 +59,8 @@ input[type=text], input[type=password], input[type=time], input[type=date], text
 // }
 
 button, input[type=submit]{
+  text-transform: uppercase;
+  font-size: 14px;
   cursor: pointer;
   color: $jam;
   background-color: white;
