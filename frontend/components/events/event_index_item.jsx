@@ -18,7 +18,7 @@ class EventIndexItem extends React.Component{
     this.date = MONTHS[date.getMonth()] + ' ' + date.getDate();
     this.time = date.toLocaleTimeString().match( /(\S*)\S{3}\s(\S\S)/).slice(1, 3).join(" ");
 
-    const isHost = this.props.userId === this.props.host.id;
+    this.isHost = this.props.userId === this.props.host.id;
   }
 
   showDetail(){
@@ -29,7 +29,7 @@ class EventIndexItem extends React.Component{
 
 
     return (
-      <div className={this.isHost ? 'event-item hosted' : 'event-item'} >
+      <div className={this.isHost ? 'event-item hosted' : (this.props.attendees[this.props.userId] ? 'event-item joined' : 'event-item')} >
         <div className='date'>
           <div id='day'>{this.day}</div>
           <div id='date'>{this.date}</div>

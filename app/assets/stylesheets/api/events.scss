@@ -50,13 +50,14 @@
 }
 
 .event-item{
-  border: 1px solid $jam;
+  // border: 1px solid $jam;
   color: black;
   width: 200px;
   height: 200px;
   border-radius: 5px;
   background-color: lighten($light-gray, 5%);
   position: relative;
+  text-align: center;
   margin: 20px;
   .host {
 
@@ -128,10 +129,14 @@
     }
   }
 }
-.hosted {
-  ul button {
-    background-color: transparentize($link, 0.4);
+.event-item.hosted {
+  border: 1px solid $link;
+  // background-color: transparentize($link, 0.8);
+  button {
   }
   // background-color: transparentize($link, 0.9);
   // border: 1px solid $link;
+}
+.event-item.joined {
+  border: 1px solid $jam;
 }
