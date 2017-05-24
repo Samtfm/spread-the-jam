@@ -25,7 +25,7 @@ class Cities extends React.Component{
         <ul>
           {this.props.cities.map(city => (
             <Link key={city.id} tabIndex="-1" to={`/cities/${city.id}`}>
-              <li style={{backgroundImage: `url(${city.imgUrl})`}}>
+              <li style={{backgroundImage: `url(${city.imgUrl || ''})`}}>
                 <button>
                   {city.name}
                 </button>

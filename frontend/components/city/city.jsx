@@ -26,7 +26,7 @@ class City extends React.Component{
       <section className="city">
         <div className="banner">
           <div className="banner-image"
-           style={{backgroundImage: `url(${this.props.city.imgUrl})`}}></div>
+           style={{backgroundImage: `url(${this.props.city.imgUrl || ''})`}}></div>
            <div className='banner-content'>
              <h1>{this.props.city.name}</h1>
 
