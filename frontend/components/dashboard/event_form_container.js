@@ -5,11 +5,12 @@ import EventForm from './event_form';
 import { createEvent, receiveErrors, requestEvent, updateEvent } from '../../actions/event_actions';
 import { requestCities } from '../../actions/city_actions';
 import { selectCities } from '../../reducers/selectors';
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state, ownProps) => ({
   userId: state.session.currentUser,
   cityId: state.users[state.session.currentUser].cityId,
   errors: state.errors,
-  cities: selectCities(state)
+  cities: selectCities(state),
+  eventObj: state.events[parseInt(ownProps.match.params.id)]
 });
 
 

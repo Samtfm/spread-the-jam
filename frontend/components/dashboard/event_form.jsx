@@ -5,7 +5,13 @@ class EventForm extends React.Component{
   constructor(props){
     const date = new Date(Date.now()).toDateString();
     super(props);
-    this.state = { description: '', address: '', date: '', time: '12:00', cityId: this.props.cityId || this.props.cities[0].id};
+    this.state = {
+      description: '',
+      address: '',
+      date: '',
+      time: '12:00',
+      cityId: this.props.cityId || this.props.cities[0].id
+    };
   }
 
   componentWillUnmount(){
@@ -14,7 +20,20 @@ class EventForm extends React.Component{
   componentDidMount(){
     this.props.requestCities();
     if (this.props.edit) {
-      this.props.requestEvent();
+      this.props.requestEvent().then(res => console.log(res));
+    }
+  }
+
+  componentWillReceiveProps(newProps){
+    console.log(newProps);
+    if (newProps.eventObj){
+      this.setState({
+        description: newProps.eventObj.description,
+        address: newProps.eventObj.address,
+        date: '',
+        time: '12:00',
+        cityId: newProps.cityId
+      });
     }
   }
 
@@ -74,6 +93,7 @@ class EventForm extends React.Component{
         <label>
           Address
           <input type='text'
+            value={this.state.address}
             onChange={this.updateAddress.bind(this)} />
         </label>
         <label>
