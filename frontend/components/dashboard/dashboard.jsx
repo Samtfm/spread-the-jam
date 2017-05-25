@@ -8,7 +8,6 @@ import EventsContainer from '../events/events_container';
 //   <
 // );
 class Dashboard extends React.Component{
-//TODO: add descriptive text / title / sidebar
   componentDidMount(){
     this.props.requestEvents(this.props.currentUser.id);
   }

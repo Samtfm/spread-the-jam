@@ -3,8 +3,6 @@ import {Link } from 'react-router-dom';
 import { parseRubyDateTime } from '../../util/time_util';
 
 class EventIndexItem extends React.Component{
-//TODO: style / format modal details
-//TODO: add edit buttons to modal, change style of hosted events
   componentDidMount(){
 
   }

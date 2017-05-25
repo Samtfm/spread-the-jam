@@ -2,7 +2,6 @@
  import Modal from 'react-modal';
 
 class EventForm extends React.Component{
-//TODO: ADD DROPDOWN TO CHOOSE EVENT CITY
   constructor(props){
     const date = new Date(Date.now()).toDateString();
     super(props);
@@ -100,7 +99,7 @@ class EventForm extends React.Component{
       </div>
       <section className='new-event body'>
       <form className="event-form">
-        <h2 className='body-title'>What are the deets?</h2>
+        <h2 className='body-title'>{this.props.edit ? 'Update the deets!' : 'What are the deets?'}</h2>
         <ul className='errors'>
           {this.props.errors ?
           (this.props.errors.map((err) => <li>{err}</li>)) : ''}
@@ -132,7 +131,7 @@ class EventForm extends React.Component{
           </select>
         </label>
         <label>
-          description
+          Description
           <textarea onChange={this.updateDescription.bind(this)} value={this.state.description}>
           </textarea>
         </label>
