@@ -29,7 +29,7 @@ class EventIndexItem extends React.Component{
 
 
     return (
-      <div className={this.isHost ? 'event-item hosted' : (this.props.attendees[this.props.userId] ? 'event-item joined' : 'event-item')} >
+      <div className={this.isHost ? 'event-item hosted' : (this.props.eventObj.attendees.some(att => att && att.id === this.props.userId) ? 'event-item joined' : 'event-item')} >
         <div className='date'>
           <div id='day'>{this.day}</div>
           <div id='date'>{this.date}</div>
