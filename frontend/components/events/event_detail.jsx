@@ -37,9 +37,8 @@ class EventDetail extends React.Component{
         </Link>
       </div>
     );
-
     const JoinLeaveButton = () => (
-      this.props.eventObj.attendees[this.props.userId] ?
+      this.props.eventObj.attendees.some(att => att && att.id === this.props.userId) ?
       (
         <button onClick={this.unregister.bind(this)}>
           LEAVE

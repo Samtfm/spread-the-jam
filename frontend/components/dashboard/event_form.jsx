@@ -6,7 +6,6 @@ class EventForm extends React.Component{
     const date = new Date(Date.now()).toDateString();
     super(props);
     this.state = { description: '', address: '', date: '', time: '12:00', cityId: this.props.cityId || this.props.cities[0].id};
-    console.log(this.props);
   }
 
   componentWillUnmount(){
@@ -20,10 +19,8 @@ class EventForm extends React.Component{
   }
 
   submit(){
-    // console.log(this.state);
     const rubyDateTime = (this.state.date) ?
       this.state.date + 'T' + this.state.time + ':00.000Z' : null;
-    console.log(rubyDateTime);
     const eventObj = {
       address: this.state.address,
       description: this.state.description,
@@ -31,7 +28,6 @@ class EventForm extends React.Component{
       host_id: this.props.userId,
       date_time: rubyDateTime
     };
-    console.log(eventObj);
     this.props.createEvent(eventObj);
   }
 

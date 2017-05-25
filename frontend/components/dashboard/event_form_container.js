@@ -18,7 +18,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   const redirectToDash = () => {
     ownProps.history.push('/dashboard');
   };
-  console.log(ownProps);
   return {
     createEvent: (eventObj) => dispatch(createEvent(eventObj, redirectToDash)),
     clearErrors: () => dispatch(receiveErrors([])),

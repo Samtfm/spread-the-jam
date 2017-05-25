@@ -62,6 +62,6 @@ end
   date_time: DateTime.new(2017, 6 + rand(3), 1 + rand(30), 10 + rand(10), rand(2)*30, 0)
   )
 end
-20.times do
+33.times do
   Registration.create(user_id: User.all.sample.id, event_id: Event.all.sample.id );
 end
