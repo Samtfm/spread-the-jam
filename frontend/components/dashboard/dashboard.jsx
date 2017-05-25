@@ -18,7 +18,7 @@ class Dashboard extends React.Component{
       <section>
         <div className="banner welcome">
           <div className="banner-image"
-            style={{backgroundImage: `url(${'http://res.cloudinary.com/samtfm/image/upload/v1495558030/guitar_notebook.jpg'})`}}></div>
+            style={{backgroundImage: `url(${'http://res.cloudinary.com/samtfm/image/upload/v1495688254/microphone-354070_1920_f9j5dh.jpg'})`}}></div>
           <div className='banner-content'>
             <h2>Welcome home, {this.props.currentUser.username}!</h2>
             <Link tabIndex="-1" to='/signup'>

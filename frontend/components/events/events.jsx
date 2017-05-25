@@ -36,7 +36,7 @@ class Events extends React.Component{
           onRequestClose={this.hideDetail.bind(this)}
           contentLabel="Event Details">
 
-            <button onClick={this.hideDetail.bind(this)}>X</button>
+            <button className='close' onClick={this.hideDetail.bind(this)}>×</button>
             <EventDetailContainer eventId={this.state.detailId} />
 
         </Modal>

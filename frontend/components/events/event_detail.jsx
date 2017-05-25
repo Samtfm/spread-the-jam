@@ -1,5 +1,6 @@
 import React from 'react';
 import { Modal } from 'react-modal';
+import { Link } from 'react-router-dom';
 
 class EventDetail extends React.Component{
   constructor(props){
@@ -25,11 +26,11 @@ class EventDetail extends React.Component{
 
     const EditCancelButtons = () => (
       <div>
-        {/*<Link tabIndex='-1' to={`/edit-event/${this.props.id}`}>
+        <Link tabIndex='-1' to={`/edit-event/${this.props.eventId}`}>
           <button >
             EDIT
           </button>
-        </Link>*/}
+        </Link>
       </div>
     );
 
@@ -50,20 +51,26 @@ class EventDetail extends React.Component{
       <section>
         <ul>
           <li>
-            <div className='date'>
-              <div id='date'>{this.day + ', ' + this.date}</div>
-              <div id='time'>{this.time}</div>
-            </div>
+            <label>Host:</label>
+            <div>{this.props.eventObj.host.username}</div>
           </li>
           <li>
-            host: {this.props.eventObj.host.username}
+            <label>Date:</label>
+            <div id='date'>{this.day + ', ' + this.date}</div>
           </li>
-          <li>Address: {this.props.eventObj.address}</li>
           <li>
-            description: <p>
+            <label>Time:</label>
+            <div id='time'>{this.time}</div>
+          </li>
+          <li>
+            <label>Address:</label>
+            <div> {this.props.eventObj.address}</div>
+          </li>
+          <li>
+            <label>Description:</label>
+            <p>
               {this.props.eventObj.description}
             </p>
-
           </li>
           <li>number attending: {this.props.eventObj.numAttendees}</li>
         </ul>
