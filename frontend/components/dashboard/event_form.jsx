@@ -6,6 +6,7 @@ class EventForm extends React.Component{
     const date = new Date(Date.now()).toDateString();
     super(props);
     this.state = {
+      id: 6,
       description: '',
       address: '',
       date: '',
@@ -26,27 +27,36 @@ class EventForm extends React.Component{
 
   componentWillReceiveProps(newProps){
     if (newProps.eventObj){
+      console.log(newProps.eventObj);
+      console.log(this.state);
       this.setState({
         description: newProps.eventObj.description,
         address: newProps.eventObj.address,
-        date: '',
-        time: '12:00',
-        cityId: newProps.cityId
+        date: newProps.eventObj.dateTime.slice(0,10),
+        time: newProps.eventObj.dateTime.slice(11,16),
+        cityId: newProps.eventObj.cityId,
+        id: newProps.eventObj.id
       });
+
     }
   }
 
   submit(){
     const rubyDateTime = (this.state.date) ?
-      this.state.date + 'T' + this.state.time + ':00.000Z' : null;
+    this.state.date + 'T' + this.state.time + ':00.000Z' : null;
     const eventObj = {
       address: this.state.address,
       description: this.state.description,
       city_id: this.state.cityId,
       host_id: this.props.userId,
-      date_time: rubyDateTime
+      date_time: rubyDateTime,
+      id: this.state.id
     };
-    this.props.createEvent(eventObj);
+    if (this.props.edit){
+      this.props.updateEvent(eventObj);
+    } else {
+      this.props.createEvent(eventObj);
+    }
   }
 
   updateDescription(e) {
@@ -103,16 +113,14 @@ class EventForm extends React.Component{
             ))};
           </select>
         </label>
-
         <label>
           description
           <textarea onChange={this.updateDescription.bind(this)} value={this.state.description}>
           </textarea>
         </label>
 
-
         <button onClick={this.submit.bind(this)}>
-          Create Jam
+          {this.props.edit ? 'Update Jam' : 'Create Jam'}
         </button>
       </form>
     );

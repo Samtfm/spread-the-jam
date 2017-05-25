@@ -9,20 +9,24 @@ class EventIndexItem extends React.Component{
   }
   constructor(props){
     super(props);
-    const date = new Date(this.props.dateTime);
+    this.setDate(props);
+  }
+  componentWillReceiveProps(newProps){
+    this.setDate(newProps);
+  }
+  showDetail(){
+    this.props.showDetail(this.props.id);
+  }
+
+  setDate(props){
+    const date = new Date(props.dateTime);
     const DAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
     // const MONTHS = "January February March April May June July August September October November December".split(' ');
     const MONTHS = "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split(' ');
-
     this.day = DAYS[date.getDay()];
     this.date = MONTHS[date.getMonth()] + ' ' + date.getDate();
     this.time = date.toLocaleTimeString().match( /(\S*)\S{3}\s(\S\S)/).slice(1, 3).join(" ");
-
-    this.isHost = this.props.userId === this.props.host.id;
-  }
-
-  showDetail(){
-    this.props.showDetail(this.props.id);
+    this.isHost = props.userId === props.host.id;
   }
 
   render(){
