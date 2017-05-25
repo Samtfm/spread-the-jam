@@ -49,11 +49,19 @@ h2{
   font-size: 22px;
   font-weight: bold;
 }
-input[type=text], input[type=password], input[type=time], input[type=date], textarea{
+input[type=text], input[type=password], input[type=time], input[type=date], select, textarea{
   border-radius: 3px;
   padding: 4px;
 
 }
+
+select {
+  background-color: white;
+  margin: 5px;
+}
+// option:checked, option:hover{
+//   // background: $link;
+// }
 // ::-webkit-input-placeholder{
 //   font-size: 14px;
 // }

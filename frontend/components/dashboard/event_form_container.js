@@ -2,10 +2,13 @@ import { connect } from 'react-redux';
 
 import EventForm from './event_form';
 import { createEvent, receiveErrors } from '../../actions/event_actions';
-
+import { requestCities } from '../../actions/city_actions';
+import { selectCities } from '../../reducers/selectors';
 const mapStateToProps = state => ({
   userId: state.session.currentUser,
-  errors: state.errors
+  cityId: state.users[state.session.currentUser].cityId,
+  errors: state.errors,
+  cities: selectCities(state)
 });
 
 
@@ -16,7 +19,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   };
   return {
     createEvent: (eventObj) => dispatch(createEvent(eventObj, redirectToDash)),
-    clearErrors: () => dispatch(receiveErrors([]))
+    clearErrors: () => dispatch(receiveErrors([])),
+    requestCities: () => dispatch(requestCities())
   };
 };
 

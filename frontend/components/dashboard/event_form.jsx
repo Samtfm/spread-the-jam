@@ -12,6 +12,9 @@ class EventForm extends React.Component{
   componentWillUnmount(){
     this.props.clearErrors();
   }
+  componentDidMount(){
+    this.props.requestCities();
+  }
 
   submit(){
     // console.log(this.state);
@@ -54,16 +57,6 @@ class EventForm extends React.Component{
           (this.props.errors.map((err) => <li>{err}</li>)) : ''}
         </ul>
         <label>
-          description
-          <textarea onChange={this.updateDescription.bind(this)} value={this.state.description}>
-          </textarea>
-        </label>
-        <label>
-          Address
-          <input type='text'
-            onChange={this.updateAddress.bind(this)} />
-        </label>
-        <label>
           Date
           <input type='date'
             value={this.state.date}
@@ -75,6 +68,28 @@ class EventForm extends React.Component{
             value={this.state.time}
             onChange={this.updateTime.bind(this)} />
         </label>
+        <label>
+          Address
+          <input type='text'
+            onChange={this.updateAddress.bind(this)} />
+        </label>
+        <label>
+          City
+          <select>
+            {this.props.cities.map(city => (
+              <option value={city.id}
+                selected={this.props.cityId && this.props.cityId === city.id}>{city.name}</option>
+            ))};
+          </select>
+        </label>
+
+        <label>
+          description
+          <textarea onChange={this.updateDescription.bind(this)} value={this.state.description}>
+          </textarea>
+        </label>
+
+
         <button onClick={this.submit.bind(this)}>
           Create Jam
         </button>

@@ -6,14 +6,28 @@
 .event-form{
   display: flex;
   flex-direction: column;
+  width: 350px;
   label{
     display: flex;
-    flex-direction: column;
+    // flex-direction: column;
+    justify-content: flex-end;
     align-items: center;
     margin: 10px;
-    input, textarea {
+    input, textarea, select {
       margin: 5px;
+      width: 200px;
     }
+  }
+  textarea{
+    height: 80px;
+    resize: vertical;
+    overflow: auto;
+  }
+  button{
+    background-color: $jam;
+    color: white;
+    width: 40%;
+    margin: auto;
   }
 
 }
