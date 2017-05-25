@@ -15,19 +15,26 @@ class Dashboard extends React.Component{
 
   render(){
     return(
-      <section className='dashboard body'>
-        <div className='sidebar'>
-          <h2>Welcome home, {this.props.currentUser.username}!</h2>
-          <Link tabIndex="-1" to='/signup'>
-            <button>Sign up for a jam!</button>
-          </Link>
+      <section>
+        <div className="banner welcome">
+          <div className="banner-image"
+            style={{backgroundImage: `url(${'http://res.cloudinary.com/samtfm/image/upload/v1495558030/guitar_notebook.jpg'})`}}></div>
+          <div className='banner-content'>
+            <h2>Welcome home, {this.props.currentUser.username}!</h2>
+            <Link tabIndex="-1" to='/signup'>
+              <button>Sign up for a jam!</button>
+            </Link>
+          </div>
         </div>
+        <div className='dashboard body'>
+          <h2>Upcoming Events</h2>
         <EventsContainer events={this.props.joinedEvents}
           firstItem={() => (
             <Link tabIndex='-1' to='/new-event'>
               <button id='new-event'>Host A Jam</button>
             </Link>
           )}/>
+        </div>
       </section>
     );
   }

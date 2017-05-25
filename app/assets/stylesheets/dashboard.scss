@@ -1,8 +1,12 @@
 @import 'variables';
 
 section.dashboard {
-  display: flex;
-  flex-direction: column;
+  // display: flex;
+  // flex-direction: column;
+  .dash-header{
+    height: 100px;
+    background-color: transparentize($link, .7);
+  }
   .sidebar{
     display: flex;
     align-items: center;
@@ -20,6 +24,14 @@ section.dashboard {
     margin-top: 50px;
     margin-bottom: 20px;
     text-align: center;
+  }
+}
+.dashboard {
+  h2{
+    margin-top: 30px;
+    margin-bottom: 20px;
+    padding: 5px;
+    border-bottom: 2px solid $link;
   }
 }
 #new-event{

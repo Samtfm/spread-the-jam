@@ -39,6 +39,11 @@ class Header extends React.Component{
             </NavLink>
           </li>
           <li>
+            <NavLink tabIndex="-1" exact to='/new-event'>
+              <button className='nav'>Host</button>
+            </NavLink>
+          </li>
+          <li>
             <button className='nav' onClick={this.props.signOut}>Log Out</button>
           </li>
 
@@ -61,7 +66,7 @@ class Header extends React.Component{
         <nav>
           <Link className='title'
             tabIndex="-1" to='/'>
-            <h1>Spread the Jam</h1>
+            <h1>Spread the&nbsp;Jam</h1>
           </Link>
 
           <HeaderNav />
