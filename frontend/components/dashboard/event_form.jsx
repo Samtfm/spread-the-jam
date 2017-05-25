@@ -20,7 +20,7 @@ class EventForm extends React.Component{
   componentDidMount(){
     this.props.requestCities();
     if (this.props.edit) {
-      this.props.requestEvent().then(res => console.log(res));
+      this.props.requestEvent();
     }
   }
 
@@ -98,8 +98,8 @@ class EventForm extends React.Component{
         <label>
           City
           <select value={this.state.cityId} onChange={this.updateCity.bind(this)}>
-            {this.props.cities.map(city => (
-              <option value={city.id}>{city.name}</option>
+            {this.props.cities.map((city, id) => (
+              <option key={id} value={city.id}>{city.name}</option>
             ))};
           </select>
         </label>
