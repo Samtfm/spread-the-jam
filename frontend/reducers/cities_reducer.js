@@ -11,7 +11,7 @@ const CitiesReducer = (state = {}, action) => {
       newState[action.city.id] = action.city;
       return newState;
     case RECEIVE_EVENT:
-      newState[action.eventObj.city.id] = action.eventObj.city;
+      merge(newState[action.eventObj.city.id], action.eventObj.city);
       return newState;
     case RECEIVE_CURRENT_USER:
       const city = action.user.city;
