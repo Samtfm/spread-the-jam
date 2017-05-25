@@ -87,7 +87,17 @@ class EventForm extends React.Component{
 
   render(){
     return (
-      <form className="event-form body">
+      <div>
+
+      <div className="banner">
+        <div className="banner-image"
+         style={{backgroundImage: `url('http://res.cloudinary.com/samtfm/image/upload/c_crop,g_south,h_709,w_1920,x_0,y_0/v1495688255/studio.jpg')`}}></div>
+         <div className='banner-content'>
+        </div>
+      </div>
+      <section className='new-event body'>
+      <form className="event-form">
+        <h2>Host a Jam</h2>
         <ul className='errors'>
           {this.props.errors ?
           (this.props.errors.map((err) => <li>{err}</li>)) : ''}
@@ -155,6 +165,8 @@ class EventForm extends React.Component{
           </button>
         )}
       </form>
+    </section>
+    </div>
     );
   }
 }

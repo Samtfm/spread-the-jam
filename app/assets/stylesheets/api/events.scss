@@ -3,7 +3,16 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import 'variables';
 
+.new-event{
+  h2 {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    padding: 5px;
+    border-bottom: 2px solid $link;
+  }
+}
 .event-form{
+  margin: auto;
   display: flex;
   flex-direction: column;
   width: 350px;
