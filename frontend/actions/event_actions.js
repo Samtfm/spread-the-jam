@@ -45,7 +45,7 @@ export const requestUserEvents = (userId) => dispatch => (
 
 export const requestEvent = (id) => dispatch => (
   APIUtil.fetchEvent(id)
-    .then(res => dispatch(receiveEvents(res)),
+    .then(res => dispatch(receiveEvent(res)),
           err => dispatch(receiveErrors(err.responseJSON)))
 );
 export const createEvent = (eventObj, callback) => dispatch => (

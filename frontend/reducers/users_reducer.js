@@ -1,7 +1,7 @@
 import { RECEIVE_USER, RECEIVE_ERRORS }
   from '../actions/user_actions';
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
-import { RECEIVE_EVENTS } from '../actions/event_actions';
+import { RECEIVE_EVENTS, RECEIVE_EVENT } from '../actions/event_actions';
 import { RECEIVE_REGISTRATION } from '../actions/registration_actions';
 
 import { merge, mapValues, pick } from 'lodash';
@@ -41,6 +41,8 @@ const UsersReducer = (state = {}, action) => {
       //   newState[hostId].username = hostUsername;
       // });
       // return newState;
+    case RECEIVE_EVENT:
+      return merge({}, state, action.eventObj.users);
     default:
       return state;
   }

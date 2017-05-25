@@ -21,6 +21,10 @@ class EventDetail extends React.Component{
   unregister(){
     this.props.leaveEvent({user_id: this.props.userId, event_id: this.props.eventId});
   }
+  componentDidMount(){
+    this.props.requestEvent();
+  }
+
 
   render(){
 
@@ -72,14 +76,16 @@ class EventDetail extends React.Component{
               {this.props.eventObj.description}
             </p>
           </li>
-          <li>number attending: {this.props.eventObj.numAttendees}</li>
+          <li>
+
+            <label>attendees ({this.props.eventObj.numAttendees})</label>
+            <ul className='attendees'>
+              {this.props.eventObj.attendees.map(attendee => (
+                <li>{attendee ? attendee.username : ''}</li>
+              ))}
+            </ul>
+          </li>
         </ul>
-        {/*<ul className='attendees'>
-          <h3>attendees</h3>
-          {this.props.eventObj.attendees.map(attendee => (
-            <li>{attendee.username}</li>
-          ))}
-        </ul>*/}
         {this.isHost ? (
           <EditCancelButtons />
         ) : (

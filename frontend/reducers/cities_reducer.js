@@ -1,4 +1,6 @@
 import { RECEIVE_CITIES, RECEIVE_CITY } from '../actions/city_actions';
+import { RECEIVE_EVENT } from '../actions/event_actions';
+
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
 import merge from 'lodash/merge';
 const CitiesReducer = (state = {}, action) => {
@@ -7,6 +9,9 @@ const CitiesReducer = (state = {}, action) => {
   switch (action.type) {
     case RECEIVE_CITY:
       newState[action.city.id] = action.city;
+      return newState;
+    case RECEIVE_EVENT:
+      newState[action.eventObj.city.id] = action.eventObj.city;
       return newState;
     case RECEIVE_CURRENT_USER:
       const city = action.user.city;

@@ -79,6 +79,7 @@
     label{
       width: 40%;
     }
+    div, p, ul {width: 55%;}
     li {
       border-bottom: 1px solid #ddd;
       padding: 20px;
@@ -86,6 +87,16 @@
       // justify-content: space-between;
       margin: 0;
       width: auto;
+    }
+  }
+  ul.attendees {
+    margin: 0;
+    padding: 0;
+    li{
+      margin: none;
+      border: none;
+      padding: 2px;
+
     }
   }
   button {

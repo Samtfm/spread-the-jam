@@ -35,19 +35,11 @@ event1 = Event.create(
 )
 
 event2 = Event.create(
-  address: "160 spear street",
-  description: "lunch time jam!",
-  city_id: sf.id,
-  host_id: sam.id,
-  date_time: DateTime.new(2017, 5, 29, 12, 30, 0)
-)
-
-event3 = Event.create(
   address: Faker::Address.street_address,
-  description: "",
-  city_id: sf.id,
+  description: "lunch time jam!",
+  city_id: ch.id,
   host_id: carlos.id,
-  date_time: DateTime.new(2017, 8, 22, 18 , 00, 0)
+  date_time: DateTime.new(2017, 5, 29, 12, 30, 0)
 )
 
 event4 = Event.create(
