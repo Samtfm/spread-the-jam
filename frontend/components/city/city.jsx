@@ -28,12 +28,14 @@ class City extends React.Component{
           <div className="banner-image"
            style={{backgroundImage: `url(${this.props.city.imgUrl || ''})`}}></div>
            <div className='banner-content'>
-             <h1>{this.props.city.name}</h1>
+             <div className='banner-text'>
+               <h1>{this.props.city.name}</h1>
+             </div>
 
              { isHomeCity ? (
                ''
              ) : (
-               <button onClick={this.chooseCity.bind(this)}>
+               <button className='banner-button' onClick={this.chooseCity.bind(this)}>
                  Set as my home city
                </button>
              )}
@@ -41,6 +43,7 @@ class City extends React.Component{
         </div>
 
         <div  className='body'>
+          <h2 className='body-title'>Events in {this.props.city.name}</h2>
           <EventsContainer events={this.props.events} />
         </div>
       </section>

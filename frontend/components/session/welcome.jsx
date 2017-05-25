@@ -8,10 +8,13 @@ const Welcome = () => (
         <div className="banner-image"
           style={{backgroundImage: `url(${'http://res.cloudinary.com/samtfm/image/upload/v1495558030/guitar_notebook.jpg'})`}}></div>
         <div className='banner-content'>
-          <h2>Do you play music?</h2>
+          <div className='banner-text'>
+            <h2>Do you play music?</h2>
+            <p>Of course you do!</p>
+          </div>
           <nav>
             <Link tabIndex="-1" to='/signup'>
-              <button>Let's play music together!</button>
+              <button className='banner-button'>Let's play music together!</button>
             </Link>
           </nav>
         </div>

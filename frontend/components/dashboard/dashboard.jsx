@@ -20,14 +20,17 @@ class Dashboard extends React.Component{
           <div className="banner-image"
             style={{backgroundImage: `url(${'http://res.cloudinary.com/samtfm/image/upload/v1495688254/microphone-354070_1920_f9j5dh.jpg'})`}}></div>
           <div className='banner-content'>
-            <h2>Welcome home, {this.props.currentUser.username}!</h2>
+            <div className='banner-text'>
+              <h2>Welcome home, {this.props.currentUser.username}!</h2>
+            </div>
+
             <Link tabIndex="-1" to='/signup'>
-              <button>Sign up for a jam!</button>
+              <button className='banner-button'>Sign up for a jam!</button>
             </Link>
           </div>
         </div>
         <div className='dashboard body'>
-          <h2>Upcoming Events</h2>
+          <h2 className='body-title'>Upcoming Events</h2>
         <EventsContainer events={this.props.joinedEvents}
           firstItem={() => (
             <Link tabIndex='-1' to='/new-event'>
