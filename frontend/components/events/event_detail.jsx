@@ -35,12 +35,12 @@ class EventDetail extends React.Component{
     const JoinLeaveButton = () => (
       this.props.eventObj.attendees.some(att => att && att.id === this.props.userId) ?
       (
-        <button onClick={this.unregister.bind(this)}>
+        <button className='white' onClick={this.unregister.bind(this)}>
           LEAVE
         </button>
       ) : (
-        <button onClick={this.register.bind(this)}>
-          JOIN
+        <button className='jam' onClick={this.register.bind(this)}>
+          Count me in
         </button>
       )
     );

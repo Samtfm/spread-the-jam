@@ -61,8 +61,7 @@ class EventForm extends React.Component{
     }
   }
   deleteEvent(){
-    console.log("HEY");
-    // this.props.deleteEvent();
+    this.props.deleteEvent();
   }
 
   updateDescription(e) {
@@ -141,7 +140,6 @@ class EventForm extends React.Component{
             contentLabel="Are you sure?">
             <h2> Are you sure you want to delete this jam?</h2>
             <div>
-
               <button className='white' onClick={() => this.setState({displayConfirmDelete: false})}>
                 no
               </button>

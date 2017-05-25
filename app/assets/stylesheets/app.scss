@@ -94,6 +94,7 @@ button.jam {
 button.white {
   color: $jam;
   background-color: white;
+  border: 1px solid $jam;
 }
 input[type=submit]{
   // border: 2px solid $blue;

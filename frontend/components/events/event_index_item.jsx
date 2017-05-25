@@ -36,7 +36,7 @@ class EventIndexItem extends React.Component{
           <li>{this.props.address}</li>
           <li>number attending: {this.props.numAttendees}</li>
           <li>
-            <button onClick={this.showDetail.bind(this)}>Details</button>
+            <button className='white' onClick={this.showDetail.bind(this)}>Details</button>
           </li>
         </ul>
       </div>

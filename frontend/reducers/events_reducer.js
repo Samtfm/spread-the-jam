@@ -1,4 +1,4 @@
-import { RECEIVE_EVENTS, RECEIVE_EVENT } from '../actions/event_actions';
+import { RECEIVE_EVENTS, RECEIVE_EVENT, RECEIVE_CANCELLATION } from '../actions/event_actions';
 import { RECEIVE_REGISTRATION, REMOVE_REGISTRATION } from '../actions/registration_actions';
 
 import {merge, pick, mapValues} from 'lodash';
@@ -13,13 +13,16 @@ const EventsReducer = (state = {}, action) => {
       newState[eventId].attendees[userId] = true;
       return newState;
     case REMOVE_REGISTRATION:
-      newState[eventId].attendees[userId] = null;
+      delete newState[eventId].attendees[userId];
       return newState;
     case RECEIVE_EVENTS:
       const events = mapValues(action.events, event => pick(event, keys));
       return merge({}, state, events);
     case RECEIVE_EVENT:
       newState[action.eventObj.id] = pick(action.eventObj, keys);
+      return newState;
+    case RECEIVE_CANCELLATION:
+      delete newState[action.eventObj.id];
       return newState;
     default:
       return state;

@@ -10,7 +10,7 @@ export const receiveErrors = err => ({
 
 export const RECEIVE_EVENTS = "RECEIVE_EVENTS";
 export const RECEIVE_EVENT = "RECEIVE_EVENT";
-
+export const RECEIVE_CANCELLATION = "RECEIVE_CANCELLATION";
 
 export const receiveEvents = (events) => ({
   type: RECEIVE_EVENTS,
@@ -19,6 +19,11 @@ export const receiveEvents = (events) => ({
 
 export const receiveEvent = (eventObj) => ({
   type: RECEIVE_EVENT,
+  eventObj
+});
+
+export const receiveCancellation = (eventObj) => ({
+  type: RECEIVE_CANCELLATION,
   eventObj
 });
 
@@ -46,6 +51,14 @@ export const requestUserEvents = (userId) => dispatch => (
 export const requestEvent = (id) => dispatch => (
   APIUtil.fetchEvent(id)
     .then(res => dispatch(receiveEvent(res)),
+          err => dispatch(receiveErrors(err.responseJSON)))
+);
+export const deleteEvent = (id, callback) => dispatch => (
+  APIUtil.destroyEvent(id)
+    .then(res => {
+      callback();
+      return dispatch(receiveCancellation(res));
+    },
           err => dispatch(receiveErrors(err.responseJSON)))
 );
 export const createEvent = (eventObj, callback) => dispatch => (

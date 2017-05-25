@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
 import EventForm from './event_form';
-import { createEvent, receiveErrors, requestEvent, updateEvent } from '../../actions/event_actions';
+import { createEvent, receiveErrors, requestEvent, updateEvent, deleteEvent } from '../../actions/event_actions';
 import { requestCities } from '../../actions/city_actions';
 import { selectCities } from '../../reducers/selectors';
 const mapStateToProps = (state, ownProps) => ({
@@ -24,8 +24,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     clearErrors: () => dispatch(receiveErrors([])),
     requestCities: () => dispatch(requestCities()),
     requestEvent: () => dispatch(requestEvent(parseInt(ownProps.match.params.id))),
-    updateEvent: (eventObj) => dispatch(updateEvent(eventObj, redirectToDash))
-
+    updateEvent: (eventObj) => dispatch(updateEvent(eventObj, redirectToDash)),
+    deleteEvent: () => dispatch(deleteEvent(parseInt(ownProps.match.params.id), redirectToDash))
 
   };
 };
