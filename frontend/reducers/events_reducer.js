@@ -20,7 +20,7 @@ const EventsReducer = (state = {}, action) => {
       return merge({}, state, events);
     case RECEIVE_EVENT:
       newState[action.eventObj.id] = pick(action.eventObj, keys);
-      return merge({}, state, events);
+      return newState;
     default:
       return state;
   }
