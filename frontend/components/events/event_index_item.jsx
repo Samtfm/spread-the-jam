@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link } from 'react-router-dom';
+import { parseRubyDateTime } from '../../util/time_util';
 
 class EventIndexItem extends React.Component{
 //TODO: style / format modal details
@@ -9,24 +10,15 @@ class EventIndexItem extends React.Component{
   }
   constructor(props){
     super(props);
-    this.setDate(props);
+    this.dateTime = parseRubyDateTime(props.dateTime);
+    this.isHost = props.userId === props.host.id;
   }
   componentWillReceiveProps(newProps){
-    this.setDate(newProps);
+    this.dateTime = parseRubyDateTime(newProps.dateTime);
+    this.isHost = newProps.userId === newProps.host.id;
   }
   showDetail(){
     this.props.showDetail(this.props.id);
-  }
-
-  setDate(props){
-    const date = new Date(props.dateTime);
-    const DAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
-    // const MONTHS = "January February March April May June July August September October November December".split(' ');
-    const MONTHS = "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split(' ');
-    this.day = DAYS[date.getDay()];
-    this.date = MONTHS[date.getMonth()] + ' ' + date.getDate();
-    this.time = date.toLocaleTimeString().match( /(\S*)\S{3}\s(\S\S)/).slice(1, 3).join(" ");
-    this.isHost = props.userId === props.host.id;
   }
 
   render(){
@@ -35,9 +27,9 @@ class EventIndexItem extends React.Component{
     return (
       <div className={this.isHost ? 'event-item hosted' : (this.props.attendees.some(att => att && att.id === this.props.userId) ? 'event-item joined' : 'event-item')} >
         <div className='date'>
-          <div id='day'>{this.day}</div>
-          <div id='date'>{this.date}</div>
-          <div id='time'>{this.time}</div>
+          <div id='day'>{this.dateTime.dayString}</div>
+          <div id='date'>{this.dateTime.dateString}</div>
+          <div id='time'>{this.dateTime.timeString}</div>
         </div>
         <div className='host'><div id='host'>host</div><div id='name'>{this.props.host.username}</div></div>
         <ul>
