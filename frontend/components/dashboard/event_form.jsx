@@ -5,7 +5,7 @@ class EventForm extends React.Component{
   constructor(props){
     const date = new Date(Date.now()).toDateString();
     super(props);
-    this.state = { description: '', address: '', date: '', time: '12:00'};
+    this.state = { description: '', address: '', date: '', time: '12:00', cityId: this.props.cityId || this.props.cities[0].id};
     console.log(this.props);
   }
 
@@ -24,7 +24,7 @@ class EventForm extends React.Component{
     const eventObj = {
       address: this.state.address,
       description: this.state.description,
-      city_id: 1,
+      city_id: this.state.cityId,
       host_id: this.props.userId,
       date_time: rubyDateTime
     };
@@ -47,6 +47,10 @@ class EventForm extends React.Component{
   updateTime(e) {
     e.preventDefault();
     this.setState({ time: e.target.value });
+  }
+  updateCity(e) {
+    e.preventDefault();
+    this.setState({ cityId: e.target.value });
   }
 
   render(){
@@ -75,10 +79,9 @@ class EventForm extends React.Component{
         </label>
         <label>
           City
-          <select>
+          <select value={this.state.cityId} onChange={this.updateCity.bind(this)}>
             {this.props.cities.map(city => (
-              <option value={city.id}
-                selected={this.props.cityId && this.props.cityId === city.id}>{city.name}</option>
+              <option value={city.id}>{city.name}</option>
             ))};
           </select>
         </label>
