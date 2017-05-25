@@ -1,17 +1,13 @@
 import React from 'react';
 import { Modal } from 'react-modal';
 import { Link } from 'react-router-dom';
+import { parseRubyDateTime } from '../../util/time_util';
+
 
 class EventDetail extends React.Component{
   constructor(props){
     super(props);
-    const date = new Date(this.props.eventObj.dateTime);
-    const DAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
-    const MONTHS = "January February March April May June July August September October November December".split(' ');
-
-    this.day = DAYS[date.getDay()];
-    this.date = MONTHS[date.getMonth()] + ' ' + date.getDate();
-    this.time = date.toLocaleTimeString().match( /(\S*)\S{3}\s(\S\S)/).slice(1, 3).join(" ");
+    this.dateTime = parseRubyDateTime(props.eventObj.dateTime);
     this.isHost = this.props.userId === this.props.eventObj.host.id;
   }
 
@@ -59,11 +55,11 @@ class EventDetail extends React.Component{
           </li>
           <li>
             <label>Date:</label>
-            <div id='date'>{this.day + ', ' + this.date}</div>
+            <div id='date'>{this.dateTime.dayString + ', ' + this.dateTime.dateStringFull}</div>
           </li>
           <li>
             <label>Time:</label>
-            <div id='time'>{this.time}</div>
+            <div id='time'>{this.dateTime.timeString}</div>
           </li>
           <li>
             <label>Address:</label>
@@ -79,8 +75,8 @@ class EventDetail extends React.Component{
 
             <label>attendees ({this.props.eventObj.numAttendees})</label>
             <ul className='attendees'>
-              {this.props.eventObj.attendees.map(attendee => (
-                <li>{attendee ? attendee.username : ''}</li>
+              {this.props.eventObj.attendees.map((attendee, id) => (
+                <li key={id}>{attendee ? attendee.username : ''}</li>
               ))}
             </ul>
           </li>

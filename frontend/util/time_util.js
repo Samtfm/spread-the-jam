@@ -7,20 +7,19 @@ export const parseRubyDateTime = (dateTime) => {
   const dayString = DAYS[date.getDay()];
   const dateString = ABBR_MONTHS[date.getMonth()] + ' ' + date.getDate();
   const dateStringFull = MONTHS[date.getMonth()] + ' ' + date.getDate();
-
   const hours = parseInt(date.toUTCString().match(/\s(\d\d):/));
-  const minutes = parseInt(date.toUTCString().match(/:(\d\d):/)[1]);
+  const minuteString = date.toUTCString().match(/:(\d\d):/)[1];
   let timeString;
   if (hours === 0){
-    timeString = `12:${minutes} AM`;
+    timeString = `12:${minuteString} AM`;
   } else if (hours === 12){
-    timeString = `12:${minutes} PM`;
+    timeString = `12:${minuteString} PM`;
   } else if (hours > 12) {
-    timeString = `${hours-12}:${minutes} PM`;
+    timeString = `${hours-12}:${minuteString} PM`;
   } else {
-    timeString = `${hours}:${minutes} AM`;
+    timeString = `${hours}:${minuteString} AM`;
   }
-  return { date, dayString, dateString, dateStringFull, hours, minutes, timeString };
+  return { date, dayString, dateString, dateStringFull, hours, minutes: parseInt(minuteString), timeString };
 };
 // this.day = DAYS[date.getDay()];
 // this.date = MONTHS[date.getMonth()] + ' ' + date.getDate();

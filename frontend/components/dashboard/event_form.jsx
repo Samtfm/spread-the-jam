@@ -6,12 +6,12 @@ class EventForm extends React.Component{
     const date = new Date(Date.now()).toDateString();
     super(props);
     this.state = {
-      id: 6,
+      id: null,
       description: '',
       address: '',
       date: '',
       time: '12:00',
-      cityId: this.props.cityId || this.props.cities[0].id
+      cityId: this.props.cityId
     };
   }
 
@@ -27,8 +27,6 @@ class EventForm extends React.Component{
 
   componentWillReceiveProps(newProps){
     if (newProps.eventObj){
-      console.log(newProps.eventObj);
-      console.log(this.state);
       this.setState({
         description: newProps.eventObj.description,
         address: newProps.eventObj.address,
