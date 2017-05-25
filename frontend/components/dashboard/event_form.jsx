@@ -1,4 +1,5 @@
  import React from 'react';
+ import Modal from 'react-modal';
 
 class EventForm extends React.Component{
 //TODO: ADD DROPDOWN TO CHOOSE EVENT CITY
@@ -11,10 +12,13 @@ class EventForm extends React.Component{
       address: '',
       date: '',
       time: '12:00',
-      cityId: this.props.cityId
+      cityId: this.props.cityId,
+      displayConfirmDelete: false,
     };
   }
-
+  componentWillMount(){
+    Modal.setAppElement('body');
+  }
   componentWillUnmount(){
     this.props.clearErrors();
   }
@@ -55,6 +59,10 @@ class EventForm extends React.Component{
     } else {
       this.props.createEvent(eventObj);
     }
+  }
+  deleteEvent(){
+    console.log("HEY");
+    // this.props.deleteEvent();
   }
 
   updateDescription(e) {
@@ -117,9 +125,37 @@ class EventForm extends React.Component{
           </textarea>
         </label>
 
-        <button onClick={this.submit.bind(this)}>
-          {this.props.edit ? 'Update Jam' : 'Create Jam'}
-        </button>
+        {this.props.edit ? (
+        <div>
+          <button className='white' onClick={() => this.setState({displayConfirmDelete: true})}>
+            Delete Jam
+          </button>
+          <button className='jam' onClick={this.submit.bind(this)}>
+            Update Jam
+          </button>
+          <Modal
+            isOpen={this.state.displayConfirmDelete}
+            className='modal delete-warning'
+            shouldCloseOnOverlayClick={true}
+            onRequestClose={() => this.setState({displayConfirmDelete: false})}
+            contentLabel="Are you sure?">
+            <h2> Are you sure you want to delete this jam?</h2>
+            <div>
+
+              <button className='white' onClick={() => this.setState({displayConfirmDelete: false})}>
+                no
+              </button>
+              <button className='jam' onClick={this.deleteEvent.bind(this)}>
+                yes
+              </button>
+            </div>
+          </Modal>
+        </div>
+        ):(
+          <button className='jam' onClick={this.submit.bind(this)}>
+            Create Jam
+          </button>
+        )}
       </form>
     );
   }

@@ -34,13 +34,13 @@ class Header extends React.Component{
             </NavLink>
           </li>
           <li>
-            <NavLink tabIndex="-1" exact to='/dashboard'>
-              <button className='nav'>Dashboard</button>
+            <NavLink tabIndex="-1" exact to='/new-event'>
+              <button className='nav'>Host</button>
             </NavLink>
           </li>
           <li>
-            <NavLink tabIndex="-1" exact to='/new-event'>
-              <button className='nav'>Host</button>
+            <NavLink tabIndex="-1" exact to='/dashboard'>
+              <button className='nav'>Dashboard</button>
             </NavLink>
           </li>
           <li>

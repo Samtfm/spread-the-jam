@@ -87,7 +87,14 @@ button, input[type=submit]{
     filter: brightness(115%);
   }
 }
-
+button.jam {
+  color: white;
+  background-color: $jam;
+}
+button.white {
+  color: $jam;
+  background-color: white;
+}
 input[type=submit]{
   // border: 2px solid $blue;
 }
