@@ -32,8 +32,11 @@
     max-width: 1200px;
   }
   a {
+    // flex-basis: 5px;
+    // flex-basis: 30%;
     width: 30%;
-    min-width: 250px;
+    // width: 260px;
+    min-width: 240px!important;
   }
   li {
     margin: 5px;
