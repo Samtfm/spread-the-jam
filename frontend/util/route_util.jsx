@@ -24,7 +24,6 @@ export const Secure = ({ component: Component, path, exact, loggedIn}) => (
 );
 
 export const Host = ({ component: Component, path, exact, loggedIn, currentUser, eventObj}) => {
-  console.log(eventObj);
   return (
     <Route path={path} exact={exact || false} render={(props) => (
       (loggedIn && (!eventObj || (currentUser.id === eventObj.hostId))) ? (

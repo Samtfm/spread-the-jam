@@ -52,7 +52,7 @@ class EventForm extends React.Component{
       description: this.state.description,
       city_id: this.state.cityId,
       host_id: this.props.userId,
-      date_time: this.state.dateTime.format(),
+      date_time: this.state.dateTime ? this.state.dateTime.format() : null,
       id: this.state.id
     };
     if (this.props.edit){
@@ -74,7 +74,6 @@ class EventForm extends React.Component{
     this.setState({ address: e.target.value });
   }
   updateDate(m) {
-    console.log(m.format());
     this.setState({ dateTime: m });
   }
   updateTime(e) {
