@@ -9,14 +9,6 @@ class Cities extends React.Component{
   render(){
     return (
       <section className="cities">
-
-        {/*<div className="banner">
-          <div className="banner-image"
-            style={{backgroundImage: `url(${'https://linkablenetworks.com/wp-content/themes/linkablenetworks/library/images/svg/logo-mark.svg'})`}}>hi</div>
-          <div className='banner-content'>
-            <h1>{'where are ya?'}</h1>
-          </div>
-        </div>*/}
         <h1>Set your home city</h1>
         <p>Make it easy to find events in your area</p>
         <h2>We're building our communities here</h2>
