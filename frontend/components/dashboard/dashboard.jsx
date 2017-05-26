@@ -23,7 +23,7 @@ class Dashboard extends React.Component{
               <h2>Welcome home, {this.props.currentUser.username}!</h2>
             </div>
 
-            <Link tabIndex="-1" to='/signup'>
+            <Link tabIndex="-1" to={(this.props.currentUser.cityId) ? (`/cities/${this.props.currentUser.cityId}`) : ("/cities")}>
               <button className='banner-button'>Sign up for a jam!</button>
             </Link>
           </div>

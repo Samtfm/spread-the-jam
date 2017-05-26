@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 export const Auth = ({ component: Component, path, exact, loggedIn, currentUser}) => (
   <Route path={path} exact={exact || false} render={(props) => (
       loggedIn? (
-        <Redirect to= {(currentUser.cityId) ? (`/cities/${currentUser.cityId}`) : ("/cities")} />
+        <Redirect to= { '/dashboard' /*(currentUser.cityId) ? (`/cities/${currentUser.cityId}`) : ("/cities")*/} />
       ) : (
         <Component {...props} />
       )
