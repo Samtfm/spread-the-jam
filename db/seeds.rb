@@ -12,8 +12,7 @@ Registration.destroy_all
 Event.destroy_all
 City.destroy_all
 
-sam = User.create(username: "sam", password: 'password')
-scrappy = User.create(username: "scrappy", password: 'password')
+sam = User.create(username: "Sam", password: 'password')
 carlos = User.create(username: "Carlos", password: 'password')
 maria = User.create(username: "Maria", password: 'password')
 

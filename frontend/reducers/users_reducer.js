@@ -20,13 +20,8 @@ const UsersReducer = (state = {}, action) => {
       newState[action.user.id] = action.user;
       return newState;
     case RECEIVE_CURRENT_USER:
-      if (action.user) { //check for resetting user to null
-
-        // const keys = Object.keys(action.user).filter(key => (typeof action.user[key]) !== 'object');
-        // const user = pick(action.user, keys);
-        // newState[action.user.id] = user;
+      if (action.user) {
         mergeBasics(newState, action.user);
-
         return newState;
       } else {
         return state;
@@ -34,13 +29,6 @@ const UsersReducer = (state = {}, action) => {
     case RECEIVE_EVENTS:
       mapValues(action.events, ({host}) => mergeBasics(newState, host));
       return newState;
-      // const keys = ['hostId', 'hostUsername'];
-      //
-      // mapValues(action.events, ({hostId, hostUsername}) => {
-      //   newState[hostId] = newState[hostId] || {};
-      //   newState[hostId].username = hostUsername;
-      // });
-      // return newState;
     case RECEIVE_EVENT:
       return merge({}, state, action.eventObj.users);
     default:

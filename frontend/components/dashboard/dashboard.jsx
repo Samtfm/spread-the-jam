@@ -29,7 +29,7 @@ class Dashboard extends React.Component{
           </div>
         </div>
         <div className='dashboard body'>
-          <h2 className='body-title'>Upcoming Events</h2>
+          <h2 className='body-title'>Your Upcoming Events</h2>
         <EventsContainer events={this.props.joinedEvents}
           firstItem={() => (
             <Link tabIndex='-1' to='/new-event'>

@@ -1,24 +1,136 @@
-# README
+# Spread the Jam
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Live Site][heroku]
 
-Things you may want to cover:
+[heroku]: https://spreadthejam.herokuapp.com/
 
-* Ruby version
+[tws]: teawithstrangers.com
 
-* System dependencies
+Spread the jam is a meetup app for musicians, based on [Tea With Strangers][tws]. Users can find and join events in their home city, as well as host events.
 
-* Configuration
+## Features
+ - things
+  - you
+  -can
+  d0
 
-* Database creation
+//languages/frameworks,  libraries
+## Tools
 
-* Database initialization
+### languages/frameworks
+ - ruby
+ - javascript
+ - rails
 
-* How to run the test suite
+## Features
+  - Set your home city
+  - Join and leave Events
+  - Host events, with option to edit and delete them later.
+  - View all joined and hosted events in dashboard
 
-* Services (job queues, cache servers, search engines, etc.)
+## libraries
+ - react
+ - redux
+ - BCrypt
+ - react-modal
+ - react-dateTime
 
-* Deployment instructions
+## Screenshots
+![alt text][san_francisco]
 
-* ...
+[san_francisco]: http://res.cloudinary.com/samtfm/image/upload/v1495835514/san_francisco_events_wnyzni.png "San Francisco events"
+
+![alt text][dashboard]
+
+[dashboard]: http://res.cloudinary.com/samtfm/image/upload/v1495836980/dashboard2_ev3dvi.png "Event detail in dashboard"
+
+## Code Samples
+
+### Normalized State
+The state is fully normalized, so local storage doesn't have any duplicated data. For example a user doesn't hold a homeCityName, but rather a key to a city object that is stored in a separate slice of state.
+
+This has the advantage of ensuring consistency of the state, as well as taking up less local storage.
+
+However, the server returns fully nested data, so as to ensure the client has access to all the information it needs. Then the reducers user the following code to parse this nested server response into a normalized state.
+
+```js
+// reducers/users_reducer.js
+
+// helper function
+const mergeBasics = (state, obj) => {
+  // select all keys of the object that do not point to complex data
+  const keys = Object.keys(obj).filter( key =>
+    (typeof obj[key]) !== 'object'
+  );
+  const simpleObj = pick(obj, keys); // create object from simple keys
+  state[obj.id] = simpleObj; // assign object to the slice of state
+};
+
+const UsersReducer = (state = {}, action) => {
+  const newState = merge({}, state)
+  switch(action.type){
+    case RECEIVE_CURRENT_USER:
+      mergeBasics(newState, action.user); // merge only non-object keys
+      return newState;
+    ...
+
+// reducers/cities_reducer.js
+const CitiesReducer = (state = {}, action) => {
+  const newState = merge({}, state);
+  switch (action.type) {
+    case RECEIVE_CURRENT_USER:
+      // extract full city object from response
+      const city = action.user.city;
+      if (city){
+        // assign that city to the cities slice
+        newState[city.id] = city;
+        return newState;
+      } else { // user did not have a home city
+        return state;
+      }
+    ...
+
+```
+
+### Edit Event Authentication
+
+Beyond the standard authentication that registers whether a user is logged in, access editing events must be restricted to the host of that event.
+However, it wasn't possible to check the host of an event before loading the edit page.
+
+Say we have an event with an id of 23, and a hostId of 6.
+Visiting the url `/edit-event/23` will make an api call to event 23. Until the page loads, the user is never redirected. Once this api call returns with a response, we see that it's hostId is 6. The User is redirected unless the currentUserId stored in the state is 6.
+
+In the future, I plan to refactor this code by populating each user with a list of hosted event Ids. This will avoid needing such a complicated Route solution.
+
+```js
+//route_util.js
+const Host = ({ component: Component, path, exact, loggedIn, currentUser, eventObj}) => {
+  return (
+    <Route path={path} exact={exact || false} render={(props) => (
+      (loggedIn && (!eventObj || (currentUser.id === eventObj.hostId))) ? (
+        <Component {...props} />
+      ) : (
+        <Redirect to="/" />
+      )
+    )}/>
+  );
+};
+const mapStateToProps = (state, ownProps) => {
+  // find id from path
+  const params = ownProps.location.pathname.split('/');
+  const eventId = parseInt(params[params.length - 1]);
+  return {
+    loggedIn: Boolean(state.session.currentUser),
+    currentUser: state.users[state.session.currentUser],
+    eventObj: state.events[eventId]
+  };
+};
+export const HostRoute = withRouter(connect(mapStateToProps)(Host));
+
+```
+
+
+## Future Directions
+
+ - Google Maps integration
+ - Register for events with an instrument

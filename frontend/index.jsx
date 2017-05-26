@@ -17,32 +17,12 @@ const Root = ({store}) => (
 );
 
 document.addEventListener('DOMContentLoaded', () => {
-
-/*
-// old bootstrap that got out of hand
-  let store;
-  if (window.currentUserData){
-    const user = window.currentUserData.user;
-    const preloadedState = { session: { currentUser: user.id}, users: {} };
-    preloadedState.users[user.id] = user;
-    const preloadedState = { session: {currentUser: user.id}};
-    store = configureStore(preloadedState);
-    delete window.currentUser;
-  } else {
-    store = configureStore();
-  }
-*/
-
- // Sam's weird bootstrap!
- // QUESTION: is this bootstrap bad?
+ // bootstrap!
   const store = configureStore();
   if (window.currentUserData){
     store.dispatch(receiveCurrentUser(window.currentUserData));
     delete window.currentUserData;
   }
-
-  //TODO: remove store from window! (debugger console.log)
-  window.store = store;
 
   const rootEl = document.getElementById('root');
   ReactDOM.render(<Root store={store} />, rootEl);
