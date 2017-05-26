@@ -17,7 +17,7 @@ h2.body-title {
   .dateTime{
     height: 500px;
   }
-  label, div{
+  label, div.buttons{
     display: flex;
     // flex-direction: column;
     justify-content: flex-end;
@@ -34,11 +34,11 @@ h2.body-title {
     margin-right: 75px;
   }
   textarea{
-    height: 80px;
+    height: 120px;
     resize: vertical;
     overflow: auto;
   }
-  div {
+  div.buttons {
     width: 80%;
   }
   button{

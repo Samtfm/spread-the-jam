@@ -101,7 +101,6 @@ class EventForm extends React.Component{
       </div>
       <section className='new-event body'>
 
-        <DateTime value={this.state.dateTime} onChange={this.updateDate.bind(this)} />
 
       <form className="event-form">
         <h2 className='body-title'>{this.props.edit ? 'Update the deets!' : 'What are the deets?'}</h2>
@@ -110,17 +109,12 @@ class EventForm extends React.Component{
           (this.props.errors.map((err) => <li>{err}</li>)) : ''}
         </ul>
         <label className='date-time-picker'>
-          Date
+          Date/Time
+          <DateTime value={this.state.dateTime} onChange={this.updateDate.bind(this)} />
           {/*}
           <input type='date'
             value={this.state.date}
             onChange={this.updateDate.bind(this)} />*/}
-        </label>
-        <label>
-          Time
-          <input type='time'
-            value={this.state.time}
-            onChange={this.updateTime.bind(this)} />
         </label>
         <label>
           Address
@@ -143,7 +137,7 @@ class EventForm extends React.Component{
         </label>
 
         {this.props.edit ? (
-        <div>
+        <div className='buttons'>
           <button className='white' onClick={() => this.setState({displayConfirmDelete: true})}>
             Delete Jam
           </button>
