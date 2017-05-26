@@ -2,7 +2,8 @@
 
 .steps{
   display: flex;
-  height: 150px;
+  min-height: 150px;
+  padding: 10px 0;
   background-color: transparentize($link, .8);
   align-items: center;
   justify-content: space-around;
