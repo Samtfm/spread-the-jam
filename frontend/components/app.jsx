@@ -1,7 +1,7 @@
 import React from 'react';
-import { Route, Redirect } from 'react-router-dom';
+import { Route, Redirect, Switch } from 'react-router-dom';
 
-import { AuthRoute, SecureRoute } from '../util/route_util';
+import { AuthRoute, SecureRoute, HostRoute } from '../util/route_util';
 import SessionFormContainer from './session/session_form_container';
 
 import Dashboard from './dashboard/dashboard';
@@ -17,17 +17,20 @@ import CityContainer from './city/city_container';
 const App = () => (
   <div>
     <h1></h1>
+
     <HeaderContainer />
+    <Switch>
       <SecureRoute path='/cities/:id' component={CityContainer} />
-      <Route exact path='/' component={Welcome} />
 
       <AuthRoute path='/signup' component={SessionFormContainer} />
       <AuthRoute path='/signin' component={SessionFormContainer} />
       <SecureRoute exact path='/dashboard' component={DashboardContainer} />
       <SecureRoute exact path='/cities' component={CitiesContainer} />
       <SecureRoute exact path='/new-event' component={EventFormContainer} />
-      <SecureRoute exact path='/edit-event/:id' component={() => <EventFormContainer edit='true' />} />
+      <HostRoute exact path='/edit-event/:id' component={() => <EventFormContainer edit='true' />} />
     {/*<SecureRoute exact path="/" component={() => (<Redirect to="/dashboard"/>)}/>*/}
+      <Route path='/' component={Welcome} />
+    </Switch>
 
     <div className='footer' />
   </div>

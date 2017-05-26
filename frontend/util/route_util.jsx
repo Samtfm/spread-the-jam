@@ -23,6 +23,29 @@ export const Secure = ({ component: Component, path, exact, loggedIn}) => (
     )}/>
 );
 
+export const Host = ({ component: Component, path, exact, loggedIn, currentUser, eventObj}) => {
+  console.log(eventObj);
+  return (
+    <Route path={path} exact={exact || false} render={(props) => (
+      (loggedIn && (!eventObj || (currentUser.id === eventObj.hostId))) ? (
+        <Component {...props} />
+      ) : (
+        <Redirect to="/" />
+      )
+    )}/>
+  );
+};
+const mapStateToPropsHost = (state, ownProps) => {
+  const params = ownProps.location.pathname.split('/');
+  const eventId = parseInt(params[params.length - 1]);
+  return {
+    loggedIn: Boolean(state.session.currentUser),
+    currentUser: state.users[state.session.currentUser],
+    eventObj: state.events[eventId]
+    // eventObj: state.events[parseInt(ownProps.match.params.id)]
+  };
+};
+
 const mapStateToProps = state => ({
   loggedIn: Boolean(state.session.currentUser),
   currentUser: state.users[state.session.currentUser]
@@ -30,3 +53,4 @@ const mapStateToProps = state => ({
 
 export const AuthRoute = withRouter(connect(mapStateToProps)(Auth));
 export const SecureRoute = withRouter(connect(mapStateToProps)(Secure));
+export const HostRoute = withRouter(connect(mapStateToPropsHost)(Host));

@@ -26,7 +26,7 @@ class Event < ApplicationRecord
 
   belongs_to :city
 
-  has_many :registrations
+  has_many :registrations, dependent: :destroy
 
   has_many :attendees, through: :registrations, source: :user
 end

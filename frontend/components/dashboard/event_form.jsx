@@ -24,7 +24,7 @@ class EventForm extends React.Component{
   componentDidMount(){
     this.props.requestCities();
     if (this.props.edit) {
-      this.props.requestEvent();
+      this.props.requestEvent().fail(() => this.props.history.push('/'));
     }
   }
 
