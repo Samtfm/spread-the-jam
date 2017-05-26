@@ -60,7 +60,11 @@ input[type=text], input[type=password], input[type=time], input[type=date], sele
 
 select {
   background-color: white;
+  font-family: 'muli', sans-serif;
   margin: 5px;
+  height: 28px;
+  font-size: 16px;
+  border: none;
 }
 // option:checked, option:hover{
 //   // background: $link;
