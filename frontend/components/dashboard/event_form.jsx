@@ -1,5 +1,7 @@
  import React from 'react';
  import Modal from 'react-modal';
+import DateTime from 'react-datetime';
+import moment from 'moment';
 
 class EventForm extends React.Component{
   constructor(props){
@@ -13,6 +15,7 @@ class EventForm extends React.Component{
       time: '12:00',
       cityId: this.props.cityId,
       displayConfirmDelete: false,
+      dateTime: null
     };
   }
   componentWillMount(){
@@ -33,10 +36,9 @@ class EventForm extends React.Component{
       this.setState({
         description: newProps.eventObj.description,
         address: newProps.eventObj.address,
-        date: newProps.eventObj.dateTime.slice(0,10),
-        time: newProps.eventObj.dateTime.slice(11,16),
         cityId: newProps.eventObj.cityId,
-        id: newProps.eventObj.id
+        id: newProps.eventObj.id,
+        dateTime: moment(newProps.eventObj.dateTime).utc()
       });
 
     }
@@ -50,7 +52,7 @@ class EventForm extends React.Component{
       description: this.state.description,
       city_id: this.state.cityId,
       host_id: this.props.userId,
-      date_time: rubyDateTime,
+      date_time: this.state.dateTime.format(),
       id: this.state.id
     };
     if (this.props.edit){
@@ -71,9 +73,9 @@ class EventForm extends React.Component{
     e.preventDefault();
     this.setState({ address: e.target.value });
   }
-  updateDate(e) {
-    e.preventDefault();
-    this.setState({ date: e.target.value });
+  updateDate(m) {
+    console.log(m.format());
+    this.setState({ dateTime: m });
   }
   updateTime(e) {
     e.preventDefault();
@@ -98,17 +100,21 @@ class EventForm extends React.Component{
         </div>
       </div>
       <section className='new-event body'>
+
+        <DateTime value={this.state.dateTime} onChange={this.updateDate.bind(this)} />
+
       <form className="event-form">
         <h2 className='body-title'>{this.props.edit ? 'Update the deets!' : 'What are the deets?'}</h2>
         <ul className='errors'>
           {this.props.errors ?
           (this.props.errors.map((err) => <li>{err}</li>)) : ''}
         </ul>
-        <label>
+        <label className='date-time-picker'>
           Date
+          {/*}
           <input type='date'
             value={this.state.date}
-            onChange={this.updateDate.bind(this)} />
+            onChange={this.updateDate.bind(this)} />*/}
         </label>
         <label>
           Time
