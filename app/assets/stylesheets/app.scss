@@ -89,9 +89,13 @@ button, input[type=submit]{
 }
 button.jam {
   color: white;
+  font-size: 16px;
+
   background-color: $jam;
 }
 button.white {
+  font-size: 16px;
+
   color: $jam;
   background-color: white;
   border: 1px solid transparentize($jam, .4);
