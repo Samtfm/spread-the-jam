@@ -23,8 +23,19 @@ ny = City.create(name: "New York", img_url: 'http://res.cloudinary.com/samtfm/im
 nv = City.create(name: "Nashville", img_url: 'http://res.cloudinary.com/samtfm/image/upload/c_scale,w_1200/v1495168184/nashville.jpg')
 ch = City.create(name: "Chicago", img_url: 'http://res.cloudinary.com/samtfm/image/upload/c_scale,w_1200/v1495168184/chicago.jpg')
 ld = City.create(name: "London", img_url: 'http://res.cloudinary.com/samtfm/image/upload/c_scale,w_1200/v1495168184/london.jpg')
-no = City.create(name: "New Orleans", img_url: 'http://res.cloudinary.com/samtfm/image/upload/c_scale,w_1200/v1495168184/new_orleans.jpg')
+# no = City.create(name: "New Orleans", img_url: 'http://res.cloudinary.com/samtfm/image/upload/c_scale,w_1200/v1495168184/new_orleans.jpg')
+pl = City.create(name: "Portland", img_url: 'http://res.cloudinary.com/samtfm/image/upload/c_scale,w_1200/v1495999282/portland-1840765_1920_zjxlpa.jpg')
 
+descriptions = [
+  "Let's play some folk music, I play #{Faker::Music.instrument.downcase} and have a spare #{Faker::Music.instrument.downcase} if anyone needs an instrument.",
+  "Has your significant other done left ya? Let's play some blues.",
+  "Looking for others interested in exploring experimental found-object music. Anything is an instrument if you hit it with a stick!",
+  "Anyone interested in starting a small choral group? I have a piano",
+  "Big fan of indie rock. Any songwriters out there feel free to bring anything you want to try out with a group.",
+  "I play #{Faker::Music.instrument.downcase} but can't sing for the life of me. Anyone want to get together and play some blues?",
+  "Anyone want to practice vocal harmonies over some classic beatles songs?",
+  "I play #{Faker::Music.instrument.downcase}, and have a drumset. Anyone up for some jazz standards?"
+]
 event1 = Event.create(
   address: Faker::Address.street_address,
   description: "neat folks and rad tunes!",
@@ -53,14 +64,16 @@ event4 = Event.create(
   User.create(username: Faker::Name.first_name, password: 'password', city_id: City.all.sample.id)
 end
 20.times do
+  user = User.all.sample
   Event.create(
   address: Faker::Address.street_address,
-  description: Faker::Lorem.sentence(4),
-  city_id: City.all.sample.id,
-  host_id: User.all.sample.id,
+  description: descriptions.sample,
+  city_id: user.city.id,
+  host_id: user.id,
   date_time: DateTime.new(2017, 6 + rand(3), 1 + rand(30), 10 + rand(10), rand(2)*30, 0)
   )
 end
 33.times do
-  Registration.create(user_id: User.all.sample.id, event_id: Event.all.sample.id );
+  user = User.all.sample
+  Registration.create(user_id: user..id, event_id: user.city.events.sample.id);
 end
