@@ -8,19 +8,19 @@
 
 Spread the jam is a meetup app for musicians, based on [Tea With Strangers][tws]. Users can find and join events in their home city, as well as host events.
 
-## Features
- - things
-  - you
-  -can
-  d0
-
-//languages/frameworks,  libraries
 ## Tools
 
-### languages/frameworks
+### Languages/Frameworks
  - ruby
  - javascript
  - rails
+
+### Libraries
+ - react
+ - redux
+ - BCrypt
+ - react-modal
+ - react-dateTime
 
 ## Features
   - Set your home city
@@ -28,21 +28,15 @@ Spread the jam is a meetup app for musicians, based on [Tea With Strangers][tws]
   - Host events, with option to edit and delete them later.
   - View all joined and hosted events in dashboard
 
-## libraries
- - react
- - redux
- - BCrypt
- - react-modal
- - react-dateTime
 
 ## Screenshots
 ![alt text][san_francisco]
 
-[san_francisco]: http://res.cloudinary.com/samtfm/image/upload/v1495835514/san_francisco_events_wnyzni.png "San Francisco events"
+[san_francisco]: http://res.cloudinary.com/samtfm/image/upload/c_scale,w_600/v1495835514/san_francisco_events_wnyzni.png "San Francisco events"
 
 ![alt text][dashboard]
 
-[dashboard]: http://res.cloudinary.com/samtfm/image/upload/v1495836980/dashboard2_ev3dvi.png "Event detail in dashboard"
+[dashboard]: http://res.cloudinary.com/samtfm/image/upload/c_scale,w_600/v1495836980/dashboard2_ev3dvi.png "Event detail in dashboard"
 
 ## Code Samples
 
@@ -104,9 +98,11 @@ In the future, I plan to refactor this code by populating each user with a list 
 
 ```js
 //route_util.js
-const Host = ({ component: Component, path, exact, loggedIn, currentUser, eventObj}) => {
+const Host = ({ component: Component, path, loggedIn, currentUser, eventObj}) => {
   return (
-    <Route path={path} exact={exact || false} render={(props) => (
+    <Route path={path} render={(props) => (
+      // ensure user is redirected, and page either hasn't finished loading,
+      // or the loaded event has a matching hostId
       (loggedIn && (!eventObj || (currentUser.id === eventObj.hostId))) ? (
         <Component {...props} />
       ) : (
@@ -116,16 +112,17 @@ const Host = ({ component: Component, path, exact, loggedIn, currentUser, eventO
   );
 };
 const mapStateToProps = (state, ownProps) => {
-  // find id from path
+  // parse eventId from path
   const params = ownProps.location.pathname.split('/');
   const eventId = parseInt(params[params.length - 1]);
   return {
     loggedIn: Boolean(state.session.currentUser),
     currentUser: state.users[state.session.currentUser],
-    eventObj: state.events[eventId]
+    eventObj: state.events[eventId]  // find event object in state
   };
 };
 export const HostRoute = withRouter(connect(mapStateToProps)(Host));
+//HostRoute can now be used instead of the standard Route component
 
 ```
 
