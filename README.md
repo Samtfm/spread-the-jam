@@ -6,7 +6,7 @@
 
 [tws]: teawithstrangers.com
 
-Spread the jam is a meetup app for musicians, based on [Tea With Strangers][tws]. Users can find and join events in their home city, as well as host events.
+Spread the jam is a meetup app for musicians based on [Tea With Strangers][tws]. Users can find and join events in their home city, as well as host events.
 
 ## Tools
 
