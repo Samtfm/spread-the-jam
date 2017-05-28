@@ -2,7 +2,7 @@
 
 [Live Site][heroku]
 
-[heroku]: https://spreadthejam.herokuapp.com/
+[heroku]: http://www.spreadthejam.net
 
 [tws]: teawithstrangers.com
 
