@@ -30,6 +30,7 @@ module.exports = {
     devtoolModuleFilenameTemplate: '[resourcePath]',
     devtoolFallbackModuleFilenameTemplate: '[resourcePath]?[hash]'
   },
+  plugins: plugins,
   module: {
     loaders: [
       {
