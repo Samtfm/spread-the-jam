@@ -22,7 +22,7 @@ const Welcome = () => (
       <section className='steps'>
         <div>
           <h2>Show up for a jam</h2>
-          <p>You and a few others meet up with your instruments.</p>
+          <p>Grab your instrument and meet up with a host.</p>
         </div>
         <div>
           <h2>Create live music</h2>
