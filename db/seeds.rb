@@ -25,16 +25,7 @@ ld = City.create(name: "London", img_url: 'http://res.cloudinary.com/samtfm/imag
 # no = City.create(name: "New Orleans", img_url: 'http://res.cloudinary.com/samtfm/image/upload/c_scale,w_1200/v1495168184/new_orleans.jpg')
 pl = City.create(name: "Portland", img_url: 'http://res.cloudinary.com/samtfm/image/upload/c_scale,w_1200/v1495999282/portland-1840765_1920_zjxlpa.jpg')
 
-descriptions = [
-  "Let's play some folk music, I play #{Faker::Music.instrument.downcase} and have a spare #{Faker::Music.instrument.downcase} if anyone needs an instrument.",
-  "Has your significant other done left ya? Let's play some blues.",
-  "Looking for others interested in exploring experimental found-object music. Anything is an instrument if you hit it with a stick!",
-  "Anyone interested in starting a small choral group? I have a piano if anyone can play.",
-  "Big fan of indie rock. Any songwriters out there feel free to bring anything you want to try out with a group.",
-  "I play #{Faker::Music.instrument.downcase} but can't sing for the life of me. Anyone want to get together and play some blues?",
-  "Anyone want to practice vocal harmonies over some classic beatles songs?",
-  "I play #{Faker::Music.instrument.downcase}, and have a drumset. Anyone up for some jazz standards?"
-]
+
 # event1 = Event.create(
 #   address: Faker::Address.street_address,
 #   description: "neat folks and rad tunes!",
@@ -58,22 +49,66 @@ descriptions = [
 #   host_id: frank.id,
 #   date_time: DateTime.new(2017, 6, 15, 14, 00, 0)
 # )
-
-20.times do
-  User.create(username: Faker::Name.first_name, password: 'password', city_id: City.all.sample.id)
+def create_user(city)
+  User.create(username: Faker::Name.first_name, password: 'crassword', city_id: city.id);
 end
-20.times do
-  user = User.all.sample
+
+def create_event(user)
+  descriptions = [
+    "Let's play some folk music, I play #{Faker::Music.instrument.downcase} and have a spare #{Faker::Music.instrument.downcase} if anyone needs an instrument.",
+    "Has your significant other done left ya? Let's play some blues.",
+    "Looking for others interested in exploring experimental found-object music. Anything is an instrument if you hit it with a stick!",
+    "Anyone interested in starting a small choral group? I have a piano if anyone can play.",
+    "Big fan of indie rock. Any songwriters out there feel free to bring anything you want to try out with a group.",
+    "I play #{Faker::Music.instrument.downcase} but can't sing for the life of me. Anyone want to get together and play some blues?",
+    "Anyone want to practice vocal harmonies over some classic beatles songs?",
+    "I play #{Faker::Music.instrument.downcase}, and have a drumset. Anyone up for some jazz standards?",
+    "I've always wanted to jam with someone who plays the #{Faker::Music.instrument.downcase}, but all instruments are welcome :)",
+    "Looking to start a #{Faker::Music.instrument.downcase} group"
+  ]
   Event.create(
-  address: Faker::Address.street_address,
-  description: descriptions.sample,
-  city_id: user.city.id,
-  host_id: user.id,
-  date_time: DateTime.new(2017, 6 + rand(3), 1 + rand(30), 10 + rand(10), rand(2)*30, 0)
+    address: Faker::Address.street_address,
+    description: descriptions.sample,
+    city_id: user.city.id,
+    host_id: user.id,
+    date_time: DateTime.new(2017, 6 + rand(3), 1 + rand(30), 10 + rand(10), rand(2)*30, 0)
   )
 end
-33.times do
-  user = User.all.sample
-  Registration.create(user_id: user.id, event_id: user.city.events.sample.id);
+
+def create_registration(user)
+  Registration.create(user_id: user.id, event_id: user.city.events.sample.id)
 end
+
+
+City.all.each do |city|
+  4.times do
+    user = create_user(city)
+    create_event(user)
+  end
+  5.times { create_user(city) } # add some users that don't host events
+end
+
+# add a few rando events
+10.times do
+  create_event(User.all.sample)
+end
+
+#add registrations in each city
+City.all.each do |city|
+  8.times do
+    create_registration(city.users.sample)
+  end
+end
+
 sam = User.create(username: "Sam", password: 'password', city_id: sf.id)
+2.times { create_event(sam) }
+2.times { create_registration(sam) }
+
+# add a few more rando registrations
+10.times do
+  user = User.all.sample
+  event = user.city.events.sample
+  event = user.city.events.sample if event.attendees.length > 3
+  event = user.city.events.sample if event.attendees.length > 3
+  Registration.create(user_id: user.id, event_id: event.id)
+end
