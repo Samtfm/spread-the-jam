@@ -86,7 +86,7 @@ const CitiesReducer = (state = {}, action) => {
 
 ```
 
-### Edit Event Authentication
+### Authentication for Editing Events
 
 Beyond the standard authentication that registers whether a user is logged in, access editing events must be restricted to the host of that event.
 However, it wasn't possible to check the host of an event before loading the edit page.
