@@ -23,21 +23,24 @@ class EventIndexItem extends React.Component{
 
 
     return (
-      <div className={this.isHost ? 'event-item hosted' : (this.props.attendees.some(att => att && att.id === this.props.userId) ? 'event-item joined' : 'event-item')} >
-        <div className='date'>
-          <div id='day'>{this.dateTime.dayString}</div>
-          <div id='date'>{this.dateTime.dateString}</div>
-          <div id='time'>{this.dateTime.timeString}</div>
+      <a onClick={this.showDetail.bind(this)}>
+
+        <div className={this.isHost ? 'event-item hosted' : (this.props.attendees.some(att => att && att.id === this.props.userId) ? 'event-item joined' : 'event-item')} >
+          <div className='date'>
+            <div id='day'>{this.dateTime.dayString}</div>
+            <div id='date'>{this.dateTime.dateString}</div>
+            <div id='time'>{this.dateTime.timeString}</div>
+          </div>
+          <div className='host'><div id='host'>host</div><div id='name'>{this.props.host.username}</div></div>
+          <ul>
+            <li>{this.props.address}</li>
+            <li>number attending: {this.props.numAttendees}</li>
+            <li>
+              <button className='white' onClick={this.showDetail.bind(this)}>Details</button>
+            </li>
+          </ul>
         </div>
-        <div className='host'><div id='host'>host</div><div id='name'>{this.props.host.username}</div></div>
-        <ul>
-          <li>{this.props.address}</li>
-          <li>number attending: {this.props.numAttendees}</li>
-          <li>
-            <button className='white' onClick={this.showDetail.bind(this)}>Details</button>
-          </li>
-        </ul>
-      </div>
+      </a>
     );
   }
 }
