@@ -165,6 +165,10 @@
       margin: 6px;
     }
   }
+  cursor: pointer;
+  &:hover{
+    background-color: #e2e2e2;
+  }
 }
 .event-item.hosted {
   border: 1px solid $link;

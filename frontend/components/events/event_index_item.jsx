@@ -23,9 +23,7 @@ class EventIndexItem extends React.Component{
 
 
     return (
-      <a onClick={this.showDetail.bind(this)}>
-
-        <div className={this.isHost ? 'event-item hosted' : (this.props.attendees.some(att => att && att.id === this.props.userId) ? 'event-item joined' : 'event-item')} >
+        <div onClick={this.showDetail.bind(this)} className={this.isHost ? 'event-item hosted' : (this.props.attendees.some(att => att && att.id === this.props.userId) ? 'event-item joined' : 'event-item')} >
           <div className='date'>
             <div id='day'>{this.dateTime.dayString}</div>
             <div id='date'>{this.dateTime.dateString}</div>
@@ -40,7 +38,6 @@ class EventIndexItem extends React.Component{
             </li>
           </ul>
         </div>
-      </a>
     );
   }
 }
