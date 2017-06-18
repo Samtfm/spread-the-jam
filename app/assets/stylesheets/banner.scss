@@ -7,6 +7,7 @@
   margin: 40px;
 }
 .banner{
+  font-weight: bold;
   position: relative;
   width: 100%;
   .banner-image {
@@ -55,10 +56,6 @@
       opacity: .9;
 
       font-size: 38px;
-    }
-    button {
-      background-color: $jam;
-      color: white;
     }
   }
 }

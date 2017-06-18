@@ -14,7 +14,7 @@ const Welcome = () => (
           </div>
           <nav>
             <Link tabIndex="-1" to='/signup'>
-              <button className='banner-button'>Let's play music together!</button>
+              <button className='banner-button jam'>Let's play music together!</button>
             </Link>
           </nav>
         </div>

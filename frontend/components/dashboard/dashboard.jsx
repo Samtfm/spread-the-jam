@@ -24,7 +24,7 @@ class Dashboard extends React.Component{
             </div>
 
             <Link tabIndex="-1" to={(this.props.currentUser.cityId) ? (`/cities/${this.props.currentUser.cityId}`) : ("/cities")}>
-              <button className='banner-button'>Sign up for a jam!</button>
+              <button className='banner-button jam'>Sign up for a jam!</button>
             </Link>
           </div>
         </div>

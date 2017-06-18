@@ -31,6 +31,7 @@ class Events extends React.Component{
       <section className='event-index'>
         <Modal
           isOpen={this.state.detailShowing}
+          overlayClassName='modal-overlay'
           className='event-detail'
           shouldCloseOnOverlayClick={true}
           onRequestClose={this.hideDetail.bind(this)}

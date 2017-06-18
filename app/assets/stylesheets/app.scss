@@ -41,7 +41,9 @@ body{
   left: 0;
   margin: 0;
 }
-
+p{
+  font-size: 18px;
+}
 a{
   color: $link;
 }
@@ -94,9 +96,9 @@ button, input[type=submit]{
 }
 button.jam {
   color: white;
-  font-size: 16px;
+  // font-size: 16px;
 
-  background-color: $jam;
+  background-color: $link;
 }
 button.white {
   font-size: 16px;

@@ -91,7 +91,7 @@ class EventForm extends React.Component{
 
       <div className="banner">
         <div className="banner-image"
-         style={{backgroundImage: `url('http://res.cloudinary.com/samtfm/image/upload/c_crop,g_south,h_709,w_1920,x_0,y_0/v1495688255/studio.jpg')`}}></div>
+         style={{backgroundImage: `url('http://res.cloudinary.com/samtfm/image/upload/e_brightness:-41/c_crop,g_south,h_709,w_1920,x_0,y_0/v1495688255/studio.jpg')`}}></div>
          <div className='banner-content'>
            <div className='banner-text'>
              <h2>Host a Jam!</h2>
@@ -146,6 +146,7 @@ class EventForm extends React.Component{
           <Modal
             isOpen={this.state.displayConfirmDelete}
             className='modal delete-warning'
+            overlayClassName='modal-overlay'
             shouldCloseOnOverlayClick={true}
             onRequestClose={() => this.setState({displayConfirmDelete: false})}
             contentLabel="Are you sure?">
