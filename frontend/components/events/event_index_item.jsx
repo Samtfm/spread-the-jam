@@ -53,8 +53,6 @@ class EventIndexItem extends React.Component{
           <ul>
             <li>Attending: {this.props.numAttendees}</li>
             <li> {blurb}</li>
-            <li>
-            </li>
           </ul>
         </div>
     );

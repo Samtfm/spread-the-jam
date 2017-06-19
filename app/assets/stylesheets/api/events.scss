@@ -25,7 +25,11 @@
   // background-color: $light-gray;
   max-width: 500px;
   min-width: 300px;
-  max-height: 650px;
+  max-height: 750px;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: top;
   // min-height: 400px;
   margin: auto;
 
@@ -184,6 +188,7 @@
     height: 100%;
     li{
       margin: 5px;
+      margin-bottom: 15px;
     }
     button{
       font-weight: bold;

@@ -4,12 +4,17 @@ h2.body-title {
   margin: auto;
   margin-top: 30px;
   margin-bottom: 20px;
+  font-size: 26px;
   padding: 5px;
   width: 95%;
-  color: $jam;
+  color: darken($jam, 15);
+  font-weight: bold;
   border-bottom: 2px solid $jam;
 }
 .event-form{
+  background-color: $blue;
+  border-radius: 5px;
+  border: 1px solid $link;
   margin: auto;
   margin-bottom: 15px;
   display: flex;
@@ -45,7 +50,7 @@ h2.body-title {
   }
   button{
     width: 45%;
-    margin: auto;
+    margin: 10px;
   }
 }
 .modal{

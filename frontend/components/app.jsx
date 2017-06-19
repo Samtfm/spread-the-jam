@@ -33,6 +33,8 @@ const App = () => (
     </Switch>
 
     <div className='footer'>
+      <div className="footer-content">
+
       <p>Spread the Jam is a demo website by Sam Faber-Manning</p>
       <div className='links'>
 
@@ -44,6 +46,7 @@ const App = () => (
         </a>
       </div>
     </div>
+  </div>
   </div>
 );
 

@@ -26,7 +26,7 @@ class EventDetail extends React.Component{
     const EditCancelButtons = () => (
       <div>
         <Link tabIndex='-1' to={`/edit-event/${this.props.eventId}`}>
-          <button className='white'>
+          <button className='jam'>
             EDIT
           </button>
         </Link>

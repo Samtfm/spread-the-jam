@@ -7,8 +7,11 @@ $blue: #EEE;
 $light-gray: #CCC;
 $light-blue: rgb(173, 183, 207);
 
-$jam: rgb(240, 10, 90);
+// $jam: rgb(240, 10, 90);
+$jam: rgb(40, 180, 220);
+
 $city-tint: transparentize($jam, .6);//rgba(162,16,42,0.4);
 
 // $city-tint: rgba(100,80,200,0.4);
-$link: rgb(250, 150, 9);//#56D; // #3AB;
+// $link: rgb(250, 150, 9);//#56D; // #3AB;
+$link: rgb(256, 180, 20);//#56D; // #3AB;

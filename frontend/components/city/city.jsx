@@ -34,7 +34,7 @@ class City extends React.Component{
              { isHomeCity ? (
                ''
              ) : (
-               <button className='banner-button' onClick={this.chooseCity.bind(this)}>
+               <button className='banner-button jam' onClick={this.chooseCity.bind(this)}>
                  Set as my home city
                </button>
              )}

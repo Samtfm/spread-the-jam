@@ -101,8 +101,8 @@ class EventForm extends React.Component{
       <section className='new-event body'>
 
 
+      <h2 className='body-title'>{this.props.edit ? 'Update the deets!' : 'What are the deets?'}</h2>
       <form className="event-form">
-        <h2 className='body-title'>{this.props.edit ? 'Update the deets!' : 'What are the deets?'}</h2>
         <ul className='errors'>
           {this.props.errors ?
           (this.props.errors.map((err) => <li>{err}</li>)) : ''}
