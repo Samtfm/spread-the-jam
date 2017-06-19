@@ -32,7 +32,18 @@ const App = () => (
       <Route path='/' component={Welcome} />
     </Switch>
 
-    <div className='footer' />
+    <div className='footer'>
+      <p>Spread the Jam is a demo website by Sam Faber-Manning</p>
+      <div className='links'>
+
+        <a href="https://github.com/Samtfm">
+          <i className="fa fa-github" aria-hidden="true"></i> GitHub
+          </a>
+        <a href="https://www.linkedin.com/in/sam-faber-manning/">
+          <i className="fa fa-linkedin" aria-hidden="true"></i> LinkedIn
+        </a>
+      </div>
+    </div>
   </div>
 );
 
