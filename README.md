@@ -4,7 +4,7 @@
 
 [heroku]: http://www.spreadthejam.net
 
-[tws]: teawithstrangers.com
+[tws]: http://www.teawithstrangers.com
 
 Spread the jam is a meetup app for musicians based on [Tea With Strangers][tws]. Users can find and join events in their home city, as well as host events.
 
@@ -43,7 +43,7 @@ Spread the jam is a meetup app for musicians based on [Tea With Strangers][tws].
 ### Normalized State
 The state is fully normalized, so local storage doesn't have any duplicated data. For example a user doesn't hold a homeCityName, but rather a key to a city object that is stored in a separate slice of state.
 
-This has the advantage of ensuring consistency of the state, as well as taking up less local storage.
+This has the advantage of ensuring consistency of the state, as well as avoiding duplicate data.
 
 However, the server returns fully nested data, so as to ensure the client has access to all the information it needs. Then the reducers user the following code to parse this nested server response into a normalized state.
 
