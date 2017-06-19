@@ -72,7 +72,7 @@ class EventDetail extends React.Component{
           </li>
           <li>
 
-            <label>attendees ({this.props.eventObj.numAttendees})</label>
+            <label>Attendees ({this.props.eventObj.numAttendees})</label>
             <ul className='attendees'>
               {this.props.eventObj.attendees.map((attendee, id) => (
                 <li key={id}>{attendee ? attendee.username : ''}</li>
