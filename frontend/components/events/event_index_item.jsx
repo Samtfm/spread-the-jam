@@ -37,8 +37,8 @@ class EventIndexItem extends React.Component{
       )
     );
     const blurb = (
-      this.props.description.length > 60 ?
-      this.props.description.slice(0, 57) + "..." :
+      this.props.description.length > 65 ?
+      this.props.description.slice(0, 62) + "..." :
       this.props.description
     );
     return (
