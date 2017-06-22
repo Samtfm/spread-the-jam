@@ -36,11 +36,7 @@
     h1, h2 {
       color: white;
       margin: 20px;
-      font-size: 50px;
       font-weight: 900;
-      opacity: .75;
-      letter-spacing: .1em;
-      word-spacing: .2em;
     }
     p {
       color: white;
@@ -48,12 +44,16 @@
       text-align: center;
     }
     h1, {
+      letter-spacing: .15em;
+      word-spacing: .2em;
+      font-size: 54px;
+      opacity: .75;
       text-transform: uppercase;
     }
     h2 {
       letter-spacing: .05em;
       word-spacing: .1em;
-      opacity: .9;
+      // opacity: .9;
 
       font-size: 38px;
     }
