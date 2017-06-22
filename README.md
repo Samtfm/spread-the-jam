@@ -36,7 +36,7 @@ Spread the jam is a meetup app for musicians based on [Tea With Strangers][tws].
 
 ![alt text][dashboard]
 
-[dashboard]: http://res.cloudinary.com/samtfm/image/upload/c_scale,w_600/v1495836980/dashboard2_ev3dvi.png "Event detail in dashboard"
+[dashboard]: docs/screenshots/event_detail.png "Event detail view"
 
 ## Code Samples
 
