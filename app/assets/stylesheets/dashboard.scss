@@ -35,14 +35,14 @@ section.dashboard {
   }
 }
 #new-event{
+  &:hover{
+    box-shadow: 0 0 6px #ccc;
+  }
   width: 200px;
   height: 200px;
   margin: 20px;
-  color: white;
+  color: $link;
   font-size: 22px;
-  background-color: transparentize($link, .7);
-  border: 1px solid $link;
-  &:hover{
-    // background-color: transparentize($link, .6);
-  }
+  background-color: transparentize($link, .9);
+  border: 2px dashed $link;
 }

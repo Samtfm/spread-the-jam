@@ -32,7 +32,7 @@ Spread the jam is a meetup app for musicians based on [Tea With Strangers][tws].
 ## Screenshots
 ![alt text][san_francisco]
 
-[san_francisco]: http://res.cloudinary.com/samtfm/image/upload/c_scale,w_600/v1495835514/san_francisco_events_wnyzni.png "San Francisco events"
+[san_francisco]: docs/screenshots/SF_events.png "San Francisco events"
 
 ![alt text][dashboard]
 

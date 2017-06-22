@@ -70,6 +70,9 @@
       color: white;
       // background-color: rgba(180,100,80,0.6);
       background-color: $city-tint;
+      &:hover{
+        box-shadow: 0 0 6px #aaa;
+      }
     }
     // overflow: hidden;
   }

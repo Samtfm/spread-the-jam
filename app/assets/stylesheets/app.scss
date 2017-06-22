@@ -79,7 +79,7 @@ h1, h2{
   text-align: center;
 }
 h2{
-  color: darken($link, 13);
+  color: darken($link, 15);
   font-size: 24px;
   font-weight: bold;
 }
@@ -112,14 +112,14 @@ button, input[type=submit]{
   background-color: white;
   font-weight: bold;
 	border-radius:3px;
-  filter: brightness(95%);
+  filter: brightness(97%);
   padding-left: 15px;
   padding-right: 15px;
   height: 35px;
   -webkit-transition: all .2s ease;
   transition: all .2s ease;
   &:hover{
-    filter: brightness(115%);
+    filter: brightness(105%);
   }
 }
 button.jam {
